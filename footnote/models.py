@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1,"Published"))
 
-class Post(models.Model):
+class Idea(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     idea = models.ForeignKey(User, on_delete=models.CASCADE, related_name="footnotes")
@@ -26,4 +26,6 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
-class Comment(models.Model):
+class FootNote(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=80)
