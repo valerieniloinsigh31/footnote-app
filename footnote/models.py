@@ -14,7 +14,7 @@ class Idea(models.Model):
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name='footnote_greenvotes', blank=True)
+    likes = models.ManyToManyField(User, related_name='footnote_likes', blank=True)
 
     class Meta():
         ordering = ['-created_on']
@@ -37,7 +37,7 @@ class FootNote(models.Model):
         ordering = ['-created_on']
 
     def __str__ (self):
-        return f"Comment {self.body} by {self.name}"
+        return f"FootNote {self.body} given by {self.name}"
 
 
 
