@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Idea 
+from .models import Idea
+from .forms import FootNoteForm
 
 
 class IdeaList(generic.ListView):
@@ -26,6 +27,7 @@ class IdeaDetail(View):
                 "idea": idea,
                 "footnotes": footnotes,
                 "liked": liked,
+                "footnote_form": FootNoteForm(),
             }
         )
         
