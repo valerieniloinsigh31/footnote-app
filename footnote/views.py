@@ -30,4 +30,25 @@ class IdeaDetail(View):
                 "footnote_form": FootNoteForm()
             },
         )
+
+    def post(self, request, slug, *args, **kwargs):
+            queryset = Idea.objects.filter(status=1)
+            idea = get_object_or_404(queryset, slug=slug)
+            footnotes = idea.footnotes.filter(approved=True).order_by('created_on')
+            liked = False
+            if idea.likes.filter(id=self.request.user.id).exists():
+                liked = True
+
+            footnote_form = 
+
+            return render(
+                request,
+                "idea_detail.html",
+                {
+                    "idea": idea,
+                    "footnotes": footnotes,
+                    "liked": liked,
+                    "footnote_form": FootNoteForm()
+                },
+            )
         
