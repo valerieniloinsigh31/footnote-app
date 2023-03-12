@@ -15,7 +15,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in idea.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="https://www.stockvault.net/data/2016/01/07/182545/preview16.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ idea.featured_image.url }}">
                                 {% endif %}
@@ -23,7 +23,7 @@
                                     <p class="author">Author: {{ idea.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="idea-link">
+                            <a href="{% url 'idea_detail' idea.slug %}" class="idea-link">
                                 <h2 class="card-title">{{ idea.title }}</h2>
                                 <p class="card-text">{{ idea.excerpt }}</p>
                             </a>

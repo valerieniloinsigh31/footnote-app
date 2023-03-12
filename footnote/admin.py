@@ -14,7 +14,7 @@ class IdeaAdmin(SummernoteModelAdmin):
 @admin.register(FootNote)
 class FootNoteAdmin(admin.ModelAdmin):
 
-    list_display = ('name','body','post','created_on','approved')
+    list_display = ('name','body','idea','created_on','approved')
     list_filter = ('approved','created_on')
     search_fields =('name','email','body')
     actions = ['approve footnotes']

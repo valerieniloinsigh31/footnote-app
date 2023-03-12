@@ -26,7 +26,7 @@ class Idea(models.Model):
         return self.likes.count()
 
 class FootNote(models.Model):
-    post = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='footnotes')
+    idea = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='footnotes')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
