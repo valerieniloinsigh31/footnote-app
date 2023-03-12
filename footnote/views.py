@@ -27,7 +27,7 @@ class IdeaDetail(View):
                 "idea": idea,
                 "footnotes": footnotes,
                 "liked": liked,
-                "footnote_form": FootNoteForm(),
-            }
+                "footnote_form": FootNoteForm()
+            },
         )
         
