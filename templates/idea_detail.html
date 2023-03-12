@@ -6,17 +6,17 @@
             <div class="col-md-6 masthead-text">
                 <!-- Idea title goes in these h1 tags -->
                 <h1 class="idea-title">
-                    Idea of the Minute
+                    {{ idea.title }}
                 </h1>
                 <!-- Idea author goes before the | the idea's created date goes after -->
-                <p class="idea-subtitle"> Valerie Ni Loinsigh| </p>
+                <p class="idea-subtitle"> {{ idea.author }}| {{ idea.created_on }} </p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in idea.featured_image.url %}
                 <img src="https://www.stockvault.net/data/2016/01/07/182545/preview16.jpg" width="100%">
                 {% else %}
-                <img src="" width="100%">
+                <img src="{{ idea.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
@@ -29,17 +29,20 @@
             <div class="card-body">
                 <!-- The idea content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text "></p>
+                <p class="card-text ">
+                    {{ idea.content | safe }}
+                </p>
                 <div class="row">
 
                     <div class="col-1">
-                        <!-- The number of green votes goes before the closing strong tag -->
-                        <strong class="text-secondary"><i class="far fa-heart"></i> </strong>
+                        <!-- The number of likes goes before the closing strong tag -->
+                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ idea.number_of_likes }} </strong>
                     </div>
                     <div class="col-1">
                         {% with footnotes.count as total_footnotes %}
                         <strong class="text-secondary"><i class="far fa-footnotes"></i>
                             <!-- Our total_footnotes variable goes before the closing strong tag -->
+                            {{ total_footnotes }}
                         </strong>
                         {% endwith %}
                     </div>
@@ -57,21 +60,21 @@
             <h3>FootNotes:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each footnote in footnotes -->
-                {% %}
+                {% for footnote in footnotes %}
                 <div class="footnotes" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The footnoter's name goes here. Check the model if you're not sure what that is -->
-                        {{ }}
+                        {{ footnote.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The footnote's created date goes here -->
-                            {{ }}
+                            {{ footnote.created_on }}
                         </span> wrote:
                     </p>
                     <!-- The body of the footnote goes before the | -->
-                    {{  | linebreaks }}
+                    {{ footnote.body | linebreaks }}
                 </div>
                 <!-- Our for loop ends here -->
-                {% %}
+                {% endfor %}
             </div>
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
