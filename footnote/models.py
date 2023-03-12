@@ -7,13 +7,12 @@ STATUS = ((0, "Draft"), (1,"Published"))
 class Idea(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    idea = models.ForeignKey(User, on_delete=models.CASCADE, related_name="footnotes")
+    idea = models.ForeignKey(User, on_delete=models.CASCADE, related_name="idea")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    deleted_on = models.DateTimeField(auto_now_deleted=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='footnote_likes', blank=True)
 
@@ -27,5 +26,20 @@ class Idea(models.Model):
         return self.likes.count()
 
 class FootNote(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='footnotes')
     name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta():
+        ordering = ['-created_on']
+
+    def __str__ (self):
+        return f"Comment {self.body} by {self.name}"
+
+
+
+
+   
