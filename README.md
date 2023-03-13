@@ -49,10 +49,13 @@ Having used both Balsamiq and Lucidcharts for design at planning phase for apps 
 Inspired by the walkthrough projects (Djanjo to do app and blog), I planned on having the design for the model classes neatly planend and laid out in tabular format in a Lucidchart format, which would help me to formulae the idea in my own head when designing the code for the app:
 
 Class Models:
+Class models defined and additional definitions included within those models.
 Profile model (how is this done-form a profile, view other profiles, statistics and levels of engagement)
+
 Idea model
-Poll model
 FootNote Model
+
+Vote like or dislikg
 Store model (offline profile)
 
 Lucidcharts
@@ -71,18 +74,20 @@ Functions to break down...
 
 One to many-the profile owner operates as the superuser or administrator of their own profile. Only they can post/edit their own original idea on their own FootNote profile. Accordingly, this is a one to many relationship.
 
-The users or feedback givers who are viewing the original ideas of the profile owner, who are voting green/red on the profile owners original ideas, who are posting FootNotes in response to the ideas (which have a maximum character/word restriction but can be deleted or edited by the user until the footnote is stored/removed by the profile owner) and who can like or dislike the footnotes of other users is a many to many relationship as they can interact on the profile but also they can receive interactions by others (such as somebody liking/disliking their footnote)
+The users or feedback givers who are viewing the original ideas of the profile owner, who are voting like/dislike on the profile owners original ideas, who are posting FootNotes in response to the ideas (which have a maximum character/word restriction but can be deleted or edited by the user until the footnote is stored/removed by the profile owner) and who can like or dislike the footnotes of other users is a many to many relationship as they can interact on the profile but also they can receive interactions by others (such as somebody liking/disliking their footnote)
 
 Views...
+The views included are:
 
-Models
+Models...
+The models included are...
 
 
 Django format is the model, view, template
 
-Directories and frameworks used-Cloudinary, Materialize
+Directories and frameworks used-Cloudinary, Materialize, Summernote
 
-Design....CSS...hover..what frameworks have been connected that are aiding in bringing this app to fruition
+Design....CSS (starter template used from blog project but how has this been adapted further)...hover..what frameworks have been connected that are aiding in bringing this app to fruition
 
 Visibility
 
@@ -91,11 +96,15 @@ Visibility
 -Order
 -Frameworks to be installed (Django, Summernote)
 -MVP
--Refactoring
--Test based coding
+-Refactoring/inheritance
+-Test based coding (what tests were used)
+Manual testing...testing for responsiveness...testing programmes
 -Design based coding
 
 Was bootstrap used?
+Yes-how did bootstrap assist...
+Format we wrote bootstrap in...
+What effect did this have on the project?
 
 Object orientated design...defining classes
 
@@ -110,10 +119,15 @@ Languages-what languages were used
 
 Deployment:
 
-Early deployment as per the walkthroughs to avoid last minute panic
-Surely enough, I had some difficulties, migraiton wouldn't work on my first attempt so I had to redo the entire applicaiton
+Early deployment as per the walkthroughs to avoid last minute panic.
+Before writing the code, set up an instance on ElephantSQL and then created the app on Heroku. Used the API from ELlephant SQL to build Heroku APP. Connected Heroku with Github CLI for automatic deployment.
 
-In the end, I believe migration would not work due to mixing up the use of app name versus project name in some of the code
+  Help to avoid last minute disasters.
 
-Elephant SQL, Heroku, Github
-Connection
+
+<Challenges with deployment>
+Surely enough, I had some difficulties, migration wouldn't work on my first attempt so I had to redo the entire applicaiton (repositary-Elephant SQL-Heroku app-migrate)
+
+In the end, I believe migration would not work due to mixing up the use of app name versus project name in some of the code soi ensured to be very careful with this going forward.
+
+
