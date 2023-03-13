@@ -132,3 +132,22 @@ Surely enough, I had some difficulties, migration wouldn't work on my first atte
 In the end, I believe migration would not work due to mixing up the use of app name versus project name in some of the code soi ensured to be very careful with this going forward.
 
 
+<b>UX DESIGN</b>
+
+<b>FEATURES</b>
+
+<b>TECHNOLOGIES USED</b>
+
+<b>Manual Testing Write-Up</b>
+
+Responsiveness testing
+Compatibility testing
+Bugs resolved and unresolved
+Lighthouse tesing outcomes
+Code validation
+User stories testing
+Features testing
+
+<b>Deployment, forking, cloning </b>
+
+<b>References</b>
