@@ -103,6 +103,7 @@ Manual testing...testing for responsiveness...testing programmes
 
 Was bootstrap used?
 Yes-how did bootstrap assist...
+We used bootstrap for alert messages
 Format we wrote bootstrap in...
 What effect did this have on the project?
 
