@@ -40,7 +40,7 @@
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'footnote_like' footnote.slug %}" method="POST"> 
-                                {% csrf token %}
+                                {% csrf_token %}
                                 {% if liked %}
                                 <button type="submit" name="appidea_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
                                 {% else %}
