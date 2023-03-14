@@ -39,7 +39,7 @@
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'footnote_like' footnote.slug %}" method="POST"> 
+                            <form class="d-inline" action="{% url 'idea_like' idea.slug %}" method="POST"> 
                                     {% csrf_token %}
                                     {% if liked %}
                                     <button type="submit" name="appidea_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
@@ -55,10 +55,10 @@
                     </strong>
                     </div>
                     <div class="col-1">
-                        {% with footnotes.count as total_footnotes %}
-                        <strong class="text-secondary"><i class="far fa-footnotes"></i>
+                        {% with idea.count as total_ideas %}
+                        <strong class="text-secondary"><i class="far fa-ideas"></i>
                             <!-- Our total_footnotes variable goes before the closing strong tag -->
-                            {{ total_footnotes }}
+                            {{ total_ideas }}
                         </strong>
                         {% endwith %}
                     </div>
