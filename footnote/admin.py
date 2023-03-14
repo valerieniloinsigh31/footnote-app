@@ -21,3 +21,4 @@ class FootNoteAdmin(admin.ModelAdmin):
 
     def approve_footnotes(self, request, queryset):
         queryset.update(approved=True)
+

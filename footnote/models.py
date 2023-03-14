@@ -5,8 +5,8 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1,"Published"))
 
 class Idea(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=280, unique=True)
+    slug = models.SlugField(max_length=280, unique=True)
     idea = models.ForeignKey(User, on_delete=models.CASCADE, related_name="idea")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -27,7 +27,7 @@ class Idea(models.Model):
 
 class FootNote(models.Model):
     idea = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='footnotes')
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=280)
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -40,6 +40,6 @@ class FootNote(models.Model):
         return f"FootNote {self.body} given by {self.name}"
 
 
-
+class 
 
    
