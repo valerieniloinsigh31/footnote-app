@@ -44,25 +44,48 @@ Everyone who joins the FootNote app has the choice of having their own FootNote 
 
 <b>DESIGN:</b>
 
-Having used both Balsamiq and Lucidcharts for design at planning phase for apps in the past, I decided that Lucidcharts would be suitable for this project
+Having used both Balsamiq and Lucidcharts for design at planning phase for apps in the past, I decided that Lucidcharts would be suitable for this project as the shapes and visual aspect to it would be able to convey my stream of thoughts but also to help me to priorise each step/task as I was completing it.
+
+Agile methodology-apply the ROMDAS prioritisation...
+
+The blog walkthrough and Kanban board feature assisted me in thinking about what features I would include in project four and how to go about implementing these/dividing these into sections that I could apply and what t to prioritise...
 
 Inspired by the walkthrough projects (Djanjo to do app and blog), I planned on having the design for the model classes neatly planend and laid out in tabular format in a Lucidchart format, which would help me to formulae the idea in my own head when designing the code for the app:
 
-Class Models:
+Model-View-Template
+
+<b>Class Models</b>
 Class models defined and additional definitions included within those models.
 Profile model (how is this done-form a profile, view other profiles, statistics and levels of engagement)
+
+Two models derived closely from blog project but customised accordingly and tailored code to suit my project
+
+Additional model for superuser to store the footnote - If the superuser takes a liking to particular footnotes, these footnotes can be stored on their offline profile before being deleted from their footnote profile.
+The cascade delete effect is in place so once idea is deleted, all accompanying footnotes will be deleted as well.
+Additional model for 'connect with my profile'
+Additional model for like/dislike the idea
+Additional model 'Make this my favourite idea'...function of the FootNote website, users can favourite one idea per per day but once favourited cannot change until 24 hours is up
+
+Authentication-only those who like the original idea would be able to leave a footnote-this was for website moderation purposes-the focus of the website is to focus on providing small nuggets of inspiration, a nod in the right direction.
+
+If the feedback giver votes dislike, discouraging the idea posted then they cannot leave a footnote.
+
+Max length 280 characters for both idea and footnotes as the focus of the website is on giving helpful nuggets on fast-occuring ideas as opposed to crossing the territory into elaborate collaboration/plagiarism.
+
+Only one idea per page, administator encouraged to delete the one idea before posting another.
 
 Idea model
 FootNote Model
 
-Vote like or dislikg
+Users can vote like/dislike on idea
+If they vote like only then will they be given the authentication to post a footnote
 Store model (offline profile)
 
 Lucidcharts
 
 Luidcharts and it's shapes etc would assist me in designing how I wanted the app to look.
 
-Views:
+<b>Views:</b>
 
 Views-what views...
 
@@ -134,19 +157,79 @@ In the end, I believe migration would not work due to mixing up the use of app n
 
 <b>UX DESIGN</b>
 
+Focus on idea
+Sharp
+Scribe...creation
+Fast-moving
+Transient
+Footsteps
+Creation in motion
+What font was selected
+Design-focused on smaller devices...phones/ipads/tablets/laptops while on the move-empahsis on responsiveness
+
+
+Background...
+
+Animated background
+Focus not on reading long pieces of narrative so background does not be to be dull
+Vibrant colour
+Animation and graphics
+Hover effect for likes and dislikes
+
+
 <b>FEATURES</b>
 
+-Admin interface (moderation of site-deleting idea)
+-Post idea-all users can see
+-Vote pursue or don't pursue idea/chase or don't chase idea
+(will this be in poll format, button format or what?)
+-If vote pursue idea, can leave a footnote...Footnotes are max length 280 characters-
+to give one sentence construcitve criticism on idea. Each user can post as many footnotes as they want. They cannot delete their footnote, only the superuser/profile owner can do that. They cannot
+-Superuser posts an idea. Max length 280 words, a quick idea that occurs to them while out and about. Once posted and polls have opened, they cannot edit the idea any more as this would create a false reflection on what had been voted for if others users had already voted. Superuser can only delete idea and when deleted all associated footnotes will delete with that idea.
+-Users can like or dislike other footnotes as they please. They cannot comment on other footnotes. Footnotes have a max length and users can only post one footnote per idea to avoid oversaturation.
+-Navigation bar. Login. Register. Idea of the day. Author bio.
+-Tooltips
+-Modal messages
+
 <b>TECHNOLOGIES USED</b>
+-Summernote
+-Django
+-Javascript
+-Python
+-HTML
+-CSS
+-Different websites for graphics
 
 <b>Manual Testing Write-Up</b>
 
-Responsiveness testing
-Compatibility testing
-Bugs resolved and unresolved
-Lighthouse tesing outcomes
-Code validation
-User stories testing
-Features testing
+<b>Responsiveness testing:</b>
+Flexbox...overscroll...bootstrap
+
+<b>Compatibility testing</b>
+
+...Developer tools, screengrabs of different devices
+
+<b>Bugs resolved and unresolved</b>
+
+...mark as we go
+
+<b>Lighthouse testing outcomes</b>
+
+...screengrab
+
+<b>Code validation</b>
+HTML: [W3 Markup Validation] https://validator.w3.org
+Javascript: JS Lint...
+CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
+lighthouse: https://developers.google.com/web/tools/lighthouse
+Python: PEP8
+
+<b>User stories testing</b>
+Kanban board
+Code along with blog
+
+
+<b>Features testing</b>
 
 <b>Deployment, forking, cloning </b>
 
