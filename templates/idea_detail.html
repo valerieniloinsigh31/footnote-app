@@ -42,13 +42,13 @@
                             <form class="d-inline" action="{% url 'idea_like' idea.slug %}" method="POST"> 
                                     {% csrf_token %}
                                     {% if liked %}
-                                    <button type="submit" name="appidea_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                    <button type="submit" name="appidea_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-check"></i></button>
                                     {% else %}
-                                    <button type="submit" name="appidea_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                    <button type="submit" name="appidea_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-check"></i></button>
                                     {% endif %} 
                             </form>
                                 {% else %}
-                                <span class="text-secondary"><i class="far fa-heart"></i></span>
+                                <span class="text-secondary"><i class="fa-solid fa-check"></i></span>
                                 {% endif %}
                         <!-- The number of likes goes before the closing strong tag -->
                         <span class="text-secondary">{{ post.number_of_likes }} </span> 
@@ -104,11 +104,11 @@
                 {% if user.is_authenticated %}
 
                 <h3>Leave a FootNote:</h3>
-                <p>FootNote feedback given by: {{ user.username }}</p>
+                <p>FootNote given by: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ footnote_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit FootNote</button>
+                    <button type="submit" class="btn btn-signup btn-lg">Post your FootNote</button>
                 </form>
                 {% endif %}
                 {% endif %} 
