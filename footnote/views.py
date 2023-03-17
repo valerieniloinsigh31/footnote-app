@@ -8,7 +8,13 @@ class IdeaList(generic.ListView):
     model = Idea
     queryset = Idea.objects.filter(status=1).order_by("-created_on")
     template_name  = 'index.html'
-    paginate_by = 1
+    paginate_by = 2
+
+class MedleyList(generic.ListView):
+    model = Idea
+    queryset = Idea.objects.filter(status=1).order_by("-created_on")
+    template_name  = 'medley_detail.html'
+    paginate_by = 2
 
 class IdeaDetail(View):
 
@@ -63,21 +69,28 @@ class IdeaDetail(View):
                 },
             )
 
-#class FootNoteDetail(View):
+class MedleyDetail(View):
 
-#   def get(self, request, slug, *args, **kwargs):
-#      queryset = FootNote.objects.filter(status=1)
-#        footnote = get_object_or_404(queryset, slug=slug)
-#        if footnote.likes.filter(id=self.request.user.id).exists():
-#            liked = True
+        def get(self, request, slug, *args, **kwargs):
+                queryset = Idea.objects.filter(status=1)
+                idea = get_object_or_404(queryset, slug=slug)
+                footnotes = idea.footnotes.filter(approved=True).order_by('created_on')
+                liked = False
+                if idea.likes.filter(id=self.request.user.id).exists():
+                    liked = True
 
-#       return render(
-#            request,
-#            "footnote_detail.html",
-#            {
-#                "footnote": idea,
-#                "liked": liked,
-#            },
+                return render(
+                    request,
+                    "idea_detail.html",
+                    {
+                      "idea": idea,
+                      "footnotes": footnotes,
+                      "footnoted":False,
+                      "liked": liked,
+                      "footnote_form": FootNoteForm()
+                  },
+             )
+
         
 class IdeaLike(View):
 
@@ -92,5 +105,18 @@ class IdeaLike(View):
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
             
 
+class FootnoteLike(View):
 
+    def post(self, request, slug):
+        post = get_object_or_404(Footnote, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
+                        
+
+#
     

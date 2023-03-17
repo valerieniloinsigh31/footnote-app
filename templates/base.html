@@ -37,6 +37,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Summary</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'medley' %}">Medley</a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
@@ -94,6 +97,8 @@
         }, 2500);
         
     </script> 
+    <!-- Custom scripts for this app to be at bottom -->
+    <script></script>
 </body>
 
 </html>

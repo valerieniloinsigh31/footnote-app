@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User 
 from cloudinary.models import CloudinaryField
-#ORM-Object relational mapping...contains essential fields of the data
-#Each model maps to a single table
+
 STATUS = ((0, "Draft"), (1,"Published"))
 
 class Idea(models.Model):
@@ -33,6 +32,13 @@ class FootNote(models.Model):
     body = models.TextField(max_length=280)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+    likes = models.ManyToManyField(User, related_name='footnote_likes', blank=True)
+
+    def __str__ (self):
+        return self.title
+
+    def number_of_likes(self):
+        return self.likes.count()
     
 
     class Meta():
@@ -42,5 +48,15 @@ class FootNote(models.Model):
         return f"FootNote {self.body} by {self.name}"
 
 
-#class Store(models.model):
-#    store = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='store')
+class Medley(models.Model):
+    medley = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='medley')
+    title = models.CharField(max_length=120, unique=True)
+    slug = models.SlugField(max_length=120, unique=True)
+    medley = models.ForeignKey(User, on_delete=models.CASCADE, related_name="medley",max_length=280)
+    updated_on = models.DateTimeField(auto_now=True)
+    content = models.TextField()
+    excerpt = models.TextField(blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+
+
