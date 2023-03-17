@@ -73,7 +73,8 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>FootNotes<sup> i, ii, iii</sup></h3>
+            <h3><span class="brand"><span class="odd">Foot</span><span
+                class="thin">Notes<sup> i, ii, iii</sup></span></span></h3>
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each footnote in footnotes -->
                 {% for footnote in footnotes %}
@@ -103,12 +104,12 @@
                 {% else %}
                 {% if user.is_authenticated %}
 
-                <h3>FootNote<span class="x"><sup>x</sup></span>:</h3>
+                <h3><span class="odd">Foot</span><span class="thin">Note</span><span class="x"><sup>x</sup></span></span>:</h3>
                 <p>FootNoted by: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ footnote_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">FootNote<sup>x</sup></button>
+                    <button type="submit" class="btn btn-signup btn-lg">Foot<span class="thin">Note</span><sup>x</sup></button>
                 </form>
                 {% endif %}
                 {% endif %} 
