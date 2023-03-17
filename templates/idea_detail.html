@@ -1,5 +1,4 @@
 {% extends 'base.html' %}{% block content %}
-
 {% load crispy_forms_tags %}
 
 <div class="masthead">
@@ -10,8 +9,8 @@
                 <h1 class="idea-title">
                     {{ idea.title }}
                 </h1>
-                <!-- Profile owner goes before the | the idea's created date goes after -->
-                <p class="idea-subtitle"> {{ idea.author }}| {{ idea.created_on }} </p>
+                <!-- Idea owner goes before the | the idea's created date goes after -->
+                <p class="idea-subtitle">{{ idea.author }} | {{ idea.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
@@ -53,12 +52,13 @@
                         <!-- The number of likes goes before the closing strong tag -->
                         <span class="text-secondary">{{ idea.number_of_likes }} </span> 
                     </strong>
+
                     </div>
                     <div class="col-1">
-                        {% with idea.count as total_ideas %}
-                        <strong class="text-secondary">
+                        {% with footnotes.count as total_footnotes %}
+                        <strong class="text-secondary"><i class="fas fa-solid fa-superscript"></i>
                             <!-- Our total_footnotes variable goes before the closing strong tag -->
-                            {{ total_ideas }}
+                            {{ total_footnotes }}
                         </strong>
                         {% endwith %}
                     </div>

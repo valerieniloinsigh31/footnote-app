@@ -4,7 +4,6 @@ from django.http import HttpResponseRedirect
 from .models import Idea
 from .forms import FootNoteForm
 
-
 class IdeaList(generic.ListView):
     model = Idea
     queryset = Idea.objects.filter(status=1).order_by("-created_on")
@@ -63,8 +62,23 @@ class IdeaDetail(View):
                     "footnote_form": FootNoteForm()
                 },
             )
-        
 
+#class FootNoteDetail(View):
+
+#   def get(self, request, slug, *args, **kwargs):
+#      queryset = FootNote.objects.filter(status=1)
+#        footnote = get_object_or_404(queryset, slug=slug)
+#        if footnote.likes.filter(id=self.request.user.id).exists():
+#            liked = True
+
+#       return render(
+#            request,
+#            "footnote_detail.html",
+#            {
+#                "footnote": idea,
+#                "liked": liked,
+#            },
+        
 class IdeaLike(View):
 
     def post(self, request, slug):
@@ -77,18 +91,6 @@ class IdeaLike(View):
 
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
             
-
-class FootnoteLike(View):
-
-    def post(self, request, slug):
-        post = get_object_or_404(Footnote, slug=slug)
-
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-
-        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
 
 
     

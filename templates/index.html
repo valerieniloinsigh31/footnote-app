@@ -1,11 +1,11 @@
+ <!-- Template inheritance -->
 {% extends "base.html" %}
 
 {% block content %}
 
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Idea Entries Column-this is a Bootstrap row -->
+        <!-- Idea Entries Column-this is a Bootstrap row-Summary tab -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for idea in idea_list %}
@@ -20,7 +20,7 @@
                                 <img class="card-img-top" src=" {{ idea.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Writer: {{ idea.author }}</p>
+                                    <p class="author">Intellect: {{ idea.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'idea_detail' idea.slug %}" class="idea-link">

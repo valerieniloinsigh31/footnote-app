@@ -1,7 +1,7 @@
 <b>FootNote App</b>
 
 An app for creative writers who are often struck by inspiration whilst out and about.
-A profile based application, like a crossover between Tinder, Facebook and MySpace but aimed at creative writers. Each creative writer has the ability to build their own profile, which they will operate as the administator and superuser of as well as interacting as a general user/feedback giver on the FootNote profile pages of other FootNote app users. The app will be comrpised of a netwokr of members who work as creative writers in some form. They will stipulate their preferences upon joining and accordingly, they will be presented with a pool of like-minded creatives with similar interests who they can apply to give feedback on their FootNot Profile as well as assess whether they will accept other FootNote members as feedback givers on their profile (once the other FootNote member has submitted an application to join them on their profile as a feedback giver)
+A profile-based application, like a crossover between Tinder, Facebook and MySpace but aimed at creative writers. Each creative writer has the ability to build their own profile, which they will operate as the administator and superuser of as well as interacting as a general user/feedback giver on the FootNote profile pages of other FootNote app users. The app will be comrpised of a network of members who work as creative writers in some form. They will stipulate their preferences upon joining and accordingly, they will be presented with a pool of like-minded creatives with similar interests who they can apply to give feedback on their FootNote Profile as well as assess whether they will accept other FootNote members as feedback givers on their profile (once the other FootNote member has submitted an application to join them on their profile as a feedback giver)
 
 
 <b>Functionalities to include:</b>
@@ -48,20 +48,58 @@ Having used both Balsamiq and Lucidcharts for design at planning phase for apps 
 
 Agile methodology-apply the ROMDAS prioritisation...
 
+As I was thinking about what features to add, I categoreised them as must have, nice to have etc.
+
 The blog walkthrough and Kanban board feature assisted me in thinking about what features I would include in project four and how to go about implementing these/dividing these into sections that I could apply and what t to prioritise...
 
 Inspired by the walkthrough projects (Djanjo to do app and blog), I planned on having the design for the model classes neatly planend and laid out in tabular format in a Lucidchart format, which would help me to formulae the idea in my own head when designing the code for the app:
 
-Model-View-Template
+<b>Model-View-Template</b>
+
+<b>Model</b>
+ ORM-Object relational mapping...contains essential fields of the data. Each model maps to a single table. Django contains implicit functionality, hiding the plumbing.
+
+<b>View</b>
+ontains logic, it is the controller of the app. Define the business logic that link templates and models.
+
+<b>Template</b>
+User interface. Presentation layer- how info is displayed to the user. Designer-friendly syntax for rendering information to be presented to user. Business logic separated from presentation logic. Only concerned with presentation of data and visual elements. Can't call python code directly within templates. Visually represent data model. Syntax decoupled from HTML. Designers assumed comfortable with HTML and Javascript code. Syntax embedded within HTML, used to inject data into webpage. Most common language=Django language.
+
+Django...focus on implicit, hiding the plumbing (against usual Python approach of better to see something)
+
+Offer enough functionality (branching and looping) to allow us to make gooey decisions.
+
+Convention over configuration
+Developer need only specify unconventional aspects
+If stray from convention, explicit code needs to be added
+Implicit functionality
+
+Boilerplate code from walkthrough
+Adding customisation
+Adding some non conventional, specific code
+
+function based views...easier to see what's happening
+Principles of Agile development, prioritisation
+image storage
+
+Package=plugs into code already written (use as much/little as possible)
+Django framework=code is already written, you plug your code into it...Provides basic structure, customize within reason
+
+Routing between different templates to avoid duplicating/repeating code...extends %%
 
 <b>Class Models</b>
 Class models defined and additional definitions included within those models.
 Profile model (how is this done-form a profile, view other profiles, statistics and levels of engagement)
 
-Two models derived closely from blog project but customised accordingly and tailored code to suit my project
+Two models derived closely from blog project but customised accordingly and tailored code to suit my project which were the 'idea' model and the 'footnote' model.
 
-Additional model for superuser to store the footnote - If the superuser takes a liking to particular footnotes, these footnotes can be stored on their offline profile before being deleted from their footnote profile.
+I added an additional functionality to the footnote model that in order to be able to post a footnote in the first place, this would only become available to the user of they had clicked the check approval tick for the idea. Authentication feature.
+
+Additional model for the person who owns the idea  can soft delete their idea and all correpsonding footnotes at any time so that that the veiw becomes private and visible to only them
+
+
 The cascade delete effect is in place so once idea is deleted, all accompanying footnotes will be deleted as well.
+
 Additional model for 'connect with my profile'
 Additional model for like/dislike the idea
 Additional model 'Make this my favourite idea'...function of the FootNote website, users can favourite one idea per per day but once favourited cannot change until 24 hours is up
@@ -72,22 +110,48 @@ If the feedback giver votes dislike, discouraging the idea posted then they cann
 
 Max length 280 characters for both idea and footnotes as the focus of the website is on giving helpful nuggets on fast-occuring ideas as opposed to crossing the territory into elaborate collaboration/plagiarism.
 
-Only one idea per page, administator encouraged to delete the one idea before posting another.
+Only one idea per page so focus on one idea per page.
+
+Summary view-
+
+administator encouraged to delete the one idea before posting another.
 
 Idea model
 FootNote Model
 
-Users can vote like/dislike on idea
-If they vote like only then will they be given the authentication to post a footnote
-Store model (offline profile)
+Counter-select the green check mark, a counter is activated and this is visible also on the summary page so that users can quickly reference an idea that has received a lot of positive feedback and they might want to explore further.
 
-Lucidcharts
+Users can vote approve/disprove of on idea
+If they vote like only then will they be given the authentication to post a footnote
+
+
+
+<p>Lucidcharts</p>
 
 Luidcharts and it's shapes etc would assist me in designing how I wanted the app to look.
 
+Also the ability to make boxes and shapes color coded-operated as a visual legend of sorts.
+
+I mapped various parts as 'One to Many Relationships' or 'Many to One' and colour coded them
+
+Order of events and priorisation easier to understand...chain of action
+
+<b>Kanban board and user stories</b>
+
+Agile methodology
+Helped me to form logic
+Logical progression
+Easy way to focus on tasks that needed to be conpleted
+Features I wanted to add
+
+
 <b>Views:</b>
 
-Views-what views...
+Views-what views are there for this app:
+-Summary view-shows a segment of a page containing the idea (summary of idea and counter function shows amount of approvals). Shows amount of approvals associated with idea and main image.
+-Idea and footnote view - 1 idea per page, unlimited footnotes. Allows focus to be on idea. On this page, all users can see idea and footnotes left as well as number of approvals on ideas and number of smiley faces or unhappy faces on footnotes. They can also see when idea/footnotes were created/edited.
+-Private view- a separate offline view for the idea owner. Can soft delete the idea at an point and due to CASCADE.DELETE function, all related footnotes will soft delete also. By soft delete, this means becomes private and visible only to the user who posted the original idea and not to the general users. Once hard deleted, the idea and all footnotes would be deleted from the app.
+-View-bits of inspiration (things we liked). A separate view created by the moderator/adminstrator, showcases the most popular idea of the day and has a variety of quotes from writers and pictures of famous writers.
 
 User interaction
 One to many relationship?
@@ -99,14 +163,6 @@ One to many-the profile owner operates as the superuser or administrator of thei
 
 The users or feedback givers who are viewing the original ideas of the profile owner, who are voting like/dislike on the profile owners original ideas, who are posting FootNotes in response to the ideas (which have a maximum character/word restriction but can be deleted or edited by the user until the footnote is stored/removed by the profile owner) and who can like or dislike the footnotes of other users is a many to many relationship as they can interact on the profile but also they can receive interactions by others (such as somebody liking/disliking their footnote)
 
-Views...
-The views included are:
-
-Models...
-The models included are...
-
-
-Django format is the model, view, template
 
 Directories and frameworks used-Cloudinary, Materialize, Summernote
 
@@ -118,8 +174,8 @@ Visibility
 <b>Things to consider when compiling project</b>
 -Order
 -Frameworks to be installed (Django, Summernote)
--MVP
--Refactoring/inheritance
+-MVP (CRUD, Object orientated programming)
+-Refactoring/inheritance (order of code, inheritance from parent code and using minimum amount of code/avoid repeititon)
 -Test based coding (what tests were used)
 Manual testing...testing for responsiveness...testing programmes
 -Design based coding
@@ -157,16 +213,15 @@ In the end, I believe migration would not work due to mixing up the use of app n
 
 <b>UX DESIGN</b>
 
-Focus on idea
+Focus on idea...
+Modile-first design, app is designed for those who are on the move, out and about so naturally, would be on their mobile phones. Accordingly, app has been designed to be responsive to a number of different types of phone
 Sharp
-Scribe...creation
-Fast-moving
-Transient
-Footsteps
+Font chosen is focussed on the theme of writing, so chose '' as it looks human-like
+Fast-moving and transient...to convey the fast-moving and transient focus of quickly occuring ideas while on the move, bright, sharp colors used and various animations including...
+Footsteps...animation of footsteps moving across the screen
 Creation in motion
-What font was selected
 Design-focused on smaller devices...phones/ipads/tablets/laptops while on the move-empahsis on responsiveness
-
+Important to have one idea per page...to avoid oversaturaiton
 
 Background...
 
@@ -187,9 +242,14 @@ Hover effect for likes and dislikes
 to give one sentence construcitve criticism on idea. Each user can post as many footnotes as they want. They cannot delete their footnote, only the superuser/profile owner can do that. They cannot
 -Superuser posts an idea. Max length 280 words, a quick idea that occurs to them while out and about. Once posted and polls have opened, they cannot edit the idea any more as this would create a false reflection on what had been voted for if others users had already voted. Superuser can only delete idea and when deleted all associated footnotes will delete with that idea.
 -Users can like or dislike other footnotes as they please. They cannot comment on other footnotes. Footnotes have a max length and users can only post one footnote per idea to avoid oversaturation.
--Navigation bar. Login. Register. Idea of the day. Author bio.
+-Navigation bar. Login. Register. Quick inspiration-quotes, most popular idea of the day
 -Tooltips
 -Modal messages
+
+Future features:
+-Filter
+-Order footnotes by amount of likes
+-The main image that appears on the idea will be uploaded with idea...connected to phone
 
 <b>TECHNOLOGIES USED</b>
 -Summernote
@@ -227,6 +287,7 @@ Python: PEP8
 <b>User stories testing</b>
 Kanban board
 Code along with blog
+Prioritisation
 
 
 <b>Features testing</b>
