@@ -62,7 +62,6 @@ body {
 .author {
     color: rgb(255, 255, 255);
     margin: 4px;
-    text-transform: uppercase;
     font-family: 'Dancing Script', cursive;
     
 }
@@ -77,8 +76,8 @@ body {
 }
 
 .masthead-text {
-    background-color: #0f8992;
     color: rgb(58, 0, 128);
+    background-color:#a410e8;
     position: relative;
     font-family: 'Dancing Script', cursive;
 }
