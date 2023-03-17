@@ -1,1 +1,1 @@
-web: gunicorn FOOTNOTE_APP.wsgi
+web: gunicorn footnote.wsgi
