@@ -1,9 +1,14 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+</style>
+
 body {
-    background-color: #F9FAFC;
+    background-color: #8da8de;
+    font-family: 'Dancing Script', cursive;
 }
 
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: 'Dancing Script', cursive;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
@@ -49,6 +54,7 @@ body {
     color: white;
     margin: 4px;
     text-transform: uppercase;
+    font-family: 'Dancing Script', cursive;
 }
 
 .masthead {
@@ -61,9 +67,10 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
-    color: purple;
+    background-color: #0f8992;
+    color: rgb(58, 0, 128);
     position: relative;
+    font-family: 'Dancing Script', cursive;
 }
 
 .masthead-image {
@@ -78,7 +85,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #8a367f;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -87,22 +94,26 @@ body {
 
 .idea-link {
     text-decoration: none;
-    color: #445261;
+    color: #554461;
+    font-family: 'Dancing Script', cursive;
 }
 
 .idea-link:hover,
 .idea-link {
-    color: #E84610;
+    color: #b610e8;
+    font-family: 'Dancing Script', cursive;
 }
 
 .idea-title {
     margin-top: 20%;
     margin-left: 5%;
+    font-family: 'Dancing Script', cursive;
 }
 
 .idea-subtitle {
     margin-left: 5%;
     color: lightgray;
+    font-family: 'Dancing Script', cursive;
 }
 
 .btn-signup {
@@ -128,14 +139,14 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: #0b0909;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #10e842;
     background: transparent;
     border: none;
 }
