@@ -7,15 +7,22 @@ body {
     font-family: 'Dancing Script', cursive;
 }
 
+.x {
+    color: :#0b0909;
+}
+
+.navbar-text {
+    color: #a410e8;
+}
+
 .brand {
     font-family: 'Dancing Script', cursive;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
+.odd {
+    color: #a410e8;
 }
 
 .thin {
@@ -47,14 +54,15 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: #9d23bb;
 }
 
 .author {
-    color: white;
+    color: rgb(255, 255, 255);
     margin: 4px;
     text-transform: uppercase;
     font-family: 'Dancing Script', cursive;
+    
 }
 
 .masthead {
@@ -119,6 +127,7 @@ body {
 .btn-signup {
     background-color: #23BBBB;
     color: #fff;
+    font-family: 'Dancing Script', cursive;
 }
 
 .btn-signup:hover,
@@ -150,3 +159,21 @@ body {
     background: transparent;
     border: none;
 }
+
+.row {
+    font-family: 'Dancing Script', cursive;
+    color: #b610e8;
+}
+
+.fa-heart {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.fa-heart:hover,
+.fa-heart:active {
+    color: #e810cf;
+    background: transparent;
+    border: none;
+}
+
