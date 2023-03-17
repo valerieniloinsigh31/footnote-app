@@ -1,0 +1,6 @@
+[
+    {
+        "name": "{{ footnote.name }}",
+        "FootNote": "{{ footnote.random }}",
+    }
+]

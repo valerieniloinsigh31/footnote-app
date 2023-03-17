@@ -178,3 +178,8 @@ body {
     border: none;
 }
 
+/* Adjust images in medley view */
+
+.col-md-5 {
+    width: 100%;
+}

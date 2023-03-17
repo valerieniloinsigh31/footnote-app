@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Idea, FootNote
+from .models import Idea, FootNote, Medley
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Idea)
@@ -21,4 +21,3 @@ class FootNoteAdmin(admin.ModelAdmin):
 
     def approve_footnotes(self, request, queryset):
         queryset.update(approved=True)
-

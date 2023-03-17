@@ -50,13 +50,9 @@ class FootNote(models.Model):
 
 class Medley(models.Model):
     medley = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='medley')
-    title = models.CharField(max_length=120, unique=True)
-    slug = models.SlugField(max_length=120, unique=True)
-    medley = models.ForeignKey(User, on_delete=models.CASCADE, related_name="medley",max_length=280)
-    updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
-    excerpt = models.TextField(blank=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
 
+    def __str__ (self):
+        return self.title
+
+    
 
