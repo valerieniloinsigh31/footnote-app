@@ -55,9 +55,9 @@ class FootNote(models.Model):
 #        return self.title
 
     
-class Body(models.Model):
-    name = models.CharField(max_length=70)
-    body = models.CharField(max_length=280)
+class Writer(models.Model):
+    name = models.CharField(max_length=100)
+    quote = models.CharField(max_length=280)
 
     class Meta:
         ordering = ["-name"]

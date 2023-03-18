@@ -15,22 +15,22 @@
                             <div class="image-container">
                                 {% if "placeholder" in idea.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://www.stockvault.net/data/2016/01/07/182545/preview16.jpg">
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ idea.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Intellect: {{ idea.author }}</p>
+                                    <p class="author">Author: {{ idea.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'idea_detail' idea.slug %}" class="idea-link">
                                 <h2 class="card-title">{{ idea.title }}</h2>
                                 <p class="card-text">{{ idea.excerpt }}</p>
                             </a>
-                            <hr />
+                            <hr/>
                             <p class="card-text text-muted h6">{{ idea.created_on}} <i class="far fa-heart"></i>
                                 {{ idea.number_of_likes }}</p>
-                                <p>{{ total_footnotes }}</p>
+                            <p>{{ total_footnotes }}</p>
                         </div>
                     </div>
                 </div>
@@ -47,10 +47,10 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREVIOUS BUNCH</a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">  NEXT &raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT LOT &raquo;</a></li>
 
             {% endif %}
         </ul>

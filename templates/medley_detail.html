@@ -1,19 +1,26 @@
-{% extends 'base.html' %}
+<!--{% extends 'base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
+<h2>Footnotes</h2>
+        Medley of footnotes 
+        <div class="col-12 mt-3 left">
+          <div class="row">
+            {% for footnote in footnote_list %}
+
+            {% if forloop.counter|divisibleby:1 %}
+          </div>
+          <div class="row">
+         {% endif %}
+         {% endfor %}
+
+    
+
+<p>object_list = {
+    Samuel Beckett, Virginia Woolf, Jacqueline Wilson, Roald Dahl, Anthony Horowitz,
+    Dylan Thomas, Elisebeth Bishop
+}
  
-<h2>Writers</h2>
-<ul>
-      {% for writer in object_list %}
-          <li>{{ writer.name }}</li>
-      {% endfor %}
-  </ul>
-  
-
- 
-
-
-<!--<p>
+<p>
     <h3>Samuel Beckett</h3>
     <i>Ever tried. Ever failed. No matter. Try again. Fail again. Fail better.</i>
 </p>

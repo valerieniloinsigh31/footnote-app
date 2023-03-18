@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Idea, FootNote, Medley
+from .models import Idea, FootNote
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Idea)

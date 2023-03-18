@@ -1,11 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Idea, Medley
+from .models import Idea, FootNote
 from .forms import FootNoteForm
 from django.views.generic import ListView
 #from Medley.models import Quote
-from .models import writer
 
 class IdeaList(generic.ListView):
     model = Idea
@@ -90,10 +89,13 @@ class FootnoteLike(View):
 
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
 
-class MedleyListView(generic.ListView):
-    model = writer
-    context_object_name - 'my_favourite_writers'
+#class MedleyListView(generic.ListView):
+#    model = Writer
+#   context_object_name - 'my_favourite_writers'
                         
+#class FootNoteList(generic.ListView):
+#    model = FootNote
+#    template_name  = 'index.html'
+#    paginate_by = 1
 
-#
     
