@@ -15,9 +15,9 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in idea.featured_image.url %}
-                <img src="https://res.cloudinary.com/dlaz6yghz/image/upload/v1678824647/preview16_xlwjzw.jpg" width="100%">
+                <img src="https://res.cloudinary.com/dlaz6yghz/image/upload/v1678824647/preview16_xlwjzw.jpg" width="80%">
                 {% else %}
-                <img src="" width="100%">
+                <img src="" width="80%">
                 {% endif %}
             </div>
         </div>
@@ -50,7 +50,7 @@
                                 <span class="text-secondary"><i class="fas fa-check"></i></span>
                                 {% endif %}
                         <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span> 
+                        <span class="text-secondary">{{ idea.number_of_likes }} </span> 
                     </strong>
 
                     </div>
@@ -93,10 +93,9 @@
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
-        </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- For later - to add an IF that allows comment if user liked idea -->
+                <!-- FootNote submitted for approval -->
                 {% if footnoted %}
                 <div class="alert alert-success" role="alert">
                     Your FootNote was submitted

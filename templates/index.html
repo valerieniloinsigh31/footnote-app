@@ -15,13 +15,10 @@
                             <div class="image-container">
                                 {% if "placeholder" in idea.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="https://res.cloudinary.com/dlaz6yghz/image/upload/v1678824647/preview16_xlwjzw.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ idea.featured_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ idea.author }}</p>
-                                </div>
                             </div>
                             <a href="{% url 'idea_detail' idea.slug %}" class="idea-link">
                                 <h2 class="card-title">{{ idea.title }}</h2>

@@ -1,43 +1,56 @@
 <b>FootNote App</b>
 
 An app for creative writers who are often struck by inspiration whilst out and about.
-A profile-based application, like a crossover between Tinder, Facebook and MySpace but aimed at creative writers. Each creative writer has the ability to build their own profile, which they will operate as the administator and superuser of as well as interacting as a general user/feedback giver on the FootNote profile pages of other FootNote app users. The app will be comrpised of a network of members who work as creative writers in some form. They will stipulate their preferences upon joining and accordingly, they will be presented with a pool of like-minded creatives with similar interests who they can apply to give feedback on their FootNote Profile as well as assess whether they will accept other FootNote members as feedback givers on their profile (once the other FootNote member has submitted an application to join them on their profile as a feedback giver)
+The app will be comrpised of a network of members who work as creative writers in some form; e.g. a pool of like-minded creatives with similar interests who they can apply to give feedback on their quick ideas.
+
+The ideas are anonymous but the associated FootNotes, which only those who can log in can view are attributed to the FootNoter (both who left the idea and when)
+
+The is an approval tick beside the idea so users can signify their approval by clicking this.
+
+Approval ticks are anonymous.
+
+Users are not obliged to either tick the approval or to leave a FootNote. They can do neither, either or both if they wish. FootNotes have additional transparency incase they are overly negative, for moderatership purposes.
+
+The idea with the app is that it will encourage free ideas without judgement.
+
+It is not aiming at stealing people's intellectual property but at creative minds nudging each other in the right direction.
 
 
 <b>Functionalities to include:</b>
 
-Based on the MVP documentation provided with this module/project, I concluded that I would have to have the following functionalities available in my FootNote app:
-CRUD mentality
+Based on the Minimum Viable Product documentation on Project 4, I concluded that I would have to have the following functionalities available in my FootNote app:
+
+<b>CRUD mentality</b>
 Both the user and superuser/administrator of my FootNote application, should have the ability to Create, Read, Update and Delete items.
 
 Albeit, this is applied in different ways.
 
--For the administrator/Superuser who owns the FootNote profile, they will regulate what appears on their profile. They can create, read, update and delete their own original ideas (one idea at a time is the FootNote policy-to avoid oversaturation.) Also there is a maximum length of 100 words per original idea posted,to be inkeeping with the initial aim of the applicaiton, to post a fast idea that occurs to the profile owner whilst out and about in order to get immediate feedback (as opposed to exposing intiacte/vital parts of their original creative ideas.)
--The admin/Superuser can view the results of the poll (green votes/red votes) in response to their original idea. They won't be able to view who voted green/red on their idea.
--The admin/Superuser will be able to view FootNotes posted by the feedback givers/users who voted green on their idea. 
--The admin/Superuser cannot delete individual FootNotes, but they can store individual FootNotes. The CASCADE/delete effect will apply to their original idea. If they delete the idea, all of the FootNotes associated with that idea will delete also. 
--The admin/SuperUser cannot edit FootNotes or edit their original idea after the voting poll has opened.
--The admin/Superuser can delete their original idea (and as a result, all of the footnotes posted to it will delete with the CASCADE effect)
--The admin/Superuser can store selected FootNotes to their offline profile. They will be able to edit/update these FootNotes once they have been moved offline and are no longer visible on their public FootNote profile.
--The admin/Superuser can change the order of the FootNotes when storing (to reflect their order of preference potentially)
+-For the administrator/Superuser who regulates the FootNote profile, they will regulate what appears on their profile. They can create, read, update and delete their own original ideas (one idea at a time is the FootNote policy-to avoid oversaturation.) Also there is a maximum length of 100 words per original idea posted,to be inkeeping with the initial aim of the applicaiton, to post a fast idea that occurs to the profile owner whilst out and about in order to get immediate feedback (as opposed to exposing intiacte/vital parts of their original creative ideas.)
+-The admin/Superuser will be able to view FootNotes posted by the users and to approve whether they appear on the app. 
+-The admin/Superuser can delete ideas (and as a result, all of the footnotes posted to it will delete with the CASCADE effect)
+-The admin/Superuser can approve selected FootNotes to their offline profile. They will be able to edit/update these FootNotes once they have been moved offline and are no longer visible on their public FootNote profile.
+-The admin/Superuser can change the order of the FootNotes and ideas.
 
+USER
+-From the user perspective, their statistics on the site will accumulate from the moment they joined the application. The will stipulate their preferences (e.g. their favourite genre, their method of writing-e.g. poetry, novel, screenplay, song etc) and based on their specifications, suggested connections will pop up for them (similarly to the suggested followers function in instagram or the suggested friend section in facebook or the suggested connection section in LinkedIn). The can apply to become a feedback given on the profile of one of the suggested connections. Once they submit to become a feedback giver, the owner/admin/Superuser of the profile that they have applied to will assess whether or not to accept them as a feedback giver on their profile. This assessment will be made by the historical statistics of the applicants engagement-to-date on the FootNote App becoming readily visible to the profile owner. Metrics that will be exposed with the applicants statistics are when they joined the app, how many original ideas of their own have they posted, how many votes have they submitted to other peoples FootNote Profiles, what ratio green/red votes did they submit for other ideas, how many FootNotes did they leave what % of green votes did they leave FootNotes for (the user can only leave a footnote if they vote green). This will help the profile owner to make an informed decision about whether or not to accept them as a feedback giver on their profile. 
 
--From the user perspective, their statistics on the site will be accumulate from the moment they joined the application. The will stipulate their preferences (e.g. their favourite genre, their method of writing-e.g. poetry, novel, screenplay, song etc) and based on their specifications, suggested connections will pop up for them (similarly to the suggested followers function in instagram or the suggested friend section in facebook or the suggested connection section in LinkedIn). The can apply to become a feedback given on the profile of one of the suggested connections. Once they submit to become a feedback giver, the owner/admin/Superuser of the profile that they have applied to will assess whether or not to accept them as a feedback giver on their profile. This assessment will be made by the historical statistics of the applicants engagement-to-date on the FootNote App becoming readily visible to the profile owner. Metrics that will be exposed with the applicants statistics are when they joined the app, how many original ideas of their own have they posted, how many votes have they submitted to other peoples FootNote Profiles, what ratio green/red votes did they submit for other ideas, how many FootNotes did they leave what % of green votes did they leave FootNotes for (the user can only leave a footnote if they vote green). This will help the profile owner to make an informed decision about whether or not to accept them as a feedback giver on their profile. 
-
- Once accepted as a feedback giver on the profile, the user then can perform a variety of CRUD functionalities:
- -They can read the latest original idea posted by the profile owner
- -They can vote in a poll on original ideas posted by the profile owner (a green vote means that they believe that the profile owner should pursue the original idea that they have posted further, a red vote means that they believe the profile owner should not pursue the original idea that have have posted further). 
- -If the user votes green in order of pursuing the original idea posted, they will be given the option to leave a FootNote, with a maximum length of forty words (to support the FootNote aim of providing concise helpful nods in the right direction as opposed to giving away intellectual property). 
- -They can update or delete their FootNote at any point they want to (this will also be reflected in the statistics on their own profile). They can do this up until the point that they profile owner deletes the original idea (the FootNotes will disappear along with the original idea due to the CASCADE effect applied)
- -They will be able to click like or unlike on FootNotes posted by other users
+ Once user registers, they can then perform a variety of CRUD functionalities:
+ -They can read the latest original idea posted/any number of ideas they want to
+ -They can click on the green tick beneath an original idea to signify whetehr they believe should not pursue the original idea further/deserves more traction. 
+ -The user can leave a FootNote on an idea, with a maximum length (to support the FootNote aim of providing concise helpful nods in the right direction as opposed to giving away intellectual property). 
+ FUTURE FEATURE:-They can update or delete their FootNote at any point they want to (this will also be reflected in the statistics on their own profile). They can do this up until the point that they profile owner deletes the original idea (the FootNotes will disappear along with the original idea due to the CASCADE effect applied)
+ FUTURE FEATURE:-They will be able to click like or unlike on FootNotes posted by other users
 
 Fomr what perspective can members use the app?: I intend to apply this from both a user perspective and a supersuer perspective.
 
-The app from the perspective of the superuser who is also the administrator and, as such, a regulator of the site will be able to log in and regulate the front end view of their profile. They will operate as an administator and readily be able to control what views and posts appear on their page. it is via the administation also that the superuser will be able to decide whether they store FootNotes to their original idea in their private (hidden profile) so that they have they available when pursuing their idea at a later stage.
+The app from the perspective of the superuser who is also the administrator and, as such, a regulator of the site will be able to log in and regulate the front end view of their profile. They will operate as an administator and readily be able to control what views and posts appear on their page. 
 
 <b>What is it?:</b>
- The FootNote app is an app connecting creative people. It connects creative people whose art form is original writing of some sort, who want to share their original ideas and to get instant feedback from similarly minded people in useful footnote format, with a maximum amount of characters so that the contribution provided by other app users is a helpful nod as opposed to providing an idea to plagiarise. The emphasis on transparency, with the statistics of members becoming visible to the owners of profiles that they apply to give feedback on is in place to ensure that nobody abuses the app or tries to use it as a method of stealing the original thoughts of others/to offer unconstructive negative feedback.
+ The FootNote app is an app connecting creative people. It connects creative people whose art form is original writing of some sort, who want to share their original ideas and to get instant feedback from similarly minded people in useful footnote format, with a maximum amount of characters so that the contribution provided by other app users is a helpful nod as opposed to providing an idea to plagiarise. 
+ 
+  The emphasis on transparency (Every footnote will be attributed to the footnote giver),  is in place to ensure that nobody abuses the app or tries to use it as a method of stealing the original thoughts of others/to offer unconstructive negative feedback. Equally the ideas left are anonymous so that the ideas are judged/assessed/reacted to exclusively from a creative perspective...the anonmymous nature of the idea itself guarantees unbiased footnotes will be provided.
 
+FUTURE FEATURE
  Similarly to the preferences section of Tinder, upon joining the app, the FootNote member is presented with several questions, encouraging them to stipulate their area of interest, the genres they are interested in and writers they are similar to/inspired by and their form of writing (novel/songwriter/screenwriter/poet). Based on the preferences that they list, they will unlock a pool of other profiles that they can apply to be feedback givers on. The owners of the profiles they apply to be feedback givers to, will be able to see their site statistics (how much interaction they have had on the FootNote application (e.g. what ratio of green/red votes on other people's original ideas they have had, how many FootNotes they have posted as feedback to other people's profiles, how many original ideas have they posted to their own profile, when did they join the site etc.) The owner of the profile, who decides whether or not to accept the applicant as a feedback-giver on their own profile will be able to make an informed decision about whether to accept them or not based on their statistics. (e.g. if a profile owners sees that the member who has applied to be a feedback giver on their page, joined three years ago and has yet to post their own original thought and has voted 100% red on other people's original ideas without providing any Footnotes, the profile owner may not be inclined to accept them to their profile as the impression created is that they are there to steal ideas, to offer exclusively negative feedback and not to contribute anything themselves).
 
 Everyone who joins the FootNote app has the choice of having their own FootNote profile, where they post their ideas and are susceptible to criticism/feedback by the other FootNote app members who they have accepted as feedback givers on their profile. Additionally, they will be capable of applying to be a feedback given on the profiles or other writers who they match with. They will need to be accepted as a feedback giver before they can see the ideas, vote the idea green/red and give feedback on the profiles of other FootNote members.
@@ -197,26 +210,34 @@ One to many-the profile owner operates as the superuser or administrator of thei
 The users or feedback givers who are viewing the original ideas of the profile owner, who are voting like/dislike on the profile owners original ideas, who are posting FootNotes in response to the ideas (which have a maximum character/word restriction but can be deleted or edited by the user until the footnote is stored/removed by the profile owner) and who can like or dislike the footnotes of other users is a many to many relationship as they can interact on the profile but also they can receive interactions by others (such as somebody liking/disliking their footnote)
 
 
-Directories and frameworks used-Cloudinary, Materialize, Summernote
+<b>Directories and frameworks used:</b>
+Cloudinary
+Django
+Boostrap
+Summernote
 
-Design....CSS (starter template used from blog project but how has this been adapted further)...hover..what frameworks have been connected that are aiding in bringing this app to fruition
+
+Design....
+CSS (starter template used from blog project but how has this been adapted further)...hover..what frameworks have been connected that are aiding in bringing this app to fruition
 
 Visibility
 
 
 <b>Things to consider when compiling project</b>
 -Order
--Frameworks to be installed (Django, Summernote, Flash)
--MVP (CRUD, Object orientated programming and object orientated programming (classes))
--Refactoring/inheritance (order of code, inheritance from parent code and using minimum amount of code/avoid repeititon)
+-Frameworks to be installed (Django, Summernote, considered using Flask and reviewed a number of Bootstrap templates that I could have used)
+-MVP-My focus was on keeping in line with the Minimum Viable Product (CRUD, Object orientated programming and object orientated programming (classes))
+-Refactoring/inheritance (order of code, inheritance from parent code and using minimum amount of code/avoid repititon)
+Excellent feature of Django-blocks of code that could easily be slotted into the base.html file.
 -Test based coding (what tests were used)
+MAKE SURE TO PUT IN TESTS...Write 1/2 original tests
 Manual testing...testing for responsiveness...testing programmes
 -Design based coding...app aimed a tmobile phones. Used developer tools to view the app from different mobile phones and ensured it was reponsive. (bootstrap flexbox, overscroll:hidden, vh and vw)
 
 Was bootstrap used?
 Yes-how did bootstrap assist...
 the cards
-considered using different templates-fro exmaple the code within the 'creative' template on the bootstrap site
+considered using different templates-for exmaple the code within the 'creative' template on the bootstrap site
 
 We used bootstrap for alert messages
 Format we wrote bootstrap in...
@@ -241,7 +262,9 @@ Deployment:
 Early deployment as per the walkthroughs to avoid last minute panic.
 Before writing the code, set up an instance on ElephantSQL and then created the app on Heroku. Used the API from ELlephant SQL to build Heroku APP. Connected Heroku with Github CLI for automatic deployment.
 
-  Help to avoid last minute disasters.
+Help to avoid last minute disasters.
+
+Importance of disable the DEBUG feature emphasised in tutorials as well as the importance of removing the DISABLE_STATICFILES.
 
 
 <Challenges with deployment>
@@ -260,17 +283,19 @@ Mobile-first design, app is designed for those who are on the move, out and abou
 Sharp
 Having done some research online, the font that I have chosen, 'Dancing Script' is inkeeping with the theme of creative writing, so chose as it looks like handwriting.
 
+Use of superscript-in keeping with them theme, I used superscript in the titles. Visually appealing and on theme. <sup>FOOTNOTE</sup>
+
 In my design, I wanted to convey the fast-moving and transient nature of what the app is intended for (quickly occurring spouts of creativity) so I used bright colors, quick messages/modals and various animations including...
 
 Also to emphasize the 'by foot' or transient element, I used the color scheme of the title to spearate the Foot from the Note-Foot in purple, Note in black.
 
-Colors used: Peachpuff and 
+Colors used: Peachpuff and purple
+Shape: Maintained the summary of cards from blog walkthrough, appreciated the visual
 Animations used:
 Loaders used:
 Font used: Dancing Script
 
 Additional design feature: Use of Superscript
-
 
  Also the additional Medley app is purely for decoration, not adding functionality but there as a pool of inspiration, drawing for other areas of the app, designed to look like a dream bubble.
 
@@ -388,5 +413,7 @@ Nice to have
 <b>Features testing</b>
 
 <b>Deployment, forking, cloning </b>
+
+
 
 <b>References</b>

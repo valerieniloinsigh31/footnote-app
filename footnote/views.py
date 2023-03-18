@@ -75,27 +75,3 @@ class IdeaLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
-            
-
-class FootnoteLike(View):
-
-    def post(self, request, slug):
-        post = get_object_or_404(Footnote, slug=slug)
-
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-
-        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
-
-#class MedleyListView(generic.ListView):
-#    model = Writer
-#   context_object_name - 'my_favourite_writers'
-                        
-#class FootNoteList(generic.ListView):
-#    model = FootNote
-#    template_name  = 'index.html'
-#    paginate_by = 1
-
-    

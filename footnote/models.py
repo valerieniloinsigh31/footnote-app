@@ -7,9 +7,6 @@ STATUS = ((0, "Draft"), (1,"Published"))
 class Idea(models.Model):
     title = models.CharField(max_length=120, unique=True)
     slug = models.SlugField(max_length=120, unique=True)
-    #author = models.ForeignKey(
-    #    User, on_delete=models.CASCADE, related_name="blog_posts"
-    #)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
@@ -35,7 +32,7 @@ class FootNote(models.Model):
     body = models.TextField(max_length=280)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    likes = models.ManyToManyField(User, related_name='footnote_likes', blank=True)
+    likes = models.ManyToManyField(User, related_name='footnote_like', blank=True)
 
     def __str__ (self):
         return self.title
@@ -50,20 +47,3 @@ class FootNote(models.Model):
     def __str__ (self):
         return f"FootNote {self.body} by {self.name}"
 
-
-#class Medley(models.Model):
-#    medley = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='medley')
-
-#    def __str__ (self):
-#        return self.title
-
-    
-#class Writer(models.Model):
-#    name = models.CharField(max_length=100)
-#    quote = models.CharField(max_length=280)
-
-#    class Meta:
-#        ordering = ["-name"]
-
-#    def __str__(self):
-#        return self.name

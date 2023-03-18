@@ -85,6 +85,9 @@ body {
 .masthead-image {
     position: relative;
     overflow: hidden;
+    height: 33vh;
+    width: 33vw;
+    border-radius: 50%;
 }
 
 .masthead-image:after {
@@ -176,10 +179,4 @@ body {
     color: #e810cf;
     background: transparent;
     border: none;
-}
-
-/* Adjust images in medley view */
-
-.col-md-5 {
-    width: 100%;
 }
