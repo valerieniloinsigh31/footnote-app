@@ -4,7 +4,7 @@
 <html class="h-100">
 
 <head>
-    <title>CodeStar Blog</title>
+    <title>FootNote App</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -26,8 +26,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">c<span class="red-o">o</span>de<span
-                        class="thin">|star</span></span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand"><span class="odd">Foot</span><span
+                        class="thin">Note<sup class="odd">x</sup></span></span></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,8 +35,11 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Summary</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url 'medley' %}">Medley</a>
+                  </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -51,7 +54,7 @@
                     {% endif %}
 
                 </ul>
-                <span class="navbar-text text-muted">
+                <span class="odd">
                     the app for creative writers on the move
                 </span>
             </div>
@@ -80,10 +83,10 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">Made by Valerie Ni Loinsigh</p>
-        <p class="m-0 text-center text-white">Follow her: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+        <p class="m-0 text-center text-white">Check her out: <i class="fab fa-facebook-square ms-3"></i>
+            <i class="fab fa-twitter-square ms-6"></i>
+            <i class="fab fa-instagram-square ms-6"></i>
+            <i class="fab fa-brands fa-tiktok ms-6"></i>
     </footer>
     <script>
         setTimeout(function () {
