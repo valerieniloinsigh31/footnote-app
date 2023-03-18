@@ -173,15 +173,18 @@ Visibility
 
 <b>Things to consider when compiling project</b>
 -Order
--Frameworks to be installed (Django, Summernote)
--MVP (CRUD, Object orientated programming)
+-Frameworks to be installed (Django, Summernote, Flash)
+-MVP (CRUD, Object orientated programming and object orientated programming (classes))
 -Refactoring/inheritance (order of code, inheritance from parent code and using minimum amount of code/avoid repeititon)
 -Test based coding (what tests were used)
 Manual testing...testing for responsiveness...testing programmes
--Design based coding
+-Design based coding...app aimed a tmobile phones. Used developer tools to view the app from different mobile phones and ensured it was reponsive. (bootstrap flexbox, overscroll:hidden, vh and vw)
 
 Was bootstrap used?
 Yes-how did bootstrap assist...
+the cards
+considered using different templates-fro exmaple the code within the 'creative' template on the bootstrap site
+
 We used bootstrap for alert messages
 Format we wrote bootstrap in...
 What effect did this have on the project?
@@ -191,7 +194,10 @@ Object orientated design...defining classes
 
 Testing-what tests were used
 Test for HTML:
+Pass?
 Test for Javascript:
+Pass?
+
 Test for Python:
 
 
@@ -208,28 +214,46 @@ Before writing the code, set up an instance on ElephantSQL and then created the 
 <Challenges with deployment>
 Surely enough, I had some difficulties, migration wouldn't work on my first attempt so I had to redo the entire applicaiton (repositary-Elephant SQL-Heroku app-migrate)
 
-In the end, I believe migration would not work due to mixing up the use of app name versus project name in some of the code soi ensured to be very careful with this going forward.
+In the end, I believe migration would not work due to mixing up the use of app name versus project name in some of the code so I ensured to be very careful with this going forward.
 
+
+I an into this issue again on the friday prior to finishing the project and as tutor assistence had signed off for the night, I redid entire app and project on Githud/ElephantSQL and Heroku. All was well until I tried to deploy on Heroku and the build log revealed the buildpack wouldn't recognise any languages (e.g. python). I tried to tweak...but again believe issue may be app was created as 'footnote_final' on Gitpod but is named as 'footnotefinal' on Heorku as they won't allow underscores.
 
 <b>UX DESIGN</b>
 
 Focus on idea...
-Modile-first design, app is designed for those who are on the move, out and about so naturally, would be on their mobile phones. Accordingly, app has been designed to be responsive to a number of different types of phone
+Mobile-first design, app is designed for those who are on the move, out and about and are struck by quick inspiration and want instant feedback so naturally, is designed to be used by users when they would be on their mobile phones. Accordingly, the app has been designed to be responsive to a number of different types of phone.
+
 Sharp
-Font chosen is focussed on the theme of writing, so chose '' as it looks human-like
-Fast-moving and transient...to convey the fast-moving and transient focus of quickly occuring ideas while on the move, bright, sharp colors used and various animations including...
+Having done some research online, the font that I have chosen, 'Dancing Script' is inkeeping with the theme of creative writing, so chose as it looks like handwriting.
+
+In my design, I wanted to convey the fast-moving and transient nature of what the app is intended for (quickly occurring spouts of creativity) so I used bright, sharp colors and various animations including...
+ Also the additional Medley app is purely for decoration, not adding functionality but there as a pool of inspiration, drawing for other areas of the app, designed to look like a dream bubble.
+
 Footsteps...animation of footsteps moving across the screen
+
 Creation in motion
+
 Design-focused on smaller devices...phones/ipads/tablets/laptops while on the move-empahsis on responsiveness
-Important to have one idea per page...to avoid oversaturaiton
+
+Important to have one idea per page...to avoid oversaturtion.
+Each idea given a separate page, footnotes unlimited but relevant to that idea only.
 
 Background...
 
 Animated background
 Focus not on reading long pieces of narrative so background does not be to be dull
+
 Vibrant colour
+
 Animation and graphics
-Hover effect for likes and dislikes
+
+Loading bar
+
+Hover effect for likes and dislikes...
+
+Use of footnote superscript in the title (and dragging into the footnotes). 
+To support the idea that users are contributing small tidbits of inspiration/nudges in the right direction, adding on to the idea like a footnote as opposed to offering major insights.
 
 
 <b>FEATURES</b>
@@ -242,9 +266,11 @@ Hover effect for likes and dislikes
 to give one sentence construcitve criticism on idea. Each user can post as many footnotes as they want. They cannot delete their footnote, only the superuser/profile owner can do that. They cannot
 -Superuser posts an idea. Max length 280 words, a quick idea that occurs to them while out and about. Once posted and polls have opened, they cannot edit the idea any more as this would create a false reflection on what had been voted for if others users had already voted. Superuser can only delete idea and when deleted all associated footnotes will delete with that idea.
 -Users can like or dislike other footnotes as they please. They cannot comment on other footnotes. Footnotes have a max length and users can only post one footnote per idea to avoid oversaturation.
--Navigation bar. Login. Register. Quick inspiration-quotes, most popular idea of the day
+-Navigation bar. Login. Register. Medley tab, decorative, to provide quick inspiration-quotes, most popular idea of the day
 -Tooltips
--Modal messages
+-Modal messages...how used
+-Alert messages
+-Counter on likes and counter on number of footnotes-can like without leaving a foonote, both reflected in the summar card on summary page
 
 Future features:
 -Filter
