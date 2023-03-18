@@ -78,7 +78,27 @@ Boilerplate code from walkthrough
 Adding customisation
 Adding some non conventional, specific code
 
-function based views...easier to see what's happening
+As per the blog walkthrough, I used class-based views.
+Allow us to use code that is reusable and that inherits from one another.
+'Generic views' (built in Django feature) used, batteries included philosophy od Django.
+
+-Medley view building...
+
+1. Create view code
+
+Employ generic view.
+
+-Views.py file: 
+
+a. Import generic library from django.views 
+b. Import model that we will base views on (e.g. 'Medley' model as defined in models.py file)
+c. Create a class. 
+
+
+2. Create view template
+3. Connect urls file
+
+
 Principles of Agile development, prioritisation
 image storage
 

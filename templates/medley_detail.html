@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
+ 
+<h2>Writers</h2>
+<ul>
+      {% for writer in object_list %}
+          <li>{{ writer.name }}</li>
+      {% endfor %}
+  </ul>
+  
 
-<h2>Medley</h2>
-<p>
+ 
+
+
+<!--<p>
     <h3>Samuel Beckett</h3>
     <i>Ever tried. Ever failed. No matter. Try again. Fail again. Fail better.</i>
 </p>
@@ -31,6 +41,6 @@
         See how inspiration is all around us, all we have to do is make note!
         Don't walk in somebody elses footsteps, but do heed their FootNotes!
     </p>
-</div>
+</div> 
 
-{% endblock content %}
+{% endblock content %}-->

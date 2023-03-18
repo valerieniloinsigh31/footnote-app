@@ -48,11 +48,19 @@ class FootNote(models.Model):
         return f"FootNote {self.body} by {self.name}"
 
 
-class Medley(models.Model):
-    medley = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='medley')
+#class Medley(models.Model):
+#    medley = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='medley')
 
-    def __str__ (self):
-        return self.title
+#    def __str__ (self):
+#        return self.title
 
     
+class Body(models.Model):
+    name = models.CharField(max_length=70)
+    body = models.CharField(max_length=280)
 
+    class Meta:
+        ordering = ["-name"]
+
+    def __str__(self):
+        return self.name
