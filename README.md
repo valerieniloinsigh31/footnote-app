@@ -227,7 +227,18 @@ Mobile-first design, app is designed for those who are on the move, out and abou
 Sharp
 Having done some research online, the font that I have chosen, 'Dancing Script' is inkeeping with the theme of creative writing, so chose as it looks like handwriting.
 
-In my design, I wanted to convey the fast-moving and transient nature of what the app is intended for (quickly occurring spouts of creativity) so I used bright, sharp colors and various animations including...
+In my design, I wanted to convey the fast-moving and transient nature of what the app is intended for (quickly occurring spouts of creativity) so I used bright colors, quick messages/modals and various animations including...
+
+Also to emphasize the 'by foot' or transient element, I used the color scheme of the title to spearate the Foot from the Note-Foot in purple, Note in black.
+
+Colors used: Peachpuff and 
+Animations used:
+Loaders used:
+Font used: Dancing Script
+
+Additional design feature: Use of Superscript
+
+
  Also the additional Medley app is purely for decoration, not adding functionality but there as a pool of inspiration, drawing for other areas of the app, designed to look like a dream bubble.
 
 Footsteps...animation of footsteps moving across the screen
@@ -258,24 +269,35 @@ To support the idea that users are contributing small tidbits of inspiration/nud
 
 <b>FEATURES</b>
 
--Admin interface (moderation of site-deleting idea)
+-Admin interface (moderation of site-deleting ideas and footnotes)
+
 -Post idea-all users can see
--Vote pursue or don't pursue idea/chase or don't chase idea
-(will this be in poll format, button format or what?)
--If vote pursue idea, can leave a footnote...Footnotes are max length 280 characters-
-to give one sentence construcitve criticism on idea. Each user can post as many footnotes as they want. They cannot delete their footnote, only the superuser/profile owner can do that. They cannot
+
+-Logged in users can check the green tick to indicate they approve of the idea, a counter feature displays the amount of approvals on the summary card for each idea on the summary page
+
+
+-If vote pursue idea, can leave a footnote...Footnotes are max length 280 characters-FootNote is posted, visible for other users to see. FootNotes appear under the idea on the idea page.
+
+The purpose of the footnote is for users to give one sentence of constructive criticism on the idea. Each user can post as many footnotes as they want. The FootNote reveals who created the FootNote and when they created it.
+
 -Superuser posts an idea. Max length 280 words, a quick idea that occurs to them while out and about. Once posted and polls have opened, they cannot edit the idea any more as this would create a false reflection on what had been voted for if others users had already voted. Superuser can only delete idea and when deleted all associated footnotes will delete with that idea.
+
 -Users can like or dislike other footnotes as they please. They cannot comment on other footnotes. Footnotes have a max length and users can only post one footnote per idea to avoid oversaturation.
--Navigation bar. Login. Register. Medley tab, decorative, to provide quick inspiration-quotes, most popular idea of the day
+
+-Navigation bar. Summary page with summary cards for different ideas (revealing amount of likes/footnotes on an idea). Login/Logoff function. Register function. Medley tab, this is a decorative tab, to provide quick inspiration-quotes from famous writers and three circles in the shape of an idea bubble which generate random footnotes from the database.
 -Tooltips
+
 -Modal messages...how used
+
 -Alert messages
+
 -Counter on likes and counter on number of footnotes-can like without leaving a foonote, both reflected in the summar card on summary page
 
-Future features:
--Filter
+<b>Future features</b>
+-Filter on FootNotes under idea for different users
 -Order footnotes by amount of likes
--The main image that appears on the idea will be uploaded with idea...connected to phone
+-Order idea cards on summary page by most liked
+-The main image that appears on the idea will be also uploaded by the app user, it will be connected to their mobile.
 
 <b>TECHNOLOGIES USED</b>
 -Summernote
@@ -285,6 +307,8 @@ Future features:
 -HTML
 -CSS
 -Different websites for graphics
+
+When performing rearch, considered Flaks also
 
 <b>Manual Testing Write-Up</b>
 
@@ -299,21 +323,33 @@ Flexbox...overscroll...bootstrap
 
 ...mark as we go
 
+Opening from Github as opposed to pinned workspace...had to recreate env.py file a number of times.
+Had to reinstall various dependencies...allauth, summernote etc.
+
+
 <b>Lighthouse testing outcomes</b>
 
 ...screengrab
 
 <b>Code validation</b>
 HTML: [W3 Markup Validation] https://validator.w3.org
+Extract of validation:
 Javascript: JS Lint...
+Extract of validation:
 CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
+Extract of validation:
 lighthouse: https://developers.google.com/web/tools/lighthouse
-Python: PEP8
+Extract of validation:
+Python: PEP8:
+Extract of validation:
 
 <b>User stories testing</b>
-Kanban board
-Code along with blog
-Prioritisation
+Kanban board-completed as part of walkthrough...as I was progressing through walkthrough, this helped me to logically prioritise
+
+Prioritisation:
+Must have
+Need to have
+Nice to have
 
 
 <b>Features testing</b>
