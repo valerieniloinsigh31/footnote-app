@@ -96,63 +96,69 @@ c. Create a class.
 
 
 2. Create view template
+
+Template-html templates. Structures what you see in the view. Foor loops, shape of images. Attribute classes that are designed by CSS.
+
 3. Connect urls file
 
+Add the wiring, ensure to import the correct items at the top of the page and the correct url and brackets are used
 
-Principles of Agile development, prioritisation
-image storage
+
+<b>Principles of Agile development, prioritisation</b>
+
+Connectint cloudinary, using it for image storage and quick urls
 
 Package=plugs into code already written (use as much/little as possible)
 Django framework=code is already written, you plug your code into it...Provides basic structure, customize within reason
 
 Routing between different templates to avoid duplicating/repeating code...extends %%
+Base.html is the premise and other html files used, %% block quotes slotted into base.html file. Base.html file extended.
 
 <b>Class Models</b>
-Class models defined and additional definitions included within those models.
-Profile model (how is this done-form a profile, view other profiles, statistics and levels of engagement)
+Class-based models defined within models.py file and additional definitions included within those models.(specifications)
 
-Two models derived closely from blog project but customised accordingly and tailored code to suit my project which were the 'idea' model and the 'footnote' model.
+Two models derived closely from the blog walkthrough project but customised accordingly and tailored code to suit my project which were the 'idea' model and the 'footnote' model.
 
-I added an additional functionality to the footnote model that in order to be able to post a footnote in the first place, this would only become available to the user of they had clicked the check approval tick for the idea. Authentication feature.
+I added an additional functionality to the footnote model that a counter was attached to each idea and this was displayed under the idea, to show how many footnotes were received on a comment. Also placed exactly beside the likes so a nice visual comparison given for how many footnotes there were compared to how many likes there were.
 
-Additional model for the person who owns the idea  can soft delete their idea and all correpsonding footnotes at any time so that that the veiw becomes private and visible to only them
+Future features: Additional model for the person who owns the idea can soft-delete their idea and all corresponding footnotes at any time so that that the view becomes private and visible to only them...this will be a good way to ensure that the summary page doesn't become oversaturated.
 
+Summary page, there will be a filter option inserted to order ideas either by how many green ticks they received or how many FootNotes they recieved.
 
-The cascade delete effect is in place so once idea is deleted, all accompanying footnotes will be deleted as well.
+The cascade delete effect is in place so once an idea is deleted, all accompanying footnotes will be deleted as well.
 
-Additional model for 'connect with my profile'
-Additional model for like/dislike the idea
-Additional model 'Make this my favourite idea'...function of the FootNote website, users can favourite one idea per per day but once favourited cannot change until 24 hours is up
+-Additional model for 'connect with my profile'...people who leave ideas will be able to set up a profile, containing only their ideas.
+-Additional model 'Make this my favourite idea'...function of the FootNote website, users can choose one idea per per day as their favourite.
 
-Authentication-only those who like the original idea would be able to leave a footnote-this was for website moderation purposes-the focus of the website is to focus on providing small nuggets of inspiration, a nod in the right direction.
-
-If the feedback giver votes dislike, discouraging the idea posted then they cannot leave a footnote.
+-Authentication-an additional future feature to be added is that only those who like the original idea will be able to leave a footnote-this will be to for website moderation purposes-the focus of the website is to focus on providing small nuggets of inspiration, a nod in the right direction as opposed to negative or frivolous vitriolic comments.
 
 Max length 280 characters for both idea and footnotes as the focus of the website is on giving helpful nuggets on fast-occuring ideas as opposed to crossing the territory into elaborate collaboration/plagiarism.
 
-Only one idea per page so focus on one idea per page.
 
-Summary view-
+-Pagination
+Six idea summaries per page, then pagination comes into force.
+This is so the user does not become overwhelmed.
+It is an app designed to be used on a small, mobile device so visually, summary cards for six ideas seems most appropriate, to avoid unnecessary scrolling.
+Once the idea card is clicked into, there will be one idea per page and up to ten footnotes. 
 
-administator encouraged to delete the one idea before posting another.
 
-Idea model
-FootNote Model
+Idea Model:
+FootNote Model:
 
 Counter-select the green check mark, a counter is activated and this is visible also on the summary page so that users can quickly reference an idea that has received a lot of positive feedback and they might want to explore further.
 
-Users can vote approve/disprove of on idea
+Future feature: Users can vote approve/disprove of on idea
 If they vote like only then will they be given the authentication to post a footnote
 
 
 
 <p>Lucidcharts</p>
 
-Luidcharts and it's shapes etc would assist me in designing how I wanted the app to look.
+Luidcharts and it's easy-to-use shapes (circles, arrows), color scheme (to discern features/relationships from one another) and tabular format (enabling me to use spearate tabs for different views/drill downs into models etc) greatly assisted me in designing how I wanted the app to look.
 
-Also the ability to make boxes and shapes color coded-operated as a visual legend of sorts.
+The ability to use various shapes color coded-operated as a visual legend of sorts. The arrows also helped me to design on a chani of command.
 
-I mapped various parts as 'One to Many Relationships' or 'Many to One' and colour coded them
+I mapped various parts as 'One to Many Relationships' or 'Many to One' and colour coded them.
 
 Order of events and priorisation easier to understand...chain of action
 
@@ -164,14 +170,21 @@ Logical progression
 Easy way to focus on tasks that needed to be conpleted
 Features I wanted to add
 
+As I was progressing through the Kanban board of user stories, I bore in mind the prioritisation emphasised in the Agile methodology moduke:
+I was always thinking about what is a must-have, what would be nice to have and what would be a feature added only if we had time.
 
 <b>Views:</b>
 
 Views-what views are there for this app:
--Summary view-shows a segment of a page containing the idea (summary of idea and counter function shows amount of approvals). Shows amount of approvals associated with idea and main image.
--Idea and footnote view - 1 idea per page, unlimited footnotes. Allows focus to be on idea. On this page, all users can see idea and footnotes left as well as number of approvals on ideas and number of smiley faces or unhappy faces on footnotes. They can also see when idea/footnotes were created/edited.
+-Summary view-shows a segment of a page containing the idea (summary of all ideas posted (6 ideas per page) and a counter function shows the amount of approvals with a tick and number). Shows amount of approvals associated with idea and the main image.(either the image uploaded with the original post or a default image)
+-Idea and footnote view - 1 idea per page with up to ten footnotes. Allows focus to be on that idea. On this page, all users can see idea and footnotes left as well as number of approvals on ideas and number of smiley faces or unhappy faces on footnotes. They can also see when idea/footnotes were created/edited and by whom.
+-Sign in/sign out/register tabs: Functional tabs that allows the user/potential user to sign in/sign out or register for the app
+-Admin interface-The administrator logs in and can moderate the site. Can issue approvals etc.
+
+
+Future features:
 -Private view- a separate offline view for the idea owner. Can soft delete the idea at an point and due to CASCADE.DELETE function, all related footnotes will soft delete also. By soft delete, this means becomes private and visible only to the user who posted the original idea and not to the general users. Once hard deleted, the idea and all footnotes would be deleted from the app.
--View-bits of inspiration (things we liked). A separate view created by the moderator/adminstrator, showcases the most popular idea of the day and has a variety of quotes from writers and pictures of famous writers.
+-View-bits of inspiration (things we liked). A separate view created by the moderator/adminstrator, showcases the most popular idea of the day and has a variety of quotes from writers and pictures of famous writers. It will also have a button called 'Inspire me'. This button will generate three random footnotes (of all of the hundreds of footnotes stored on the database for the apps) and post three of them at a time. One in each circular shaped bubble, to create a dream like effect. The footnotes will be deliberately without context and the randomness/incongruity/unrelatedness with one another may be humorous or profound and hopefully inspire the user.
 
 User interaction
 One to many relationship?
