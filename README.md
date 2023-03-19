@@ -370,26 +370,56 @@ When performing resarch, considered Flask also (particularly the CI Torin projec
 
 <h1>TESTING</h1>
 
--Using the tutorials on testing from the To-Do app walkthrough, I ensured to follow those steps to test the files.
+<p>Using the tutorials on testing from the To-Do app walkthrough, I ensured to follow those steps to test the files.</p>
 
-Steps...
 
-Django...inbuilt with test.py file
-Split out into three separate files for more specified testing, clear code
--Test views - split into test_views.py file
-What views contained...what would need to be tested
--Test models - split into test_models.py file
-What views contained...what would need to be tested
--Test forms - split into test_forms.py file
-What views contained...what would need to be tested
+Django has a testing framework-with automated tests.
+Django is inbuilt with test.py file. Django imports testcase class-extension of Unittest (methods to assert things about code)
+Testing is based on assertions. 
+-Write classes within files to test various things within targeted files
+Once class is written, run the test command:
+-python3 manage.py test command run 
+After command run, output will be printed to the terminal providing a summary of the following details of the test:
+
+We see whether a test failed, coded as one of the following, '.','F' 'E'
+. = passed test
+F= failed test
+E= Error detected
+
+We see what test failed and why
+We are provided with a Summary detailing: How many tests were run, how long it took and how many failures there were.
+
+For the FootNote App, I tried to write specific tests to see whether the specific tests fail.
+
+Firstly, split the 'test.py' file out into three separate files for more specified testing, clear code (organised and easy to manage, keeping tests independent of one another). I completed a select number of tests only due to limited time: 
+
+
+(1)Test forms - split into test_forms.py file
+
+<p>What was tested for forms</p>
+Imported 'FootNoteForm' from forms.py file and django.test from TestCase
+Wrote a class and included a test for form ensuring that FootNote form was not submitted blank.
+
+
+(2)Test models - split into test_models.py file
+<p>What was tested for models</p>
+Test footnote will autmotically be false until approved by admin.
+
+
+(3)Test views - split into test_views.py file
+<p>What was tested for views</p>
+-Get summary page
+Tell it summary page-idea detail. Test uses HTTP response.
+</p>
 
 Once this was done, I performed a coverage test to see what % of the app had been tested
 
 Coverage test:
+.coverage file created.
 
 <b>Manual Testing Write-Up</b>
 
-Pagination
+Pagination-check could I move from page to page
 
 Supposed to move to a new page when three idea summaries are on site, wrote six ideas to test this and sure enough three moved to a separate page.
 
@@ -479,7 +509,7 @@ Congrats, no error found
 Extract of validation:</p>
 
 
-<p>lighthouse:</p>
+<p>Lighthouse:</p>
 <p>https://developers.google.com/web/tools/lighthouse
 Please see extract below
 Extract of validation:
