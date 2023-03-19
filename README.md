@@ -384,6 +384,11 @@ Max ten footnotes per page...check this.
 <b>Responsiveness testing:</b>
 Flexbox...overscroll...bootstrap
 
+CSS...media-queries
+justify-content center
+
+vh and vw
+
 Please see below, a variety of responsiveness testing photos on different viewports,
 viewed online via Developer Tools
 
@@ -410,20 +415,41 @@ Had to reinstall various dependencies...allauth, summernote etc.
 
 ...screengrab
 
+accessibility improved from original lighthouse test
+
 <b>Code validation</b>
 HTML: [W3 Markup Validation] https://validator.w3.org
 Extract of validation: Please see extract below
+
+Errors in all three HTML files initially, please see below
+
+Updates includes 
 Javascript: JS Lint...
+to review...what is this...what was used for Javascript project?
+
 Extract of validation:
 Only javascript used, from django, guaranteed it would be valid
+
 CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
+Congrats, no error found
+
 Extract of validation:
+
 
 lighthouse: https://developers.google.com/web/tools/lighthouse
 Please see extract below
 Extract of validation:
+
 Python: PEP8: this is inbuilt within the code itself...is this true?
+
+pip install pep8
+
+PEP8, already installed...is this related to DEBUG
+pylint requirement satisfied also, please see code extract
+
 Extract of validation:
+
+
 
 <b>User stories testing</b>
 Kanban board-completed as part of walkthrough...as I was progressing through walkthrough, this helped me to logically prioritise
