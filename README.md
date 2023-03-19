@@ -226,12 +226,17 @@ Visibility
 <b>Things to consider when compiling project</b>
 -Order
 -Frameworks to be installed (Django, Summernote, considered using Flask and reviewed a number of Bootstrap templates that I could have used)
+
 -MVP-My focus was on keeping in line with the Minimum Viable Product (CRUD, Object orientated programming and object orientated programming (classes))
+
 -Refactoring/inheritance (order of code, inheritance from parent code and using minimum amount of code/avoid repititon)
 Excellent feature of Django-blocks of code that could easily be slotted into the base.html file.
+
 -Test based coding (what tests were used)
 MAKE SURE TO PUT IN TESTS...Write 1/2 original tests
 Manual testing...testing for responsiveness...testing programmes
+
+
 -Design based coding...app aimed a tmobile phones. Used developer tools to view the app from different mobile phones and ensured it was reponsive. (bootstrap flexbox, overscroll:hidden, vh and vw)
 
 Was bootstrap used?
@@ -243,7 +248,7 @@ We used bootstrap for alert messages
 Format we wrote bootstrap in...
 What effect did this have on the project?
 
-Object orientated design...defining classes
+Object orientated design...class based models as opposed to function based models used
 
 
 Testing-what tests were used
@@ -291,8 +296,7 @@ Also to emphasize the 'by foot' or transient element, I used the color scheme of
 
 Colors used: Peachpuff and purple
 Shape: Maintained the summary of cards from blog walkthrough, appreciated the visual
-Animations used:
-Loaders used:
+Use of opaque footpprint: Above masthead on summary page and in place of masthead on individual idea pages-inkeeping with the transient, on foot theme.
 Font used: Dancing Script
 
 Additional design feature: Use of Superscript
@@ -360,21 +364,35 @@ The purpose of the footnote is for users to give one sentence of constructive cr
 <b>TECHNOLOGIES USED</b>
 -Summernote
 -Django
--Javascript
+-Crispy forms
+-Cloudinary
 -Python
 -HTML
 -CSS
--Different websites for graphics
+-Different websites for images
 
-When performing rearch, considered Flaks also
+When performing resarch, considered Flask also (particularly the CI Torin project)
 
 <b>Manual Testing Write-Up</b>
+
+Pagination
+
+Supposed to move to a new page when three idea summaries are on site, wrote six ideas to test this and sure enough three moved to a separate page.
+
+Max ten footnotes per page...check this.
 
 <b>Responsiveness testing:</b>
 Flexbox...overscroll...bootstrap
 
 Please see below, a variety of responsiveness testing photos on different viewports,
 viewed online via Developer Tools
+
+
+Was anything cut off...was everything visible
+
+Ability to scroll down
+
+Summary page...cards stacked...overflow/flexbox/media-queries
 
 <b>Compatibility testing</b>
 
@@ -443,3 +461,5 @@ Nice to have-have mentioned future features
 https://pixabay.com/photos/pocket-watch-time-sand-clock-3156771/
 All ci tutorials-particularly the blog walkthrough
 Stack comments and contributions
+
+Footprint: https://codepen.io/bogers/pen/MWJjwJa?editors=1111
