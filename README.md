@@ -164,7 +164,6 @@ Future feature: Users can vote approve/disprove of on idea
 If they vote like only then will they be given the authentication to post a footnote
 
 
-
 <p>Lucidcharts</p>
 
 Luidcharts and it's easy-to-use shapes (circles, arrows), color scheme (to discern features/relationships from one another) and tabular format (enabling me to use spearate tabs for different views/drill downs into models etc) greatly assisted me in designing how I wanted the app to look.
@@ -173,7 +172,16 @@ The ability to use various shapes color coded-operated as a visual legend of sor
 
 I mapped various parts as 'One to Many Relationships' or 'Many to One' and colour coded them.
 
-Order of events and priorisation easier to understand...chain of action
+Order of events and priorisation easier to understand, assisted eith understanding chain of action
+
+Lucidchart extracts:
+
+Lucidcharts 1: ![alt text](./static/images/lc_1.png)
+Lucidcharts 2: ![alt text](./static/images/lc_2.png)
+Lucidcharts 3: ![alt text](./static/images/lc_3.png)
+Lucidcharts 4: ![alt text](./static/images/lc_4.png)
+Lucidcharts 5: ![alt text](./static/images/lc_5.png)
+Lucidcharts 6: ![alt text](./static/images/lc_6.png)
 
 <b>Kanban board and user stories</b>
 
@@ -216,13 +224,6 @@ Django
 Boostrap
 Summernote
 
-
-Design....
-CSS (starter template used from blog project but how has this been adapted further)...hover..what frameworks have been connected that are aiding in bringing this app to fruition
-
-Visibility
-
-
 <b>Things to consider when compiling project</b>
 -Order
 -Frameworks to be installed (Django, Summernote, considered using Flask and reviewed a number of Bootstrap templates that I could have used)
@@ -237,16 +238,15 @@ MAKE SURE TO PUT IN TESTS...Write 1/2 original tests
 Manual testing...testing for responsiveness...testing programmes
 
 
--Design based coding...app aimed a tmobile phones. Used developer tools to view the app from different mobile phones and ensured it was reponsive. (bootstrap flexbox, overscroll:hidden, vh and vw)
+-Design based coding...app aimed at mobile phones. Used developer tools to view the app from different mobile phones and ensured it was reponsive. (bootstrap flexbox, overscroll:hidden, vh and vw)
 
-Was bootstrap used?
+Bootstrap:
 Yes-how did bootstrap assist...
 the cards
 considered using different templates-for exmaple the code within the 'creative' template on the bootstrap site
 
-We used bootstrap for alert messages
-Format we wrote bootstrap in...
-What effect did this have on the project?
+Used bootstrap for alert messages
+Used bootstrap formatting for cards
 
 Object orientated design...class based models as opposed to function based models used
 
@@ -296,29 +296,11 @@ Font used: Dancing Script
 
 Additional design feature: Use of Superscript
 
- Also the additional Medley app is purely for decoration, not adding functionality but there as a pool of inspiration, drawing for other areas of the app, designed to look like a dream bubble.
-
-Footsteps...animation of footsteps moving across the screen
-
-Creation in motion
+Footsteps...
 
 Design-focused on smaller devices...phones/ipads/tablets/laptops while on the move-empahsis on responsiveness
 
-Important to have one idea per page...to avoid oversaturtion.
-Each idea given a separate page, footnotes unlimited but relevant to that idea only.
-
-Background...
-
-Animated background
-Focus not on reading long pieces of narrative so background does not be to be dull
-
-Vibrant colour
-
-Animation and graphics
-
-Loading bar
-
-Hover effect for likes and dislikes...
+Important to have one idea per page once you click into idea cards via the summary page...to avoid oversaturtion.
 
 Use of footnote superscript in the title (and dragging into the footnotes). 
 To support the idea that users are contributing small tidbits of inspiration/nudges in the right direction, adding on to the idea like a footnote as opposed to offering major insights.
@@ -458,11 +440,11 @@ Sample photos:
 
 Iphone 12 pro: ![alt text](./static/images/iphone12_test.png)
 
-MacBook Pro: ![alt text](./static/images/iphone12_test.png)
+MacBook Pro: ![alt text](./static/images/macbook_pro_test)
 
-Ipad Air: ![alt text](./static/images/iphone12_test.png)
+Ipad Air: ![alt text](./static/images/ipad_air_test.png)
 
-Nest Hub:  ![alt text](./static/images/iphone12_test.png)
+Nest Hub:  ![alt text](./static/images/nest_hub_test)
 
 
 Cards stack on top of one another in a responsive fashion instead of becoming stretched or crushed and the visibility is not affected by the size of the viewport
@@ -514,7 +496,7 @@ See below various browsers listed and detail on compatability with app:
             </table> 
 <b>Bugs resolved and unresolved</b>
 
-...mark as we go
+Inbuilt PEP 8, errors detailed in Github as coding
 
 Opening from Github as opposed to pinned workspace...had to recreate env.py file a number of times.
 Had to reinstall various dependencies...allauth, summernote etc.
@@ -527,38 +509,26 @@ Browser open as I coded, refreshed and received feedback into different types of
 
 <b>Lighthouse testing outcomes</b>
 
-...screengrab
+Accessibilty low, could be improved
 
-accessibility improved from original lighthouse test
+Lighthouse test:  ![alt text](./static/images/lighthouse_test)
 
 <h1><b>Code validation</b></h1>
 
 <b>HTML</b>
 <p>[W3 Markup Validation] https://validator.w3.org
-Extract of validation: Please see extract below
+ Only minor errors. 3 HTML files, code manually tested for each. Copied and pasted
+ into validator
 
-Errors in all three HTML files initially, please see below</p>
-
-Updates includes 
+![alt text](./static/images/html_validation.png) 
 
 <p>Javascript</p>
-<p>JS Lint...
-to review...what is this...what was used for Javascript project?
-
-Extract of validation:
-
-Only javascript used, from django, guaranteed it would be valid</p>
+<p>No javascript used for app</p>
 
 <p>CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
-Congrats, no error found
+No errors found received when CSS code runthrough validator (via copy and paste)
 
-Extract of validation:</p>
-
-
-<p>Lighthouse:</p>
-<p>https://developers.google.com/web/tools/lighthouse
-Please see extract below
-Extract of validation:
+![alt text](./static/images/css_validation.png)
 </p>
 
 <p>Python:</p>
@@ -572,10 +542,6 @@ Sure enough, received the message that PEP8 was already installed
 Also tried to ensure pylint requirement satisfied also,
 "python -m pip install pylint"
 
-Extract of validation:
-
-
-
 <b>User stories testing</b>
 As per the walkthrough, in support of Agile methodology, I set up a Kanban board to track what items I installed for the app.
 
@@ -583,6 +549,10 @@ Three categories:
 To do, in progress, complete
 
 Kanban board-completed as I completed coding. As I was progressing through the coding of the application, this helped me to logically prioritise and gave me immediate visual feedback as to what remained left to be done.
+
+Kanban board:
+![alt text](./static/images/kanban_board.png)
+
 
 <b>Prioritisation:</b>
 
@@ -644,7 +614,8 @@ All app logic doesn't need to be in views.py file
 <b>References</b>
 
 https://pixabay.com/photos/pocket-watch-time-sand-clock-3156771/
+A number of free open sources used for photos that appear as featured images on idea cards on the summary page. They are uploaded to admin interface when original idea is posted. If no image provided then there is code that defaults to a different image via url in code.
 All Code Institute tutorials-particularly the blog walkthrough
-Stack comments and contributions
+Stack comments and contributions, as well as various sample repositaries provided on slack.
 
 Footprint: https://codepen.io/bogers/pen/MWJjwJa?editors=1111
