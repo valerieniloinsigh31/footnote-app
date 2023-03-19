@@ -412,10 +412,22 @@ Test footnote will autmotically be false until approved by admin.
 Tell it summary page-idea detail. Test uses HTTP response.
 </p>
 
-Once this was done, I performed a coverage test to see what % of the app had been tested
+Once this was done, I performed a coverage test to see what % of the app had been tested. 
 
-Coverage test:
-.coverage file created.
+Command to install:
+pip3 install coverage
+Command to run coverage test examine all of the tests written to see what % of app was tested-a report generated as a result:
+coverage run --source=todo manage.py test
+
+To view the report, I input the command:
+coverage report
+Can use an interactive HTML report, using command:
+coverage html
+and then to view this report, use following command:
+python3 -m http.server
+
+Thsi gives us the reason that various parts are not 100% covered so that we are know what is left to be tested.
+
 
 <b>Manual Testing Write-Up</b>
 
@@ -431,41 +443,75 @@ Alert messages for login and logout
 
 <b>Responsiveness testing:</b>
 
-Flexbox...overscroll...bootstrap
-
-CSS...
+Bootstrap code used which ensures more centred design.
+I employed the following within my CSS design to ensure that the app was responsive to smaller devices: 
 Justify-content center
-flex
-overflow:hidden
+Flex
+Overflow:hidden
+Margin
 
 vh and vw used- sizes things relative to the viewport height(vh) and viewport width(vw)
 
 Please see below, a variety of responsiveness testing photos on different viewports,
 viewed online via Developer Tools:
-Sample phots
-On..Iphone 12
-On..Nest
-On..Ipad
-On...Macbook Pro
+Sample photos:
 
-Was anything cut off...was everything visible
+Iphone 12 pro: ![alt text](./static/images/iphone12_test.png)
+
+MacBook Pro: ![alt text](./static/images/iphone12_test.png)
+
+Ipad Air: ![alt text](./static/images/iphone12_test.png)
+
+Nest Hub:  ![alt text](./static/images/iphone12_test.png)
+
 
 Cards stack on top of one another in a responsive fashion instead of becoming stretched or crushed and the visibility is not affected by the size of the viewport
 
-Ability to scroll down
+User has the ability to scroll down.
 
 
 <b>Compatibility testing</b>
 
 Tested on various browsers
 
-See below table with browser listed and detail on compatability
-
-Google
-Safari
-Firefox
-Internet Explorer
-
+See below various browsers listed and detail on compatability with app:
+<table>
+                <caption><b>Testing for compatibility</b></caption>
+                <tr>
+                    <th><b>Google</b</th>
+                    <th><b>Safari</b></th>
+                    <th><b>Firefox</b></th>
+                    <th><b>Internet explorer</b></th>
+                </tr>
+                <tr>
+                    <td>Site is compatible</td>
+                </tr>
+                <tr>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Links/URLs:</td>
+                </tr>
+                <tr>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Images work:</td>
+                </tr>
+                <tr>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+            </table> 
 <b>Bugs resolved and unresolved</b>
 
 ...mark as we go
