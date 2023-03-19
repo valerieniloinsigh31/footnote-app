@@ -595,7 +595,7 @@ Can create account with registration
 <b>On Github:</b>
 Disable debug...get rid of traceback which my compromise your site
 Install X-Frame Options=Same Origin...CORS cross origina resource sharing security feature
-Waht resources are permitted to be loaded
+Tells system resources are permitted to be loaded
 
 <b>On Heroku</b>
 Go to settings-Reveal Config Vars
