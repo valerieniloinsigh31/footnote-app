@@ -69,9 +69,22 @@
             </div>
         </div>
     </div>
-
-    <main class="flex-shrink-0 main-bg">
-
+    <div>
+         <!-- Footprint -->
+         <svg id="svg-sprite">
+            <symbol id="paw" viewBox="0 0 249 209.32">
+              <image xlink:href="http://icons.veryicon.com/png/System/Icons8%20Metro%20Style/Tracks%20Footprints%20Left%20shoe.png" x="0" y="0" height="100px" width="100px" />
+            </symbol>
+          </svg>
+          
+          <div class="ajax-loader">
+            <div class="paw"><svg class="icon">
+                <use xlink:href="#paw" />
+              </svg></div>
+          </div>
+          </div>
+          
+        <!-- Footprint closed -->
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}

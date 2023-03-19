@@ -180,3 +180,13 @@ body {
     background: transparent;
     border: none;
 }
+ 
+/* Footprint design */
+
+.ajax-loader{
+position: relative;
+margin-left: 40%;
+margin-right:40%;
+/*margin-bottom: 5rem;*/
+opacity: 20%;
+}

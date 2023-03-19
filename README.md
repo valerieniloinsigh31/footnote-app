@@ -373,6 +373,9 @@ When performing rearch, considered Flaks also
 <b>Responsiveness testing:</b>
 Flexbox...overscroll...bootstrap
 
+Please see below, a variety of responsiveness testing photos on different viewports,
+viewed online via Developer Tools
+
 <b>Compatibility testing</b>
 
 ...Developer tools, screengrabs of different devices
@@ -391,24 +394,43 @@ Had to reinstall various dependencies...allauth, summernote etc.
 
 <b>Code validation</b>
 HTML: [W3 Markup Validation] https://validator.w3.org
-Extract of validation:
+Extract of validation: Please see extract below
 Javascript: JS Lint...
 Extract of validation:
+Only javascript used, from django, guaranteed it would be valid
 CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
 Extract of validation:
+
 lighthouse: https://developers.google.com/web/tools/lighthouse
+Please see extract below
 Extract of validation:
-Python: PEP8:
+Python: PEP8: this is inbuilt within the code itself...is this true?
 Extract of validation:
 
 <b>User stories testing</b>
 Kanban board-completed as part of walkthrough...as I was progressing through walkthrough, this helped me to logically prioritise
 
-Prioritisation:
-Must have
-Need to have
-Nice to have
+<b>Prioritisation:</b>
 
+Focussed on three categories of prioritisation:
+
+Need to have: 
+CRUD functionality-administrator interface mainly
+Can create also via footnotes as a user
+Can create account with registration
+
+-Admin interface
+-Account registration
+-Different views via navigation bar
+-Users ability to submit footnotes for approval
+
+
+Maybe have
+-Counters to display number of ticks on an idea
+-Counter to show how many footnotes left on an idea
+
+Nice to have-have mentioned future features
+-Ability to like footnotes left
 
 <b>Features testing</b>
 
@@ -417,3 +439,7 @@ Nice to have
 
 
 <b>References</b>
+
+https://pixabay.com/photos/pocket-watch-time-sand-clock-3156771/
+All ci tutorials-particularly the blog walkthrough
+Stack comments and contributions
