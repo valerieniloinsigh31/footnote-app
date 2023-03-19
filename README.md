@@ -251,18 +251,7 @@ What effect did this have on the project?
 Object orientated design...class based models as opposed to function based models used
 
 
-Testing-what tests were used
-Test for HTML:
-Pass?
-Test for Javascript:
-Pass?
-
-Test for Python:
-
-
-Languages-what languages were used
-
-Deployment:
+<b>Deployment:</b>
 
 Early deployment as per the walkthroughs to avoid last minute panic.
 Before writing the code, set up an instance on ElephantSQL and then created the app on Heroku. Used the API from ELlephant SQL to build Heroku APP. Connected Heroku with Github CLI for automatic deployment.
@@ -278,7 +267,13 @@ Surely enough, I had some difficulties, migration wouldn't work on my first atte
 In the end, I believe migration would not work due to mixing up the use of app name versus project name in some of the code so I ensured to be very careful with this going forward.
 
 
-I an into this issue again on the friday prior to finishing the project and as tutor assistence had signed off for the night, I redid entire app and project on Githud/ElephantSQL and Heroku. All was well until I tried to deploy on Heroku and the build log revealed the buildpack wouldn't recognise any languages (e.g. python). I tried to tweak...but again believe issue may be app was created as 'footnote_final' on Gitpod but is named as 'footnotefinal' on Heorku as they won't allow underscores.
+I an into this issue again on the friday prior to finishing the project and as tutor assistence had signed off for the night, I redid entire app and project on Github/ElephantSQL and Heroku. All was well until I tried to deploy on Heroku and the build log revealed the buildpack wouldn't recognise any languages (e.g. python). I tried to tweak...but again believe issue may be app was created as 'footnote_final' on Gitpod but is named as 'footnotefinal' on Heorku as they won't allow underscores.
+
+I checked in with my tutor the next day and after all of the rework, it was revealed the env.py file and installations needed to be redone due to me having opened the code using gitpod as opposed to the pinned workspaces platform. A lesson learned the hard way!
+
+  A couple of tricks for this was i used the reveal config vars in Heroku to inform me what to input in my env.py file and I recursivrly installed the needed packages form the requirements.txt file using the following command:
+
+  pip3 install -r requirements.txt
 
 <b>UX DESIGN</b>
 
@@ -373,6 +368,25 @@ The purpose of the footnote is for users to give one sentence of constructive cr
 
 When performing resarch, considered Flask also (particularly the CI Torin project)
 
+<h1>TESTING</h1>
+
+-Using the tutorials on testing from the To-Do app walkthrough, I ensured to follow those steps to test the files.
+
+Steps...
+
+Django...inbuilt with test.py file
+Split out into three separate files for more specified testing, clear code
+-Test views - split into test_views.py file
+What views contained...what would need to be tested
+-Test models - split into test_models.py file
+What views contained...what would need to be tested
+-Test forms - split into test_forms.py file
+What views contained...what would need to be tested
+
+Once this was done, I performed a coverage test to see what % of the app had been tested
+
+Coverage test:
+
 <b>Manual Testing Write-Up</b>
 
 Pagination
@@ -381,27 +395,46 @@ Supposed to move to a new page when three idea summaries are on site, wrote six 
 
 Max ten footnotes per page...check this.
 
+Click submit button, footnote submitted, message appears
+
+Alert messages for login and logout
+
 <b>Responsiveness testing:</b>
+
 Flexbox...overscroll...bootstrap
 
-CSS...media-queries
-justify-content center
+CSS...
+Justify-content center
+flex
+overflow:hidden
 
-vh and vw
+vh and vw used- sizes things relative to the viewport height(vh) and viewport width(vw)
 
 Please see below, a variety of responsiveness testing photos on different viewports,
-viewed online via Developer Tools
-
+viewed online via Developer Tools:
+Sample phots
+On..Iphone 12
+On..Nest
+On..Ipad
+On...Macbook Pro
 
 Was anything cut off...was everything visible
 
+Cards stack on top of one another in a responsive fashion instead of becoming stretched or crushed and the visibility is not affected by the size of the viewport
+
 Ability to scroll down
 
-Summary page...cards stacked...overflow/flexbox/media-queries
 
 <b>Compatibility testing</b>
 
-...Developer tools, screengrabs of different devices
+Tested on various browsers
+
+See below table with browser listed and detail on compatability
+
+Google
+Safari
+Firefox
+Internet Explorer
 
 <b>Bugs resolved and unresolved</b>
 
@@ -410,6 +443,11 @@ Summary page...cards stacked...overflow/flexbox/media-queries
 Opening from Github as opposed to pinned workspace...had to recreate env.py file a number of times.
 Had to reinstall various dependencies...allauth, summernote etc.
 
+-Used 'Hello Django' blog code as boilerplate code, had to get rid of author as author id not recognised.
+
+Django, large useful error messages
+Browser open as I coded, refreshed and received feedback into different types of errors and reasons for them
+
 
 <b>Lighthouse testing outcomes</b>
 
@@ -417,48 +455,64 @@ Had to reinstall various dependencies...allauth, summernote etc.
 
 accessibility improved from original lighthouse test
 
-<b>Code validation</b>
-HTML: [W3 Markup Validation] https://validator.w3.org
+<h1><b>Code validation</b></h1>
+
+<b>HTML</b>
+<p>[W3 Markup Validation] https://validator.w3.org
 Extract of validation: Please see extract below
 
-Errors in all three HTML files initially, please see below
+Errors in all three HTML files initially, please see below</p>
 
 Updates includes 
-Javascript: JS Lint...
+
+<p>Javascript</p>
+<p>JS Lint...
 to review...what is this...what was used for Javascript project?
 
 Extract of validation:
-Only javascript used, from django, guaranteed it would be valid
 
-CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
+Only javascript used, from django, guaranteed it would be valid</p>
+
+<p>CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
 Congrats, no error found
 
-Extract of validation:
+Extract of validation:</p>
 
 
-lighthouse: https://developers.google.com/web/tools/lighthouse
+<p>lighthouse:</p>
+<p>https://developers.google.com/web/tools/lighthouse
 Please see extract below
 Extract of validation:
+</p>
 
-Python: PEP8: this is inbuilt within the code itself...is this true?
+<p>Python:</p>
+Django is a python framework, comes with inbuilt python testing
+Test.py file and PEP8
 
-pip install pep8
+To ensure python testing was installed and working, used following commands:
+"pip install pep8"
 
-PEP8, already installed...is this related to DEBUG
-pylint requirement satisfied also, please see code extract
+Sure enough, received the message that PEP8 was already installed
+Also tried to ensure pylint requirement satisfied also,
+"python -m pip install pylint"
 
 Extract of validation:
 
 
 
 <b>User stories testing</b>
-Kanban board-completed as part of walkthrough...as I was progressing through walkthrough, this helped me to logically prioritise
+As per the walkthrough, in support of Agile methodology, I set up a Kanban board to track what items I installed for the app.
+
+Three categories:
+To do, in progress, complete
+
+Kanban board-completed as I completed coding. As I was progressing through the coding of the application, this helped me to logically prioritise and gave me immediate visual feedback as to what remained left to be done.
 
 <b>Prioritisation:</b>
 
-Focussed on three categories of prioritisation:
+Focused on three categories of prioritisation:
 
-Need to have: 
+<b>Need to have:</b>
 CRUD functionality-administrator interface mainly
 Can create also via footnotes as a user
 Can create account with registration
@@ -469,14 +523,26 @@ Can create account with registration
 -Users ability to submit footnotes for approval
 
 
-Maybe have
+<b>Maybe have</b>
 -Counters to display number of ticks on an idea
 -Counter to show how many footnotes left on an idea
 
-Nice to have-have mentioned future features
+<b>Nice to have</b>
+-have mentioned future features
 -Ability to like footnotes left
 
 <b>Features testing</b>
+
+-Post FootNote
+-Counters reflect number of likes an idea received and how many FootNotes were left on an idea
+-Summary cards open up more detail idea post when clicked
+-Pagination works effectively
+-Account regisation works
+-Log in, log off works
+-Messages work and disappear by themselves after specified time (6 seconds-6000)
+-FootNotes give detail on who posted them and when they were posted
+-Facebook/Tiktok/Instgram at bottom
+-NAV bar effectively allows user to navigate from summary page to idea page
 
 <b>Deployment, forking, cloning </b>
 <b>Steps</b>
@@ -502,7 +568,7 @@ All app logic doesn't need to be in views.py file
 <b>References</b>
 
 https://pixabay.com/photos/pocket-watch-time-sand-clock-3156771/
-All ci tutorials-particularly the blog walkthrough
+All Code Institute tutorials-particularly the blog walkthrough
 Stack comments and contributions
 
 Footprint: https://codepen.io/bogers/pen/MWJjwJa?editors=1111
