@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-STATUS = ((0, "Draft"), (1,"Published"))
+STATUS = ((0, "Draft"),  (1, "Published"))
+
 
 class Idea(models.Model):
     title = models.CharField(max_length=120, unique=True)
@@ -32,6 +33,7 @@ class FootNote(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     likes = models.ManyToManyField(User, related_name='footnote_like', blank=True)
+    delete = models.BooleanField(default=False)
 
     def __str__ (self):
         return self.title
