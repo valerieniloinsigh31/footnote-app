@@ -1,0 +1,17 @@
+:root {
+    --white: #fff;
+    --black: #000000;
+    --dark:#332D2D;
+    --hover-active:red;
+  }
+
+.accordion-button:not(.collapsed) {
+    color: var(--black);
+    background-color: var(--white);
+    border: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}

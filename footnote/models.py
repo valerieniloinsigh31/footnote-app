@@ -29,22 +29,21 @@ class FootNote(models.Model):
     idea = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='footnotes')
     name = models.CharField(max_length=80)
     email = models.EmailField()
-    body = models.TextField(max_length=280)
+    content = models.TextField(max_length=280)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     likes = models.ManyToManyField(User, related_name='footnote_like', blank=True)
     delete = models.BooleanField(default=False)
 
-    def __str__ (self):
+    def __str__(self):
         return self.title
 
     def number_of_likes(self):
         return self.likes.count()
-    
 
     class Meta():
         ordering = ['-created_on']
 
-    def __str__ (self):
+    def __str__(self):
         return f"FootNote {self.body} by {self.name}"
 
