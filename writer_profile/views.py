@@ -51,7 +51,7 @@ def footnote_history(request, footnote_content):
         f'You posted the following footnote: {footnote_content}. '
     ))
 
-    template = 'footnote/footnote.html'
+    template = 'writer_profile/writerprofile.html'
     context = {
         'footnote': footnote,
         'from_writerprofile': True,
