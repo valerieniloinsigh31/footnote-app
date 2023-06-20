@@ -15,15 +15,16 @@ class Idea(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='idea_like', blank=True)
-    
+
     class Meta():
         ordering = ['-created_on']
 
-    def __str__ (self):
+    def __str__(self):
         return self.title
 
     def number_of_likes(self):
         return self.likes.count()
+
 
 class FootNote(models.Model):
     idea = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='footnotes')
@@ -46,4 +47,3 @@ class FootNote(models.Model):
 
     def __str__(self):
         return f"FootNote {self.body} by {self.name}"
-

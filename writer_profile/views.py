@@ -8,6 +8,7 @@ from django.conf import settings
 
 from customer_profile.models import WriterProfile
 from .forms import WriterProfileForm
+from footnote.models import FootNote
 
 
 @login_required
@@ -27,34 +28,33 @@ def profile(request):
                   'Failed to update profile please check your form for errors')
     else:
         form = WriterProfileForm(instance=writer_profile)
-    orders = writer_profile.orders.all()
-    template = 'writer_profile/profile.html'
+    footnotes = writer_profile.footnotes.all()
+    template = 'writer_profile/writerprofile.html'
     context = {
 
         'form': form,
-        'orders': orders,
-        'customer_profile': customer_profile,
-        'on_profile_page': True
+        'footnotes': footnotes,
+        'writer_profile': writer_profile,
+        'on_writerprofile_page': True
 
     }
     return render(request, template, context)
 
 
-def order_history(request, order_number):
+def footnote_history(request, footnote_content):
     """
-    render order history
+    render footnote history
     """
 
-    order = get_object_or_404(Order, order_number=order_number)
+    footnote = get_object_or_404(FootNote, footnote_content=footnote_content)
     messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
-        'A confirmation email was sent on the order date.'
+        f'You posted the following footnote: {footnote_content}. '
     ))
 
-    template = 'checkout/checkout_success.html'
+    template = 'footnote/footnote.html'
     context = {
-        'order': order,
-        'from_profile': True,
+        'footnote': footnote,
+        'from_writerprofile': True,
     }
 
     return render(request, template, context)
