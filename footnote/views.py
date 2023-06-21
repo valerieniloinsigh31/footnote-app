@@ -4,12 +4,12 @@ from django.http import HttpResponseRedirect
 from .models import Idea, FootNote
 from .forms import FootNoteForm
 from django.views.generic import ListView
-#from Medley.models import Quote
+
 
 class IdeaList(generic.ListView):
     model = Idea
     queryset = Idea.objects.filter(status=1).order_by("-created_on")
-    template_name  = 'index.html'
+    template_name = 'index.html'
     paginate_by = 3
 
 class IdeaDetail(View):
@@ -28,7 +28,7 @@ class IdeaDetail(View):
             {
                 "idea": idea,
                 "footnotes": footnotes,
-                "footnoted":False,
+                "footnoted": False,
                 "liked": liked,
                 "footnote_form": FootNoteForm()
             },

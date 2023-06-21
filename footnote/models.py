@@ -38,7 +38,10 @@ class FootNote(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     likes = models.ManyToManyField(User, related_name='footnote_like', blank=True)
+    footnote_number = models.CharField(max_length=32, null=True, editable=False)
     delete = models.BooleanField(default=False)
+    footnote_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                      null=False, default=0)
 
     def __str__(self):
         return self.title
@@ -63,7 +66,7 @@ class FootNote(models.Model):
         Update total footnotes each time a footnote is added,
 
         """
-        self.total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.footnote_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -86,7 +89,7 @@ class FootNoteLineItem(models.Model):
     footnote = models.ForeignKey(FootNote, null=False, blank=False,
                                  on_delete=models.CASCADE,
                                  related_name='lineitems')
-    idea = models.ForeignKey(Idea, null=False, blank=False, 
+    idea = models.ForeignKey(Idea, null=False, blank=False,
                              on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6,
@@ -98,7 +101,7 @@ class FootNoteLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the footnote total.
         """
-        self.lineitem_total = self.idea * self.quantity
+        self.lineitem_total = self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):

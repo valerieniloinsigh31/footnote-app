@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include 
+from django.urls import path, include
 from . import views
 
 app_name = 'FOOTNOTE_APP'
@@ -22,8 +22,8 @@ app_name = 'FOOTNOTE_APP'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path("", include('writer_profile.urls'), name="writer_profile_urls"), #To recheck at later point...writer_profile versus writerprofile
-    path("", include("footnote.urls"), name="footnote_urls"),
+    path("writer/", include('writer_profile.urls'), name="writer_profile_urls"),  # To recheck at later point...writer_profile versus writerprofile
+    path("footnotes/", include("footnote.urls"), name="footnote_urls"),
     path('accounts/', include('allauth.urls')),
     path('', views.FOOTNOTE_APP, name='FOOTNOTE_APP'),
 ]

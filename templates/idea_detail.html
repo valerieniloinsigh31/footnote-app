@@ -5,15 +5,12 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Idea title goes in these h1 tags -->
                 <h1 class="idea-title">
                     {{ idea.title }}
                 </h1>
-                <!-- Idea owner goes before the | the idea's created date goes after -->
                 <p class="idea-subtitle">{{ idea.author }} | {{ idea.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in idea.featured_image.url %}
                 <img src="https://res.cloudinary.com/dlaz6yghz/image/upload/v1678824647/preview16_xlwjzw.jpg" width="80%">
                 {% else %}
@@ -28,8 +25,6 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The idea content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
                     {{ idea.content | safe }}
                 </p>
@@ -49,7 +44,6 @@
                                 {% else %}
                                 <span class="text-secondary"><i class="fas fa-check"></i></span>
                                 {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
                         <span class="text-secondary">{{ idea.number_of_likes }} </span> 
                     </strong>
 
@@ -57,7 +51,6 @@
                     <div class="col-1">
                         {% with footnotes.count as total_footnotes %}
                         <strong class="text-secondary"><i class="fas fa-solid fa-superscript"></i>
-                            <!-- Our total_footnotes variable goes before the closing strong tag -->
                             {{ total_footnotes }}
                         </strong>
                         {% endwith %}
@@ -76,26 +69,20 @@
             <h3><span class="brand"><span class="odd">Foot</span><span
                 class="thin">Notes<sup> i, ii, iii</sup></span></span></h3>
             <div class="card-body">
-                <!-- We want a for loop inside the tags to iterate through each footnote in footnotes -->
                 {% for footnote in footnotes %}
                 <div class="footnotes" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        <!-- The footnoter's name goes here. Check the model if you're not sure what that is -->
                         {{ footnote.name }}
                         <span class=" text-muted font-weight-normal">
-                            <!-- The footnote's created date goes here -->
                             {{ footnote.created_on }}
                         </span> noted:
                     </p>
-                    <!-- The body of the footnote goes before the | -->
-                    {{ footnote.body | linebreaks }}
+                    {{ footnote.content | linebreaks }}
                 </div>
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- FootNote submitted for approval -->
                 {% if footnoted %}
                 <div class="alert alert-success" role="alert">
                     Your FootNote was submitted
