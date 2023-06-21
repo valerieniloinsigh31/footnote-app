@@ -21,11 +21,11 @@ def writerprofile(request):
         form = WriterProfileForm(request.POST, instance=writer_profile)
         if form.is_valid():
             form.save()
-            messages.success(request, "Your profile is updated")
+            messages.success(request, "Your writer profile is updated")
         else:
             messages.error(
                   request,
-                  'Failed to update profile please check your form for errors')
+                  'Failed to update writer profile please check your form for errors')
     else:
         form = WriterProfileForm(instance=writer_profile)
     footnotes = writer_profile.footnotes.all()
@@ -51,10 +51,10 @@ def footnote_history(request, footnote_content):
         f'You posted the following footnote: {footnote_content}. '
     ))
 
-    template = 'writer_profile/writerprofile.html'
+    template = 'footnote/footnote.html'
     context = {
         'footnote': footnote,
-        'from_writerprofile': True,
+        'from_footnote': True,
     }
 
     return render(request, template, context)
