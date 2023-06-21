@@ -30,6 +30,8 @@
                           <th scope="col">Content</th>
                           <th scope="col">Date</th>
                           <th scope="col">By:</th>
+                          <th scope="col">Edit:</th>
+                          <th scope="col">Delete:</th>
                         </tr>
                     </thead>
                   <tbody>
@@ -38,19 +40,13 @@
                           <td>{{ footnote.content }}{{ content }}</td>
                           <td>{{ footnote.created_on }}</td>
                           <td>{{ footnote.name }}</td>
+                          <td><a href="/edit/{{ footnote.id }}">
+                            <button>Edit</button></a></td>
+                          <td><a href="/delete/{{ footnote.id }}">
+                            <button>Delete</button></a></td>
                       </tr>
                     {% endfor %}
                   </tbody>
-                  <td>
-                    <a href="/edit/{{ footnote.id }}">
-                        <button>Edit</button>
-                    </a>
-                  </td>
-                  <td>
-                    <a href="/delete/{{ footnote.id }}">
-                        <button>Delete</button>
-                    </a>
-                  </td>
                 </table>
               </div>
             </div>

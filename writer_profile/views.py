@@ -62,3 +62,9 @@ def footnote_history(request, content, created_on, user):
     }
 
     return render(request, template, context)
+
+def edit_footnote(request, footnote_id):
+     """
+    edit footnote in footnote history section of writerprofile
+    """
+    return render(request, 'writer_profile/edit_footnote.html')
