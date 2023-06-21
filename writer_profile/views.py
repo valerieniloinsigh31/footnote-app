@@ -25,10 +25,11 @@ def writerprofile(request):
         else:
             messages.error(
                   request,
-                  'Failed to update writer profile please check your form for errors')
+                   'Failed to update writer profile please check your form for errors')
     else:
         form = WriterProfileForm(instance=writer_profile)
-    footnotes = writer_profile.footnotes.all()
+    
+    footnotes = FootNote.objects.all()  # is this the way to pull in footnotes from footnotes app? from writer_profile or footnote app?
     template = 'writer_profile/writerprofile.html'
     context = {
 
@@ -46,14 +47,15 @@ def footnote_history(request, footnote_content):
     render footnote history
     """
 
-    footnote = get_object_or_404(FootNote, footnote_content=footnote_content)
+    footnote = get_object_or_404(FootNote, content=content)
     messages.info(request, (
-        f'You posted the following footnote: {footnote_content}. '
+        f'You posted the following footnote: {content}. '
     ))
 
     template = 'footnote/footnote.html'
     context = {
         'footnote': footnote,
+        'content': content,
         'from_footnote': True,
     }
 

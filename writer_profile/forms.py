@@ -16,15 +16,15 @@ class WriterProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {
 
-            'email': 'email',
             'default_gender': 'Gender',
-            'default_default_town_or_city': 'Town or city',
+            'email': 'email',
+            'default_town_or_city': 'Town or city',
             'default_writingtype': 'Writing Style',
             'default_genre': 'Favourite genre',
             'default_favouriteauthor': 'Fave writer',
         }
 
-        self.fields['email'].widget.attrs['autofocus'] = True
+        self.fields['default_gender'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'default_country':
                 if self.fields[field].required:

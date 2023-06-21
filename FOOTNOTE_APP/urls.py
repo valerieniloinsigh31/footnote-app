@@ -22,7 +22,7 @@ app_name = 'FOOTNOTE_APP'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path('writerprofile/', include('writer_profile.urls')),
+    path("", include('writer_profile.urls'), name="writer_profile_urls"), #To recheck at later point...writer_profile versus writerprofile
     path("", include("footnote.urls"), name="footnote_urls"),
     path('accounts/', include('allauth.urls')),
     path('', views.FOOTNOTE_APP, name='FOOTNOTE_APP'),
