@@ -19,7 +19,7 @@ if os.path.isfile("env.py"):
 
 
 
-#Line added for authentication.
+# Line added for authentication.
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'footnote',
+    'writer_profile',
 ]
 
 SITE_ID = 1

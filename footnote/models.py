@@ -46,4 +46,4 @@ class FootNote(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return f"FootNote {self.body} by {self.name}"
+        return f"FootNote {self.content} by {self.name}"

@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.conf import settings
 
 
-from customer_profile.models import WriterProfile
+from writer_profile.models import WriterProfile
 from .forms import WriterProfileForm
 from footnote.models import FootNote
 
