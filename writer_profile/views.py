@@ -72,9 +72,15 @@ def edit_footnote(request, footnote_id):
         form = WriterProfileForm(request.POST, instance='footnote')
         if form.is_valid():
             form.save()
-            return redirect ('footnote_history')
+            return redirect ('writerprofile')
     form = WriterProfileForm(instance=footnote)
     context = {
         'form':form
     }
     return render(request, 'writer_profile/edit_footnote.html', context)
+
+
+def delete_footnote(request, footnote_id):
+    footnote = get_object_or_404(WriterProfile, id=footnote_id)
+    footnote.delete()
+    return redirect ('writerprofile')
