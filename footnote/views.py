@@ -75,3 +75,27 @@ class IdeaLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
+
+class FootNoteLike(View):
+
+    def post(self, request, slug):
+        post = get_object_or_404(FootNote, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
+
+class FootNoteDelete(View):
+
+    def post(self, request, slug):
+        post = get_object_or_404(FootNote, slug=slug)
+
+        if post.delete.filter(id=request.user.id).exists():
+            post.delete.remove(request.user)
+        else:
+            post.delete.add(request.user)
+
+        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))       

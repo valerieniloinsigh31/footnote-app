@@ -18,26 +18,39 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button">
-              <strong>FootNote History </strong>({{ footnotes.content }})
+              <strong>FootNote History </strong>{{ footnote.content | linebreaks }}
             </button>
           </h2>
         </div>
+        <!--need to ensure it's only footnotes by this specific user {{ user.username }}<-->
               <div class="wrapper">
                 <table class="table">
                     <thead>
                         <tr>
                           <th scope="col">Content</th>
                           <th scope="col">Date</th>
+                          <th scope="col">By:</th>
                         </tr>
                     </thead>
                   <tbody>
-                    {% for item in footnote.lineitems.all %}
+                    {% for footnote in footnotes %}
                       <tr>
-                          <td>{{ item.footnote.content }}({{ item.content }})</td>
-                          <td>€{{ item.footnote.created_on }}</td>
+                          <td>{{ footnote.content }}{{ content }}</td>
+                          <td>{{ footnote.created_on }}</td>
+                          <td>{{ footnote.name }}</td>
                       </tr>
                     {% endfor %}
                   </tbody>
+                  <td>
+                    <a href="/edit/{{ footnote.id }}">
+                        <button>Edit</button>
+                    </a>
+                  </td>
+                  <td>
+                    <a href="/delete/{{ footnote.id }}">
+                        <button>Delete</button>
+                    </a>
+                  </td>
                 </table>
               </div>
             </div>
@@ -56,23 +69,16 @@
               <tr>
                 <th scope="row">Gender:</th>
                 <th>
-                  <label for="id_default_gender">default_gender</label>
+                  <label for="id_default_gender">Gender</label>
                   <span class="d-none"> form gender</span>{{ form.default_gender|as_crispy_field }}
-                </th>
-              </tr>
-              <tr>
-                <th scope="row">Town or City:</th>
-                <th>
-                  <label for="id_default_town_or_city">default_town_or_city</label>
-                  <span class="d-none"> form town_or_city</span>{{ form.default_town_or_city|as_crispy_field }}
                 </th>
               </tr>
               <tr>
                 <th scope="row">Writing type | Genre</th>
                 <th><span class="d-none"> form writing type and genre</span>
-                  <label for="id_default_writingtype">default_writingtype</label>
+                  <label for="id_default_writingtype">Writing Style</label>
                   {{ form.default_writingtype|as_crispy_field }}
-                  <label for="id_default_genre">default_genre</label>
+                  <label for="id_default_genre">Fave Genre</label>
                   {{ form.default_genre|as_crispy_field }}
                 </th>
               </tr>
@@ -80,20 +86,20 @@
                 <tr>
                     <th scope="row">Fave Writer:</th>
                     <th>
-                      <label for="id_default_favouriteauthor">default_favouriteauthor</label>
+                      <label for="id_default_favouriteauthor">Fave Writer</label>
                       <span class="d-none"> form favouriteauthor</span>{{ form.default_favouriteauthor|as_crispy_field }}
                     </th>
                   </tr>
                 <th scope="row">Town or City:</th>
                 <th>
-                  <label for="id_default_town_or_city">default_town_or_city</label>
+                  <label for="id_default_town_or_city">Town or City</label>
                   <span class="d-none"> form town_or_city</span>{{ form.default_town_or_city|as_crispy_field }}
                 </th>
               </tr>
               <tr>
                 <th scope="row">Country</th>
                 <th>
-                  <label for="id_default_country">default_country</label>
+                  <label for="id_default_country">Country</label>
                   {{ form.default_country|as_crispy_field }}
                 </th>
               </tr>

@@ -16,10 +16,13 @@ class IdeaAdmin(SummernoteModelAdmin):
 @admin.register(FootNote)
 class FootNoteAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'content', 'idea', 'created_on', 'approved')
+    list_display = ('name', 'content', 'idea', 'created_on', 'approved','delete')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'content')
-    actions = ['approve footnotes']
+    actions = ['approve footnotes', 'delete footnotes']
 
     def approve_footnotes(self, request, queryset):
         queryset.update(approved=True)
+
+    def delete_footnotes(self, request, queryset):
+        queryset.update(deleted=True)

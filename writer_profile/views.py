@@ -29,7 +29,7 @@ def writerprofile(request):
     else:
         form = WriterProfileForm(instance=writer_profile)
     
-    footnotes = FootNote.objects.all()  # is this the way to pull in footnotes from footnotes app? from writer_profile or footnote app?
+    footnotes = FootNote.objects.all()  
     template = 'writer_profile/writerprofile.html'
     context = {
 
@@ -42,21 +42,23 @@ def writerprofile(request):
     return render(request, template, context)
 
 
-def footnote_history(request, footnote_content):
+def footnote_history(request, content, created_on, user):
     """
     render footnote history
     """
 
-    footnote = get_object_or_404(FootNote, content=content)
+    footnote = get_object_or_404(FootNote, content=content, created_on=created_on, user=request.user,)
     messages.info(request, (
-        f'You posted the following footnote: {content}. '
+        f'You posted the following footnote: {content} on the following date {created_on} '
     ))
 
-    template = 'footnote/footnote.html'
+    template = 'writer_profile/writerprofile.html'
     context = {
         'footnote': footnote,
         'content': content,
+        'created_on': created_on,
         'from_footnote': True,
+        'user': request.user,
     }
 
     return render(request, template, context)
