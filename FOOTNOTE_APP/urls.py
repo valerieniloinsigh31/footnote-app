@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("writer/", include('writer_profile.urls'), name="writer_profile_urls"),  
-#   path('edit/<footnote_id>', include('writer_profile.urls'), name='edit'), # Need to add edit writerprofile footnote url
+    path('edit/', include('writer_profile.urls'), name='edit'), # Need to add edit writerprofile footnote url
+    path('delete/', include('writer_profile.urls'), name='delete'),
     path("footnotes/", include("footnote.urls"), name="footnote_urls"),
     path('accounts/', include('allauth.urls')),
     path('', views.FOOTNOTE_APP, name='FOOTNOTE_APP'),

@@ -65,7 +65,7 @@ def footnote_history(request, content, created_on, user):
 
 def edit_footnote(request, footnote_id):
     """
-    edit footnote in footnote history section of writerprofile-url needs to be fixed
+    edit footnote in footnote history section of writerprofile-url needs to be fixed. id automatically assigned by django-confirm on slack
     """
     footnote = get_object_or_404(WriterProfile, id=footnote_id)
     if request.method == 'POST':

@@ -78,6 +78,8 @@
                         </span> noted:
                     </p>
                     {{ footnote.content | linebreaks }}
+                    <td><a href="/like/{{ footnote.id }}">
+                        <button>My Fave</button></a></td>
                 </div>
                 {% endfor %}
             </div>
@@ -89,19 +91,17 @@
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
-
                 <h3><span class="odd">Foot</span><span class="thin">Note</span><span class="x"><sup>x</sup></span></span>:</h3>
-                <p>FootNoted by: {{ user.username }}</p>
+                <p>FootNote by: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ footnote_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Foot<span class="thin">Note</span><sup>x</sup></button>
                 </form>
-                {% endif %}
+                {% endif %} 
                 {% endif %} 
             </div>
         </div>
     </div>
 </div>
-
 {% endblock content %}
