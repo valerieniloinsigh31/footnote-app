@@ -12,7 +12,7 @@ from footnote.models import FootNote
 
 
 @login_required
-def profile(request):
+def writerprofile(request):
     """
     view handling writer profile
     """
