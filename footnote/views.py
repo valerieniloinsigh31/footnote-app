@@ -8,39 +8,36 @@ from django.views.generic import ListView
 class AddIdea(View):
     model = Idea
     template_name = 'add_idea.html'
-    fields = '__all__'
-    #form=idea_form #is this needed?
-    #idea_form = IdeaForm(data=request.POST)
-    #exclude = [‘slug’,] 
+#    fields = '__all__' NOT SURE DO WE NEED TO STIPULATE FIELDS
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         if request.method == 'POST': 
-            idea_form = IdeaForm(request.POST) #COULD HAVE data=request.POST
+            idea_form = IdeaForm(request.POST)
             if idea_form.is_valid():
                 idea_form.save()
-                return redirect('idea_detail') #OK to redirect to another view?
-          #  idea = Idea.objects.create() #should there be a parameter or .all here?) do we need a request.post.get for the idea form
-           
-        #if idea_form.is_valid():
-        #    idea_form.instance.email = request.user.email 
-        #    idea_form.instance.name = request.user.username
-        #    idea = idea_form.save(commit=False)
-        #    idea.idea = idea
-        #    idea.save()
-        #else:
-        #    idea_form = IdeaForm()
-        #    idea.save()
-        #else:
-        #    return redirect('idea_detail') #OK to redirect to another view?
+                return redirect('idea_detail')
         idea_form = IdeaForm()
         context = {
             'idea_form': idea_form
          }   
-        return render(request, self.template_name, context) #If a GET request...ok to use self.template_name?
-    #    {
-     #           "idea_form": IdeaForm()
-      #      },)
+        return render(request, self.template_name, context)
 
+class EditIdea(View):
+    model = Idea
+    template_name = 'edit_idea.html'
+
+    def edit_idea(self, request, idea_slug): # SLUG INSTEAD OF ID
+        idea = get_object_or_404(Idea, id=idea_slug)
+        if request.method == 'POST': 
+            idea_form = IdeaForm(request.POST, instance=idea)
+            if idea_form.is_valid():
+                idea_form.save()
+                return redirect('idea_detail')
+        idea_form = IdeaForm(instance=idea)
+        context = {
+            'idea_form': idea_form
+         } 
+        return render(request, self.template_name, context)
 
 class IdeaList(generic.ListView):
     model = Idea
