@@ -39,6 +39,15 @@ class EditIdea(View):
          } 
         return render(request, self.template_name, context)
 
+#class DeleteIdea(View):
+#    model = Idea
+#    template_name = 'idea_detail.html' #not sure about this
+
+    def delete_idea(self, request, idea_slug): # SLUG INSTEAD OF ID
+        idea = get_object_or_404(Idea, id=idea_slug)
+        idea.delete()
+        return render(request, self.template_name, context)
+
 class IdeaList(generic.ListView):
     model = Idea
     queryset = Idea.objects.filter(status=1).order_by("-created_on")
@@ -46,6 +55,8 @@ class IdeaList(generic.ListView):
     paginate_by = 3
 
 class IdeaDetail(View):
+    model = Idea                       #IS THIS NEEDED
+    template_name = 'idea_detail.html' #IS THIS NEEDED
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Idea.objects.filter(status=1)
@@ -97,6 +108,11 @@ class IdeaDetail(View):
                     "footnote_form": FootNoteForm()
                 },
             ) 
+
+    def delete_idea(self, request, idea_slug): # SLUG INSTEAD OF ID
+            idea = get_object_or_404(Idea, id=idea_slug)
+            idea.delete()
+            return render(request, self.template_name, context)
 
 #class AddIdea(View):
 #    model = Idea
