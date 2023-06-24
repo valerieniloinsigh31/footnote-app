@@ -28,7 +28,6 @@
                           <th scope="col" style="color:#a410e8;">Content</th>
                           <th scope="col" style="color:#a410e8;">Date</th>
                           <th scope="col" style="color:#a410e8;">By:</th>
-                          <th scope="col" style="color:#a410e8;">Edit:</th>
                           <th scope="col" style="color:#a410e8;">Delete:</th>
                         </tr>
                     </thead>
@@ -38,8 +37,6 @@
                           <td>{{ footnote.content }}{{ content }}</td>
                           <td>{{ footnote.created_on }}</td>
                           <td>{{ footnote.name }}</td>
-                          <td><a href="/edit/{{ footnote.id }}">
-                            <button>Edit</button></a></td>
                           <td><a href="/delete/{{ footnote.id }}">
                             <button>Delete</button></a></td>
                       </tr>

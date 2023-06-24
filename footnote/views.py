@@ -120,16 +120,3 @@ class IdeaLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
-
-#class FootNoteLike(View): #What id can be used for footnotes-no slug
-
-#    def post(self, request, footnote_id):
-#        post = get_object_or_404(FootNote, id=footnote_id)
-
-#        if post.likes.filter(id=request.user.id).exists():
-#            post.likes.remove(request.user)
-#        else:
-#            post.likes.add(request.user)
-
-#        return HttpResponseRedirect(reverse('idea_detail', args=[id]))
-
