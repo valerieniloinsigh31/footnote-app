@@ -23,9 +23,8 @@ def writerprofile(request):
             form.save()
             messages.success(request, "Your writer profile is updated")
         else:
-            messages.error(
-                  request,
-                   'Failed to update writer profile please check your form for errors')
+            messages.error(request,
+                           'Failed to update writer profile, please review form')
     else:
         form = WriterProfileForm(instance=writer_profile)
     
@@ -63,6 +62,7 @@ def footnote_history(request, content, created_on, user):
 
     return render(request, template, context)
 
+
 def edit_footnote(request, footnote_id):
     """
     edit footnote in footnote history section of writerprofile-url needs to be fixed. id automatically assigned by django-confirm on slack
@@ -72,7 +72,7 @@ def edit_footnote(request, footnote_id):
         form = WriterProfileForm(request.POST, instance='footnote')
         if form.is_valid():
             form.save()
-            return redirect ('writerprofile')
+            return redirect('writerprofile')
     form = WriterProfileForm(instance=footnote)
     context = {
         'form':form

@@ -1,20 +1,20 @@
 <b>FootNote App</b>
 
-An app for creative writers who are often struck by inspiration whilst out and about.
-The app will be comrpised of a network of members who work as creative writers in some form; e.g. a pool of like-minded creatives with similar interests who they can apply to give feedback on their quick ideas.
 
-The ideas are anonymous but the associated FootNotes, which only those who can log in can view are attributed to the FootNoter (both who left the idea and when)
+An app for creative writers who are often struck by inspiration whilst out and about.
+The app will be comrpised of a network of members who work as creative writers in some form; e.g. a pool of like-minded creatives with similar interests who can give feedback on one another's quick ideas. They can also store and edit footnotes privately on a page only visible to them.
 
 The is an approval tick beside the idea so users can signify their approval by clicking this.
 
 Approval ticks are anonymous.
 
-Users are not obliged to either tick the approval or to leave a FootNote. They can do neither, either or both if they wish. FootNotes have additional transparency incase they are overly negative, for moderatership purposes.
+Users are not obliged to either tick the approval or to leave a FootNote. They can do neither, either or both if they wish. FootNotes have additional transparency incase they are overly negative, for moderatership purposes. The name of the person leaving the footnote is presented beside their footnote within the idea page.
 
-The idea with the app is that it will encourage free ideas without judgement.
+The premise of the app is that it will encourage free ideas without judgement.
 
 It is not aiming at stealing people's intellectual property but at creative minds nudging each other in the right direction.
 
+ To avoid intellectual theft, the ideas and footnotes are both capped at certain lengths. The user can store/delete or edit footnotes on their own private page-the writer profile page, to encourage their own creativity. This will not impact others as it is only visible to them and, accordingly, will not negatively imapct the user experience for anybody else.
 
 <b>Functionalities to include:</b>
 
