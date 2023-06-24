@@ -2,7 +2,7 @@ from django.test import TestCase
 from .models import Idea, FootNote
 
 
-class TestViews(TestCase):
+class TestViews(TestCase): #Insert a test like this for all of the views in the project
 
     class TestViews(TestCase):
 

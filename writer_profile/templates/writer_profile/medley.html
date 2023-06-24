@@ -1,11 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medley</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}{% block content %}
+{% load crispy_forms_tags %}
+<h2>Medley</h2>
+<p>
+    <h3>Samuel Beckett</h3>
+    <i>Ever tried. Ever failed. No matter. Try again. Fail again. Fail better.</i>
+</p>
+<p>
+    <h3>'The Street Lawyer' by John Grisham</h3>
+    <i>I didn't dare think of the future; the past was still happening.</i>
+</p>
+<p>
+    <h3>'The Mai' by Marina Carr</h3>
+    <i>The name alone evokes a thousand memories in me.</i>
+</p>
+<div class="col-md-5">
+    <img src="https://console.cloudinary.com/console/c-dab8addb1c5bb0d02e3472a3bb5a3a/media_library/folders/home" alt="">
+</div>
+</div>
+
+<div class="row featurette">
+<div class="col-md-5">
+    <img src="https://console.cloudinary.com/console/c-dab8addb1c5bb0d02e3472a3bb5a3a/media_library/folders/home" alt="">
+</div>
+<div class="col-md-7">
+    <h3>Duly noted</h3>
+    <p>
+        Press the button below to bring up random FootNotes deposited to our database by our users.
+        See how inspiration is all around us, all we have to do is make note!
+        Don't walk in somebody elses footsteps, but do heed their FootNotes!
+    </p>
+</div>
+
+{% endblock content %}
