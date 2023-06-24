@@ -26,10 +26,10 @@ class EditIdea(View):
     model = Idea
     template_name = 'edit_idea.html'
 
-    def edit_idea(self, request, idea_slug): # SLUG INSTEAD OF ID
-        idea = get_object_or_404(Idea, id=idea_slug)
+    def edit_idea(self, request, slug): # SLUG INSTEAD OF ID
+        idea = get_object_or_404(Idea, slug=slug)
         if request.method == 'POST': 
-            idea_form = IdeaForm(request.POST, instance=idea)
+            idea_form = IdeaForm(data=request.POST, instance=idea)
             if idea_form.is_valid():
                 idea_form.save()
                 return redirect('idea_detail')
@@ -37,15 +37,6 @@ class EditIdea(View):
         context = {
             'idea_form': idea_form
          } 
-        return render(request, self.template_name, context)
-
-#class DeleteIdea(View):
-#    model = Idea
-#    template_name = 'idea_detail.html' #not sure about this
-
-    def delete_idea(self, request, idea_slug): # SLUG INSTEAD OF ID
-        idea = get_object_or_404(Idea, id=idea_slug)
-        idea.delete()
         return render(request, self.template_name, context)
 
 class IdeaList(generic.ListView):
@@ -109,57 +100,16 @@ class IdeaDetail(View):
                 },
             ) 
 
-    def delete_idea(self, request, idea_slug): # SLUG INSTEAD OF ID
-            idea = get_object_or_404(Idea, id=idea_slug)
+class DeleteIdea(View):
+    model = Idea                       #IS THIS NEEDED
+    template_name = 'idea_detail.html' #IS THIS NEEDED
+
+    def delete_idea(self, request, slug): # SLUG INSTEAD OF ID
+            idea = get_object_or_404(Idea, slug=slug) #SLUG OR ID TO BE USED IN VIEW
             idea.delete()
-            return render(request, self.template_name, context)
-
-#class AddIdea(View):
-#    model = Idea
-#    template_name = 'add_idea.html'
-#    fields = '__all__'
-    #exclude = [‘slug’,] 
-
-#    def post(self, request):
-#        if request.method == 'POST':
-#           idea = Idea.objects.create()
-#           return redirect('')
-#        return render(request, self.template_name)
-    #model = Idea
-    #template_name = 'add_idea.html'
-    #fields = '__all_'
-
-    #def add_item(request):
-    #    if request.method == 'POST':
-    #        Idea.objects.create
-    #        return redirect('idea_detail')
-    #    return render(request, 'footnote/add_idea/html')
+            return render(request, self.template_name, args=[slug]) #Not sure if args is needed
 
 class IdeaLike(View):
-
-    def post(self, request, slug):
-        post = get_object_or_404(Idea, slug=slug)
-
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-
-        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
-
-class IdeaEdit(View):
-
-    def post(self, request, slug):
-        post = get_object_or_404(Idea, slug=slug)
-
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-
-        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
-
-class IdeaDelete(View): #DON'T THINK A SEPARATE FUNCTION NEEDS TO BE CREATED FOR DELETION
 
     def post(self, request, slug):
         post = get_object_or_404(Idea, slug=slug)
