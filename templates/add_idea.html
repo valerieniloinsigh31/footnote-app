@@ -11,7 +11,7 @@
     <title>Add an Idea</title>
 </head>
 <body>
- <form method="POST" action="add_idea">
+ <form method="POST" action="add">    <!--MAYBE add_idea better-->
     {{ idea_form | crispy }}
     {% csrf_token %}
     {% if user.is_authenticated %}

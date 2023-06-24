@@ -2,34 +2,41 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Idea, FootNote
-from .forms import FootNoteForm
+from .forms import FootNoteForm, IdeaForm
 from django.views.generic import ListView
 
 class AddIdea(View):
     model = Idea
     template_name = 'add_idea.html'
     fields = '__all__'
+    #idea_form = IdeaForm(data=request.POST)
     #exclude = [‘slug’,] 
 
-    def post(self, request):
-        if request.method == 'POST':
-           idea = Idea.objects.create()
-           idea_form = IdeaForm(data=request.POST)
-           idea.save()
-        else:
-            if idea_form.is_valid():
-                idea_form.instance.email = request.user.email 
-                idea_form.instance.name = request.user.username
-                idea = idea_form.save(commit=False)
-                idea.idea = idea
-                idea.save()
-            else:
-                idea_form = IdeaForm()
-        return redirect('')
-        return render(request, self.template_name,
+    def post(self, request, *args, **kwargs):
+        if request.method == 'POST': 
+            idea_form = IdeaForm(data=request.POST)
+            idea = Idea.objects.create(idea_form=idea_form) #should there be a parameter or .all here?) do we need a request.post.get for the idea form
+           
+        #if idea_form.is_valid():
+        #    idea_form.instance.email = request.user.email 
+        #    idea_form.instance.name = request.user.username
+        #    idea = idea_form.save(commit=False)
+        #    idea.idea = idea
+        #    idea.save()
+        #else:
+        #    idea_form = IdeaForm()
+        #    idea.save()
+        #else:
+            return redirect('idea_detail')
+        return render(request, self.template_name, #If a GET request
         {
+                "idea": idea,
                 "idea_form": IdeaForm()
-            },)
+            },
+            )
+    #    {
+     #           "idea_form": IdeaForm()
+      #      },)
 
 
 class IdeaList(generic.ListView):
