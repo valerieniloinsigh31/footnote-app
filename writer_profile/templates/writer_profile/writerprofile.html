@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{% static 'writer_profile/css/writerprofile.css' %}">
 {% endblock %}
 
-<h1 class="text-center my-3">My Writer Profile</h1>
+<h1 class="text-center my-3" style="color:#a410e8;">My Writer Profile</h1>
 <div class="container-fluid">
   <div class="row mx-auto mb-4">
     <div class="col-lg-6 col-md-12 mt-2">
@@ -17,9 +17,7 @@
       <div class="accordion" id="footnote-accordion">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button">
-              <strong>FootNote Log <i class="fa-solid fa-shoe-prints"></i> </strong>{{ footnote.content | linebreaks }}
-            </button>
+              <strong style="margin-left: 20%;">FootNote Log <i class="fa-solid fa-shoe-prints"></i> </strong>{{ footnote.content | linebreaks }}
           </h2>
         </div>
         <!--need to ensure it's only footnotes by this specific user {{ user.username }}<-->

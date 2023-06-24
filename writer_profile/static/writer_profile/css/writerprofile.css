@@ -5,6 +5,7 @@
     --hover-active:red;
   }
 
+ /*
 .accordion-button:not(.collapsed) {
     color: var(--black);
     background-color: var(--white);
@@ -15,3 +16,10 @@
     box-shadow: none;
     border-color: rgba(0,0,0,.125);
 }
+*/
+
+.wrapper {
+        font-weight: 300;
+        color:#a410e8; 
+}
+

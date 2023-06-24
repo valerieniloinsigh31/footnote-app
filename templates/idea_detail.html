@@ -55,10 +55,12 @@
                         </strong>
                         {% endwith %}
                     </div>
-                    <td><a href="/edit/{{ idea.slug }}">
-                        <button>Edit</button></a></td>
-                      <td><a href="/delete/{{ idea.slug }}">
-                        <button>Delete</button></a></td>
+                    <hr>
+                    <td><a href="/edit/{{ idea.slug }}"><button class="odd" style="border-radius:50%">Edit <i class="fa-solid fa-pen"></i></button></a></td> 
+                    <hr>
+                    <hr>
+                    <td><a href="/delete/{{ idea.slug }}"><button class="odd" style="border-radius:50%">Delete <i class="fa-solid fa-dumpster"></i></button></a></td>
+                    <hr>
                 </div>
             </div>
         </div>
