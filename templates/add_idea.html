@@ -11,8 +11,8 @@
     <title>Add an Idea</title>
 </head>
 <body>
- <form method="POST" action="add">    <!--MAYBE add_idea better-->
-    {{ idea_form | crispy }}
+ <form method="POST" action="add_idea">    <!--MAYBE add_idea better-->
+    {{ idea_form.as_p | crispy }}. <!--can render as template variable because view code...consider as_p for vertical styling-->
     {% csrf_token %}
     {% if user.is_authenticated %}
                 <h3><span class="odd">Idea</span>:</h3>

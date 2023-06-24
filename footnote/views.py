@@ -9,13 +9,17 @@ class AddIdea(View):
     model = Idea
     template_name = 'add_idea.html'
     fields = '__all__'
+    #form=idea_form #is this needed?
     #idea_form = IdeaForm(data=request.POST)
     #exclude = [‘slug’,] 
 
     def post(self, request, *args, **kwargs):
         if request.method == 'POST': 
-            idea_form = IdeaForm(data=request.POST)
-            idea = Idea.objects.create(idea_form=idea_form) #should there be a parameter or .all here?) do we need a request.post.get for the idea form
+            idea_form = IdeaForm(request.POST) #COULD HAVE data=request.POST
+            if idea_form.is_valid():
+                idea_form.save()
+                return redirect('idea_detail') #OK to redirect to another view?
+          #  idea = Idea.objects.create() #should there be a parameter or .all here?) do we need a request.post.get for the idea form
            
         #if idea_form.is_valid():
         #    idea_form.instance.email = request.user.email 
@@ -27,13 +31,12 @@ class AddIdea(View):
         #    idea_form = IdeaForm()
         #    idea.save()
         #else:
-            return redirect('idea_detail')
-        return render(request, self.template_name, #If a GET request
-        {
-                "idea": idea,
-                "idea_form": IdeaForm()
-            },
-            )
+        #    return redirect('idea_detail') #OK to redirect to another view?
+        idea_form = IdeaForm()
+        context = {
+            'idea_form': idea_form
+         }   
+        return render(request, self.template_name, context) #If a GET request...ok to use self.template_name?
     #    {
      #           "idea_form": IdeaForm()
       #      },)
