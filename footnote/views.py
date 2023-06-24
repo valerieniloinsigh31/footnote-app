@@ -93,9 +93,11 @@ class FootNoteDelete(View):
     def post(self, request, id):
         post = get_object_or_404(FootNote, id=id)
 
-        if post.delete.filter(id=request.user.id).exists():
+        if post.delete.filter(id=request.user.id).exists(): #CHECK IF PERSON WHO DELETED HAS SAME ID AS POSTER OF FOOTNOTE
             post.delete.remove(request.user)
         else:
             post.delete.add(request.user)
 
-        return HttpResponseRedirect(reverse('idea_detail', args=[id]))       
+        return HttpResponseRedirect(reverse('idea_detail', args=[id]))    
+        
+           

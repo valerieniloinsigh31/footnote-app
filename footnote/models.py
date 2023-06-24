@@ -17,6 +17,7 @@ class Idea(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    delete = models.BooleanField(default=False)
     likes = models.ManyToManyField(
         User, related_name='idea_like', blank=True)
 
@@ -28,6 +29,9 @@ class Idea(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+    
+    def delete_idea(self):
+        return self.idea.delete()
 
 
 class FootNote(models.Model):
