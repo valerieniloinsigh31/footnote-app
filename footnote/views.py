@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Idea, FootNote
@@ -63,7 +63,29 @@ class IdeaDetail(View):
                     "liked": liked,
                     "footnote_form": FootNoteForm()
                 },
-            )           
+            ) 
+
+class AddIdea(View):
+    model = Idea
+    template_name = 'add_idea.html'
+    fields = '__all__'
+    #exclude = [‘slug’,] 
+
+    def post(self, request):
+        if request.method == 'POST':
+           idea = Idea.objects.create()
+           return redirect('')
+        return render(request, self.template_name)
+    #model = Idea
+    #template_name = 'add_idea.html'
+    #fields = '__all_'
+
+    #def add_item(request):
+    #    if request.method == 'POST':
+    #        Idea.objects.create
+    #        return redirect('idea_detail')
+    #    return render(request, 'footnote/add_idea/html')
+
 class IdeaLike(View):
 
     def post(self, request, slug):
@@ -100,28 +122,15 @@ class IdeaDelete(View): #DON'T THINK A SEPARATE FUNCTION NEEDS TO BE CREATED FOR
 
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
 
-class FootNoteLike(View): #What id can be used for footnotes-no slug
+#class FootNoteLike(View): #What id can be used for footnotes-no slug
 
-    def post(self, request, footnote_id):
-        post = get_object_or_404(FootNote, id=footnote_id)
+#    def post(self, request, footnote_id):
+#        post = get_object_or_404(FootNote, id=footnote_id)
 
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
+#        if post.likes.filter(id=request.user.id).exists():
+#            post.likes.remove(request.user)
+#        else:
+#            post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('idea_detail', args=[id]))
-
-class FootNoteDelete(View):
-
-    def post(self, request, footnote_id):
-        post = get_object_or_404(FootNote, id=footnote_id)
-
-        if post.delete.filter(id=request.user.id).exists(): #CHECK IF PERSON WHO DELETED HAS SAME ID AS POSTER OF FOOTNOTE
-            post.delete.remove(request.user)
-        else:
-            post.delete.add(request.user)
-
-        return HttpResponseRedirect(reverse('idea_detail', args=[id]))    
-
+#        return HttpResponseRedirect(reverse('idea_detail', args=[id]))
 

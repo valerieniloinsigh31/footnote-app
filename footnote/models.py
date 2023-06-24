@@ -13,10 +13,14 @@ class Idea(models.Model):
     title = models.CharField(max_length=120, unique=True)
     slug = models.SlugField(max_length=120, unique=True)
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
+    content = models.TextField(max_length=500)
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    approved = models.BooleanField(default=False)
+    user_profile = models.ForeignKey(WriterProfile,
+                                     on_delete=models.SET_NULL, null=True,
+                                     blank=True, related_name='writerprofileidea')
     delete = models.BooleanField(default=False)
     likes = models.ManyToManyField(
         User, related_name='idea_like', blank=True)
@@ -33,6 +37,9 @@ class Idea(models.Model):
     def delete_idea(self):
         return self.idea.delete()
 
+    #def add_idea(self):
+    #    return self.idea.add('add_idea.html') #IS THIS EVEN NEEDED?
+
 
 class FootNote(models.Model):
     idea = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='footnotes')
@@ -42,22 +49,16 @@ class FootNote(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     likes = models.ManyToManyField(User, related_name='footnote_like', blank=True)
-    #footnote_number = models.CharField(max_length=32, null=True, editable=False)
     user_profile = models.ForeignKey(WriterProfile,
                                      on_delete=models.SET_NULL, null=True,
                                      blank=True, related_name='writerprofile')
-    delete = models.BooleanField(default=False)
-    #footnote_total = models.DecimalField(max_digits=10, decimal_places=2,
-                                     # null=False, default=0)
+    
 
     def __str__(self):
         return self.title
 
     def number_of_likes(self):
         return self.likes.count()
-
-    def delete_footnote(self):
-        return self.footnote.delete()
 
     class Meta():
         ordering = ['-created_on']

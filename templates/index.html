@@ -12,8 +12,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in idea.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/dlaz6yghz/image/upload/v1678824647/preview16_xlwjzw.jpg">
+                                <img class="card-img-top" src="https://res.cloudinary.com/dlaz6yghz/image/upload/v1678824647/preview16_xlwjzw.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ idea.featured_image.url }}">
                                 {% endif %}
@@ -40,7 +39,7 @@
         <h3>Create a new Idea to be Foot<em class="thin">Noted <sup class="odd">x</sup></em></h3>
         <div>
             <row>
-                <button type="submit" class="odd">Add an <em class="thin">Idea</em> to Foot<em class="thin">Note</em><sup class="odd">x</sup></button>
+                <a href="{% url 'add_idea' %}"><button type="submit" class="odd">Add an <em class="thin">Idea</em> to Foot<em class="thin">Note</em><sup class="odd">x</sup></button></a>
                 <hr>
                 <h4>T<em class="thin">h</em>read softly because you t<em class="thin">h</em>read on my dreams... <i class="fa-solid fa-shoe-prints"></i></h4>
             </row>

@@ -8,22 +8,30 @@ class IdeaAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
-    actions = ['edit ideas', 'delete ideas'] #ADDED THIS FOR CRUD
+    actions = ['edit ideas', 'delete ideas', 'add ideas', 'approve ideas'] #ADDED THIS FOR CRUD
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('status', 'created_on')
     summernote_fields = ('content')
 
+    #def add_ideas(self, request, queryset):
+        #queryset.update(approved=True)
+    
+    #def delete_ideas(self, request, queryset):
+        #queryset.update(deleted=True)
+
+    #def edit_ideas(self, request, queryset):
+        #queryset.update(edit=True)
 
 @admin.register(FootNote)
 class FootNoteAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'content', 'idea', 'created_on', 'approved','delete')
+    list_display = ('name', 'content', 'idea', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'content')
-    actions = ['approve footnotes', 'delete footnotes']
+    actions = ['approve footnotes']
 
     def approve_footnotes(self, request, queryset):
         queryset.update(approved=True)
 
-    def delete_footnotes(self, request, queryset):
-        queryset.update(deleted=True)
+    #def delete_footnotes(self, request, queryset):
+        #queryset.update(deleted=True)

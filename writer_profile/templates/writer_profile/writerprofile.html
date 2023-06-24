@@ -25,11 +25,11 @@
                 <table class="table">
                     <thead>
                         <tr>
-                          <th scope="col">Content</th>
-                          <th scope="col">Date</th>
-                          <th scope="col">By:</th>
-                          <th scope="col">Edit:</th>
-                          <th scope="col">Delete:</th>
+                          <th scope="col" style="color:#a410e8;">Content</th>
+                          <th scope="col" style="color:#a410e8;">Date</th>
+                          <th scope="col" style="color:#a410e8;">By:</th>
+                          <th scope="col" style="color:#a410e8;">Edit:</th>
+                          <th scope="col" style="color:#a410e8;">Delete:</th>
                         </tr>
                     </thead>
                   <tbody>
@@ -62,17 +62,17 @@
               </tr>
               <tr>
                 <th scope="row">Gender:</th>
-                <th>
-                  <label for="id_default_gender">Gender</label>
+                <th><span class="d-none"> form gender</span>
+                  <label for="id_default_gender" style="color:#a410e8"> Gender <i class="fa-solid fa-person-half-dress"></i></label>
                   <span class="d-none"> form gender</span>{{ form.default_gender|as_crispy_field }}
                 </th>
               </tr>
               <tr>
-                <th scope="row">Writing type | Genre</th>
+                <th scope="row">Writing type | Genre </th>
                 <th><span class="d-none"> form writing type and genre</span>
-                  <label for="id_default_writingtype">Writing Style</label>
+                  <label for="id_default_writingtype" style="color:#a410e8">Writing Style <i class="fa-solid fa-feather"></i></label>
                   {{ form.default_writingtype|as_crispy_field }}
-                  <label for="id_default_genre">Fave Genre</label>
+                  <label for="id_default_genre" style="color:#a410e8">Fave Genre <i class="fa-solid fa-masks-theater"></i></label>
                   {{ form.default_genre|as_crispy_field }}
                 </th>
               </tr>
@@ -80,20 +80,20 @@
                 <tr>
                     <th scope="row">Fave Writer:</th>
                     <th>
-                      <label for="id_default_favouriteauthor">Fave Writer</label>
+                      <label for="id_default_favouriteauthor" style="color:#a410e8">Fave Writer <i class="fa-solid fa-crown"></i></label>
                       <span class="d-none"> form favouriteauthor</span>{{ form.default_favouriteauthor|as_crispy_field }}
                     </th>
                   </tr>
                 <th scope="row">Town or City:</th>
                 <th>
-                  <label for="id_default_town_or_city">Town or City</label>
+                  <label for="id_default_town_or_city" style="color:#a410e8">Town or City <i class="fa-solid fa-map-pin"></i></label>
                   <span class="d-none"> form town_or_city</span>{{ form.default_town_or_city|as_crispy_field }}
                 </th>
               </tr>
               <tr>
                 <th scope="row">Country</th>
                 <th>
-                  <label for="id_default_country">Country</label>
+                  <label for="id_default_country" style="color:#a410e8">Country <i class="fa-solid fa-globe"></i></label>
                   {{ form.default_country|as_crispy_field }}
                 </th>
               </tr>

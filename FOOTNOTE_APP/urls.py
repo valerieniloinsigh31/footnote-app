@@ -22,10 +22,11 @@ app_name = 'FOOTNOTE_APP'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path("writer/", include('writer_profile.urls'), name="writer_profile_urls"),  
-    path('edit/', include('writer_profile.urls'), name='edit'), # Need to add edit writerprofile footnote url
-    path('delete/', include('writer_profile.urls'), name='delete'), # do the writer and edit urls for writerprofile need to be added separately
-    path("footnotes/", include("footnote.urls"), name="footnote_urls"),
+    path("writer/", include('writer_profile.urls')),  
+    #path('edit/', include('writer_profile.urls'), name='edit'), # Need to add edit writerprofile footnote url
+    #path('delete/', include('writer_profile.urls'), name='delete'), # do the writer and edit urls for writerprofile need to be added separately
+    path("footnote/", include("footnote.urls")), #Why does this not work to bring in the add_idea.html
+    #path("footnote/add_idea", include("footnote.urls"), name="add_idea"), #WShouldn't footnote urls cover this?
     path('accounts/', include('allauth.urls')),
     path('', views.FOOTNOTE_APP, name='FOOTNOTE_APP'),
 ]
