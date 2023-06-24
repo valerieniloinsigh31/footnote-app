@@ -30,6 +30,11 @@ body {
     color:#0b0909;
 }
 
+.idea {
+    font-weight: 300;
+    color:blueviolet;
+}
+
 .light-bg {
     background-color: #fff;
 }

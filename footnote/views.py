@@ -76,10 +76,34 @@ class IdeaLike(View):
 
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
 
+class IdeaEdit(View):
+
+    def post(self, request, slug):
+        post = get_object_or_404(Idea, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
+
+class IdeaDelete(View): #DON'T THINK A SEPARATE FUNCTION NEEDS TO BE CREATED FOR DELETION
+
+    def post(self, request, slug):
+        post = get_object_or_404(Idea, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
+
 class FootNoteLike(View): #What id can be used for footnotes-no slug
 
-    def post(self, request, id):
-        post = get_object_or_404(FootNote, id=id)
+    def post(self, request, footnote_id):
+        post = get_object_or_404(FootNote, id=footnote_id)
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
@@ -90,8 +114,8 @@ class FootNoteLike(View): #What id can be used for footnotes-no slug
 
 class FootNoteDelete(View):
 
-    def post(self, request, id):
-        post = get_object_or_404(FootNote, id=id)
+    def post(self, request, footnote_id):
+        post = get_object_or_404(FootNote, id=footnote_id)
 
         if post.delete.filter(id=request.user.id).exists(): #CHECK IF PERSON WHO DELETED HAS SAME ID AS POSTER OF FOOTNOTE
             post.delete.remove(request.user)
@@ -99,5 +123,5 @@ class FootNoteDelete(View):
             post.delete.add(request.user)
 
         return HttpResponseRedirect(reverse('idea_detail', args=[id]))    
-        
-           
+
+

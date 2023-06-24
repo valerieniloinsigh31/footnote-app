@@ -55,6 +55,10 @@
                         </strong>
                         {% endwith %}
                     </div>
+                    <td><a href="/edit/{{ idea.slug }}">
+                        <button>Edit</button></a></td>
+                      <td><a href="/delete/{{ idea.slug }}">
+                        <button>Delete</button></a></td>
                 </div>
             </div>
         </div>
@@ -75,7 +79,7 @@
                         {{ footnote.name }}
                         <span class=" text-muted font-weight-normal">
                             {{ footnote.created_on }}
-                        </span> noted:
+                        </span> noted <i class="fa-solid fa-shoe-prints"></i>:
                     </p>
                     {{ footnote.content | linebreaks }}
                     <td><a href="/like/{{ footnote.id }}">
