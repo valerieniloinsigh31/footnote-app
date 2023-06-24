@@ -6,7 +6,6 @@ if os.path.isfile("env.py"):
     import env
 
 
-
 # Line added for authentication.
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
@@ -24,7 +23,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-X_FRAME_OPTIONS= 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['footnote.herokuapp.com', '8000-valerienilo-footnoteapp-7lio4udpzq9.ws-eu100.gitpod.io']
 

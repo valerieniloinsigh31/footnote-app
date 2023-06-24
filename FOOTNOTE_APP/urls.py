@@ -1,18 +1,3 @@
-"""FOOTNOTE_APP URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include
 from . import views
@@ -22,11 +7,8 @@ app_name = 'FOOTNOTE_APP'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path("writer/", include('writer_profile.urls')),  
-    #path('edit/', include('writer_profile.urls'), name='edit'), # Need to add edit writerprofile footnote url
-    #path('delete/', include('writer_profile.urls'), name='delete'), # do the writer and edit urls for writerprofile need to be added separately
-    path("footnote/", include("footnote.urls")), #Why does this not work to bring in the add_idea.html
-    #path("footnote/add_idea", include("footnote.urls"), name="add_idea"), #WShouldn't footnote urls cover this?
+    path("writer/", include('writer_profile.urls')),
+    path("footnote/", include("footnote.urls")),  
     path('accounts/', include('allauth.urls')),
     path('', views.FOOTNOTE_APP, name='FOOTNOTE_APP'),
 ]

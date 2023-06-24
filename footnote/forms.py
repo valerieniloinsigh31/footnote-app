@@ -12,5 +12,3 @@ class IdeaForm(forms.ModelForm):
         #exclude = [‘slug’,] #As no slug exists yet
         model = Idea
         fields = ('content',)
-
-        

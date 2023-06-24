@@ -39,8 +39,10 @@
         <h3>Create a new Idea to be Foot<em class="thin">Noted <sup class="odd">x</sup></em></h3>
         <div>
             <row>
-                <a href="{% url 'add_idea' %}"><button type="submit" class="odd">Add an <em class="thin">Idea</em> to Foot<em class="thin">Note</em><sup class="odd">x</sup></button></a>
-                <hr>
+                <form action="{% url 'add_idea' %}" target=”_blank”>
+                    <button type="submit" class="odd">Add an <em class="thin">Idea</em> to Foot<em class="thin">Note</em><sup class="odd">x</sup></button>
+                </form>
+                    <hr>
                 <h4>T<em class="thin">h</em>read softly because you t<em class="thin">h</em>read on my dreams... <i class="fa-solid fa-shoe-prints"></i></h4>
             </row>
         </div>

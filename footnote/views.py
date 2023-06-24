@@ -5,6 +5,32 @@ from .models import Idea, FootNote
 from .forms import FootNoteForm
 from django.views.generic import ListView
 
+class AddIdea(View):
+    model = Idea
+    template_name = 'add_idea.html'
+    fields = '__all__'
+    #exclude = [‘slug’,] 
+
+    def post(self, request):
+        if request.method == 'POST':
+           idea = Idea.objects.create()
+           idea_form = IdeaForm(data=request.POST)
+           idea.save()
+        else:
+            if idea_form.is_valid():
+                idea_form.instance.email = request.user.email 
+                idea_form.instance.name = request.user.username
+                idea = idea_form.save(commit=False)
+                idea.idea = idea
+                idea.save()
+            else:
+                idea_form = IdeaForm()
+        return redirect('')
+        return render(request, self.template_name,
+        {
+                "idea_form": IdeaForm()
+            },)
+
 
 class IdeaList(generic.ListView):
     model = Idea
@@ -65,17 +91,17 @@ class IdeaDetail(View):
                 },
             ) 
 
-class AddIdea(View):
-    model = Idea
-    template_name = 'add_idea.html'
-    fields = '__all__'
+#class AddIdea(View):
+#    model = Idea
+#    template_name = 'add_idea.html'
+#    fields = '__all__'
     #exclude = [‘slug’,] 
 
-    def post(self, request):
-        if request.method == 'POST':
-           idea = Idea.objects.create()
-           return redirect('')
-        return render(request, self.template_name)
+#    def post(self, request):
+#        if request.method == 'POST':
+#           idea = Idea.objects.create()
+#           return redirect('')
+#        return render(request, self.template_name)
     #model = Idea
     #template_name = 'add_idea.html'
     #fields = '__all_'
