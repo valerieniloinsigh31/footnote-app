@@ -2,12 +2,13 @@ from django.contrib import admin
 from .models import Idea, FootNote
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Idea)
 class IdeaAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
-    actions = ['approve ideas'] #ADDED THIS FOR CRUD...may remove edit, delete, add
+    actions = ['approve ideas']
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('status', 'created_on')
     summernote_fields = ('content')
@@ -15,14 +16,14 @@ class IdeaAdmin(SummernoteModelAdmin):
     def approve_ideas(self, request, queryset):
         queryset.update(approved=True)
 
-    #def add_ideas(self, request, queryset):
-        #queryset.update(approved=True)
-    
-    #def delete_ideas(self, request, queryset):
-        #queryset.update(deleted=True)
+    # def add_ideas(self, request, queryset):
+        # queryset.update(approved=True)
+    # def delete_ideas(self, request, queryset):
+        # queryset.update(deleted=True)
 
-    #def edit_ideas(self, request, queryset):
-        #queryset.update(edit=True)
+    # def edit_ideas(self, request, queryset):
+        # queryset.update(edit=True)
+
 
 @admin.register(FootNote)
 class FootNoteAdmin(admin.ModelAdmin):
@@ -35,5 +36,5 @@ class FootNoteAdmin(admin.ModelAdmin):
     def approve_footnotes(self, request, queryset):
         queryset.update(approved=True)
 
-    #def delete_footnotes(self, request, queryset):
-        #queryset.update(deleted=True)
+    # def delete_footnotes(self, request, queryset):
+        # queryset.update(deleted=True)

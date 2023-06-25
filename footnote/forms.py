@@ -7,8 +7,8 @@ class FootNoteForm(forms.ModelForm):
         model = FootNote
         fields = ('content',)
 
+
 class IdeaForm(forms.ModelForm):
     class Meta:
-        #exclude = [‘slug’,] #As no slug exists yet
         model = Idea
         fields = ('content',)

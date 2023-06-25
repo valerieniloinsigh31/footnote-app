@@ -1,6 +1,32 @@
-<b>FootNote App</b>
+# FootNote App - Portfolio Project Four - Full Stack Toolkit
+
+<img src="static/media/" -put in image from AmIResponsive
+
+## Live Site: 
+
+## Repositary: 
+
+## Contents
+
+-Project Description and Goals
+-User Experience Design and Agile Methology
+-Features
+Existing Features:
+-Landing page
+-Summary
+-Idea detail
+-Writer profile
+-Sign In
+-Log in/out
+-Medley page
+Future Features:
+-Technologies used
+-Testing 
+-Deployment
+-Credits and thanks
 
 
+## Project Description and Goals
 An app for creative writers who are often struck by inspiration whilst out and about.
 The app will be comrpised of a network of members who work as creative writers in some form; e.g. a pool of like-minded creatives with similar interests who can give feedback on one another's quick ideas. They can also store footnotes privately on a page only visible to them. The footnotes will flow automatically in from various ideas posted and the logged in user and delete or keep any footnotes they wish from their personal 'FootNote' log on their profile page. This will not impact others as it is only visible to them and, accordingly, will not negatively imapct the user experience for anybody else.
 
@@ -518,6 +544,8 @@ See below various browsers listed and detail on compatability with app:
                 </tr>
                 <tr>
             </table> 
+
+ Include screengrabs using developer tools           
 <b>Bugs resolved and unresolved</b>
 
 Inbuilt PEP 8, errors detailed in Github as coding
@@ -558,6 +586,7 @@ No errors found received when CSS code runthrough validator (via copy and paste)
 <p>Python:</p>
 Django is a python framework, comes with inbuilt python testing
 Test.py file and PEP8
+CI Pytest extracts:
 
 To ensure python testing was installed and working, used following commands:
 "pip install pep8"
@@ -643,3 +672,148 @@ All Code Institute tutorials-particularly the blog walkthrough
 Stack comments and contributions, as well as various sample repositaries provided on slack.
 
 Footprint: https://codepen.io/bogers/pen/MWJjwJa?editors=1111
+
+Credits
+
+Stack community
+Particulary the peer code review page
+Drew inspiration from the following projects:
+Roman:
+Coffee now: Kieran 123
+Fitness Booking
+
+Tutor Support
+Ensured to availa of the ninety minutes of weekly tutor support available to me when I had various queries/coding issues.
+Mentor-Mitko
+Had my three meetings for submissions and greatly assisted me with two additional meetings for resubmission, targetting the areas highlighted in the assessor feedback (CRUD functionality, agile methodology and testing)
+
+When implementing the additional CRUD functionality for resubmission, I found the following tutorial and code that the Code Institute made available with regard to the Blog walkthrough very useful: https://www.youtube.com/watch?v=YH--VobIA8c
+Hvaing considered the updated features included with this tutorial, I included the additional option of the logged in user being able to edit and delete the footnote that they leave (in faded format) prior to being approved by the admin.
+
+Also noted issues with Cloudinary were mentioned wherein the heroku deployed app became out of sync with Cludinary and accordingly whitenoise installation was presented as an option.
+
+In idea_detail.html template:
+Edit and delete buttons on footnote
+Javascript
+Little bit - in static folder of relevant app
+
+comments.js file in static folder
+
+footnotes.js...
+
+variable defintiions
+getting elements by class name (walking through the DOM)
+getting element by id
+getting element by tagname
+
+variables...getting a collection of HTML objects back
+because we might have multiple footnotes (comments) placed that we want edit and delete buttons to appear on
+so must be done for each button
+for each button, an EventListener is added -saw this in Jest content with Simon Says type game
+
+how does the js interact with the HTML template
+via ia footnote.id (comment id) is in js and also stored as an attribute in the button in the HTML template
+In JS= comment_id/ footnote_id
+In HTML= comment_id = {{ comment.id }}/ footnote_id={{ footnote.id }}
+
+so we know which comment we will be acting on when we edit/delete
+
+change the href of delete/confirm button
+
+standard Bootstrap modal also included as delete modal - defensive programming (user must doubly confirm they want to delete comment/footnote)
+
+a standard GET request through the view
+
+at bottom a collection of edit buttons
+when we click on edit button
+
+we get comment id
+getting text of comment innerText
+putting into tesxt area and changing submit button, instead of submit, update
+
+using javascript to improve the FrontEnd experience
+
+Separateion of concerns-commentart on django-used to be a newspaper
+dirrect app
+different files for test
+javascript as a tool to improve the front end-kept separate
+
+Views.py: (functions)
+
+views for delete
+
+def footnote_delete(request, clug, comment_id, *args, **kwargs)
+
+filter for comment with comment_id
+when doing a 
+'.first()' at end, to avoid it being returned as queryset object as opposed to an individual record
+brings it out as a record, not a queryset object
+ 'You can only delete your own comments...consider adding this to the idea delete also' 
+
+
+
+
+
+and then for loop
+purpose of for loop
+
+
+automated testing:
+
+Lighthouse-sufficient
+if you want to take it furhter, buidl some Django unit tests, have been included to take a look at
+
+most simple test
+
+About
+
+Tests happen in a test view class
+
+files must begin with tests
+can be called anything but must inherit from TestCase ()
+
+from django.test import TestCase (automatic)
+
+class TestView(TestCase):
+  response = self.client.get(reverse('about')) //get about page
+  self.assertEqual(response.status_code, 200) //do I get status code of 200
+  self.assetTemplateUsed(response, 'about.html') //was template about.html
+
+testing to see if a page is accessible to us...if it returns status code 200-server confirming request is okay
+
+testing forms and login-more complex
+
+similar to hello Django test
+
+testing forms
+
+class TestFootNoteForm(TestCase):
+      def test_body_is_required(self): //
+        form = FootNoteForm({'body':''})
+        self.assertFalse(form.is_valid()) //
+        self.assertIn('body' in form.errors.keys()) //
+        self.assertEqual(form.errors['body'][0], 'This field is required') //  
+
+      def test_field_is_explicit_in_form_metaclass(self):
+        form = FootNoteForm({'body':''})  
+        self.assertEqual(form.Meta.fields, ('body,))
+
+when write tests
+in project level app, create new file called 'settings_test.py'
+same as main settings file (duplicate to begin) except in Database section, sues SQLite3 instead of Postgres
+
+reason is it is better to run tests against a non production database
+and postgres requires all kinds of environment variables
+
+copy of settings.py, database set back to SQLite
+
+to run tests, command is:
+
+python3 manage.py test -- settings=FOOTNOTE_APP.settings_test
+
+screengrab results and include in README
+
+
+
+could test Idea form also       
+    
