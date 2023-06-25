@@ -2,19 +2,19 @@
 
 
 An app for creative writers who are often struck by inspiration whilst out and about.
-The app will be comrpised of a network of members who work as creative writers in some form; e.g. a pool of like-minded creatives with similar interests who can give feedback on one another's quick ideas. They can also store and edit footnotes privately on a page only visible to them.
+The app will be comrpised of a network of members who work as creative writers in some form; e.g. a pool of like-minded creatives with similar interests who can give feedback on one another's quick ideas. They can also store footnotes privately on a page only visible to them. The footnotes will flow automatically in from various ideas posted and the logged in user and delete or keep any footnotes they wish from their personal 'FootNote' log on their profile page. This will not impact others as it is only visible to them and, accordingly, will not negatively imapct the user experience for anybody else.
 
 The is an approval tick beside the idea so users can signify their approval by clicking this.
 
-Approval ticks are anonymous.
+Approval ticks are anonymous but offer the user who created the idea a useful insight into the popularity of their idea amongst like minded creatives.
 
-Users are not obliged to either tick the approval or to leave a FootNote. They can do neither, either or both if they wish. FootNotes have additional transparency incase they are overly negative, for moderatership purposes. The name of the person leaving the footnote is presented beside their footnote within the idea page.
+Users are not obliged to either tick the approval or to leave a FootNote. They can do neither, either or both if they wish. FootNotes have additional transparency in case they are overly negative, for moderatership purposes. The name of the person leaving the footnote is presented beside their footnote within the idea page.
 
 The premise of the app is that it will encourage free ideas without judgement.
 
-It is not aiming at stealing people's intellectual property but at creative minds nudging each other in the right direction.
+It is designed to assist creative minds to nudge one another in the right direction.
 
- To avoid intellectual theft, the ideas and footnotes are both capped at certain lengths. The user can store/delete or edit footnotes on their own private page-the writer profile page, to encourage their own creativity. This will not impact others as it is only visible to them and, accordingly, will not negatively imapct the user experience for anybody else.
+ To avoid intellectual theft, the ideas and footnotes are both capped at certain lengths. 
 
 <b>Functionalities to include:</b>
 
@@ -25,7 +25,8 @@ Both the user and superuser/administrator of my FootNote application, should hav
 
 Albeit, this is applied in different ways.
 
--For the administrator/Superuser who regulates the FootNote profile, they will regulate what appears on their profile. They can create, read, update and delete their own original ideas (one idea at a time is the FootNote policy-to avoid oversaturation.) Also there is a maximum length of 100 words per original idea posted,to be inkeeping with the initial aim of the applicaiton, to post a fast idea that occurs to the profile owner whilst out and about in order to get immediate feedback (as opposed to exposing intiacte/vital parts of their original creative ideas.)
+ADMIN
+-For the <em>administrator/Superuser</em> who regulates the FootNote profile, they will regulate what appears on their profile. They can create, read, update and delete their own original ideas (one idea at a time is the FootNote policy-to avoid oversaturation.) Also there is a maximum length of 100 words per original idea posted,to be inkeeping with the initial aim of the applicaiton, to post a fast idea that occurs to the profile owner whilst out and about in order to get immediate feedback (as opposed to exposing intiacte/vital parts of their original creative ideas.)
 -The admin/Superuser will be able to view FootNotes posted by the users and to approve whether they appear on the app. 
 -The admin/Superuser can delete ideas (and as a result, all of the footnotes posted to it will delete with the CASCADE effect)
 -The admin/Superuser can approve selected FootNotes to their offline profile. They will be able to edit/update these FootNotes once they have been moved offline and are no longer visible on their public FootNote profile.
@@ -41,7 +42,7 @@ USER
  FUTURE FEATURE:-They can update or delete their FootNote at any point they want to (this will also be reflected in the statistics on their own profile). They can do this up until the point that they profile owner deletes the original idea (the FootNotes will disappear along with the original idea due to the CASCADE effect applied)
  FUTURE FEATURE:-They will be able to click like or unlike on FootNotes posted by other users
 
-Fomr what perspective can members use the app?: I intend to apply this from both a user perspective and a supersuer perspective.
+From what perspective can members use the app?: I intend to apply this from both a user perspective and a supersuer perspective.
 
 The app from the perspective of the superuser who is also the administrator and, as such, a regulator of the site will be able to log in and regulate the front end view of their profile. They will operate as an administator and readily be able to control what views and posts appear on their page. 
 
@@ -50,6 +51,8 @@ The app from the perspective of the superuser who is also the administrator and,
  
   The emphasis on transparency (Every footnote will be attributed to the footnote giver),  is in place to ensure that nobody abuses the app or tries to use it as a method of stealing the original thoughts of others/to offer unconstructive negative feedback. Equally the ideas left are anonymous so that the ideas are judged/assessed/reacted to exclusively from a creative perspective...the anonmymous nature of the idea itself guarantees unbiased footnotes will be provided.
 
+ EXISTING FEATURES 
+
 FUTURE FEATURE
  Similarly to the preferences section of Tinder, upon joining the app, the FootNote member is presented with several questions, encouraging them to stipulate their area of interest, the genres they are interested in and writers they are similar to/inspired by and their form of writing (novel/songwriter/screenwriter/poet). Based on the preferences that they list, they will unlock a pool of other profiles that they can apply to be feedback givers on. The owners of the profiles they apply to be feedback givers to, will be able to see their site statistics (how much interaction they have had on the FootNote application (e.g. what ratio of green/red votes on other people's original ideas they have had, how many FootNotes they have posted as feedback to other people's profiles, how many original ideas have they posted to their own profile, when did they join the site etc.) The owner of the profile, who decides whether or not to accept the applicant as a feedback-giver on their own profile will be able to make an informed decision about whether to accept them or not based on their statistics. (e.g. if a profile owners sees that the member who has applied to be a feedback giver on their page, joined three years ago and has yet to post their own original thought and has voted 100% red on other people's original ideas without providing any Footnotes, the profile owner may not be inclined to accept them to their profile as the impression created is that they are there to steal ideas, to offer exclusively negative feedback and not to contribute anything themselves).
 
@@ -57,9 +60,24 @@ Everyone who joins the FootNote app has the choice of having their own FootNote 
 
 <b>DESIGN:</b>
 
-Having used both Balsamiq and Lucidcharts for design at planning phase for apps in the past, I decided that Lucidcharts would be suitable for this project as the shapes and visual aspect to it would be able to convey my stream of thoughts but also to help me to priorise each step/task as I was completing it.
+Having used both Balsamiq and Lucidcharts for design at planning phase for apps in the past, I decided to sue Balsamiq for design of the wireframes and Lucidcharts to create the entity relationship diagrams for the models.
 
-Agile methodology-apply the ROMDAS prioritisation...
+<b>BALSAMIQ WIREFRAMES</b>
+
+ Please see below the various balsamiq wireframes for each of the pages in the FootNote app, from the perspective of a desktop as well as from a mobile viewport. Not all planned pages were included in final app(not Must Haves):
+
+Balsamiq 1(Landing page): ![alt text](./static/images/FN_Bals_Landing_Page.png)
+Balsamiq 2(Registration page) ![alt text](./static/images/FN_Bals_Register.png)
+Balsamiq 3(Sign In page) ![alt text](./static/images/FN_Bals_SignIn.png)
+Balsamiq 4(Summary page) ![alt text](./static/images/FN_Bals_Summary.png)
+Balsamiq 5(Idea Detail page) ![alt text](./static/images/FN_Bals_Idea_Detail.png)
+Balsamiq 6(Writer Profile page) ![alt text](./static/images/FN_Bals_WriterProfile.png)
+Balsamiq 7(Medley page) ![alt text](./static/images/FN_Bals_Medley.png)
+
+
+<b>LUCIDCHARTS</b>
+
+Agile methodology-apply the MOSCOWprioritisation...
 
 As I was thinking about what features to add, I categoreised them as must have, nice to have etc.
 
@@ -118,6 +136,9 @@ Add the wiring, ensure to import the correct items at the top of the page and th
 
 
 <b>Principles of Agile development, prioritisation</b>
+
+-MOSCOW prioritisation
+-Kanban board (user stories, themes, epics, milestones and sprints)
 
 Connectint cloudinary, using it for image storage and quick urls
 
@@ -243,12 +264,15 @@ Manual testing...testing for responsiveness...testing programmes
 Bootstrap:
 Yes-how did bootstrap assist...
 the cards
+the buttons
+respsonsiveness
 considered using different templates-for exmaple the code within the 'creative' template on the bootstrap site
 
 Used bootstrap for alert messages
 Used bootstrap formatting for cards
 
 Object orientated design...class based models as opposed to function based models used
+funtion based models used on writer profile in places
 
 
 <b>Deployment:</b>
