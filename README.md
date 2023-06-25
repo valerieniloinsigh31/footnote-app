@@ -813,6 +813,19 @@ python3 manage.py test -- settings=FOOTNOTE_APP.settings_test
 
 screengrab results and include in README
 
+explain results
+
+include testing legend
+
+tests in different apps
+
+tests files need to start with 'test' or 'tests'
+
+helps you when trying to understand what is going on
+
+import form
+run tests
+
 
 
 could test Idea form also       
