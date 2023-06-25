@@ -16,7 +16,7 @@
         <meta name="description" content="An app for busy creatives to leave footnotes to one another's writing ideas ">
         <meta name="keywords" content="writer, creative, artist, feedback, original, talented, poetry, fiction, novels, Ireland,"> 
         <meta name="author" content="Valerie Ni Loinsigh">
-        
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@500&display=swap" rel="stylesheet">    
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -125,6 +125,9 @@
             alert.close();
         }, 6000);
     </script>
+    {% block extras %}
+
+    {% endblock extras %}
 </body>
 
 </html>
