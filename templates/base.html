@@ -53,13 +53,13 @@
                     </li>              
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" style="color:#a410e8" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'writer_profile:writerprofile' %}">My Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'medley:medley' %}">Medley</a>
+                        <a class="nav-link" style="color:#a410e8" href="{% url 'medley:medley' %}">Medley</a>
                     </li>
                     {% else %}
                     <li class="nav-item">

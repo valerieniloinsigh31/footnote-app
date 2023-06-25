@@ -4,6 +4,14 @@ from django.http import HttpResponseRedirect
 from .models import Idea, FootNote
 from .forms import FootNoteForm, IdeaForm
 from django.views.generic import ListView
+from django.contrib.auth.decorators import login_required
+
+
+# @login_required
+# def delete_idea(request, slug): # SLUG INSTEAD OF ID
+#            idea = get_object_or_404(Idea, slug=slug) #SLUG OR ID TO BE USED IN VIEW
+#            idea.delete()
+#            return HttpResponseRedirect(reverse('idea_detail', args=[slug])) #Not sure if args is needed
 
 class AddIdea(View):
     model = Idea
@@ -22,22 +30,22 @@ class AddIdea(View):
          }   
         return render(request, self.template_name, context)
 
-class EditIdea(View):
-    model = Idea
-    template_name = 'edit_idea.html'
+# class EditIdea(View):
+#    model = Idea
+#    template_name = 'edit_idea.html'
 
-    def edit_idea(self, request, slug): # SLUG INSTEAD OF ID
-        idea = get_object_or_404(Idea, slug=slug)
-        if request.method == 'POST': 
-            idea_form = IdeaForm(data=request.POST, instance=idea)
-            if idea_form.is_valid():
-                idea_form.save()
-                return redirect('idea_detail')
-        idea_form = IdeaForm(instance=idea)
-        context = {
-            'idea_form': idea_form
-         } 
-        return render(request, self.template_name, context)
+#    def edit_idea(self, request, slug): # SLUG INSTEAD OF ID
+#        idea = get_object_or_404(Idea, slug=slug)
+#        if request.method == 'POST': 
+#            idea_form = IdeaForm(data=request.POST, instance=idea)
+#            if idea_form.is_valid():
+#                idea_form.save()
+#                return redirect('idea_detail')
+#        idea_form = IdeaForm(instance=idea)
+#        context = {
+#            'idea_form': idea_form
+#         } 
+#        return render(request, self.template_name, context)
 
 class IdeaList(generic.ListView):
     model = Idea
@@ -100,14 +108,16 @@ class IdeaDetail(View):
                 },
             ) 
 
-class DeleteIdea(View):
-    model = Idea                       #IS THIS NEEDED
-    template_name = 'idea_detail.html' #IS THIS NEEDED
-
-    def delete_idea(self, request, slug): # SLUG INSTEAD OF ID
-            idea = get_object_or_404(Idea, slug=slug) #SLUG OR ID TO BE USED IN VIEW
-            idea.delete()
-            return render(request, self.template_name, args=[slug]) #Not sure if args is needed
+# class DeleteIdea(View):
+#    model = Idea                       #IS THIS NEEDED
+#    template_name = 'idea_detail.html' #IS THIS NEEDED
+   
+# @login_required
+# def delete_idea(request, slug): # SLUG INSTEAD OF ID
+#            idea = get_object_or_404(Idea, slug=slug) #SLUG OR ID TO BE USED IN VIEW
+#            idea.delete()
+#            return HttpResponseRedirect(reverse('idea_detail', args=[slug])) #Not sure if args is needed
+    
 
 class IdeaLike(View):
 
@@ -120,3 +130,22 @@ class IdeaLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
+
+
+def footnote_delete(request, slug, footnote_id, *args, **kwargs):
+    """
+    view to delete comment
+    """
+    queryset = Idea.objects.filter(status=1)
+    post = get_object_or_404(queryset)
+    footnote = post.footnotes.filter(id=footnote_id).first()
+
+    if footnote.name == request.user.username:
+        footnote.delete()
+        messages.add_message(request, messages.SUCCESS, 'Footnote deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own footnotes, you messer!')
+
+    return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
+
+
