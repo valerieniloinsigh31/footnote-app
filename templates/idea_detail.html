@@ -113,3 +113,8 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block extras %}
+{% load static %}
+<script src="{% static 'js/footnotes.js' %}"></script>
+{% endblock extras %}

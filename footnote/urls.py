@@ -1,4 +1,4 @@
-from . import views #ALL VIEWS SHOULD BE IMPORTED FROM WITHIN APP
+from . import views 
 from django.urls import path
 #from footnote.views import AddIdea, EditIdea #THIS MAY NOT BE NEEDED
 

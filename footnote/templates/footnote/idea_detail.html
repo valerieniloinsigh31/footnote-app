@@ -84,10 +84,11 @@
                         </span> noted <i class="fa-solid fa-shoe-prints"></i>:
                     </p>
                 <div class="thin">  {{ footnote.content | linebreaks }} </div>
-                {% if user.is_authenticated and footnote.name == user.username %}
-                    <button class="btn btn-delete" footnote_id="{{ footnote.id }}">Delete</button>
-                    <button class="btn btn-edit" footnote_id="{{ footnote.id }}">Edit</button>
-                {% endif %}
+
+                    {% if user.is_authenticated and footnote.name == user.username %}
+                        <button class="btn btn-delete" footnote_id="{{ footnote.id }}">Delete</button>
+                        <button class="btn btn-edit" footnote_id="{{ footnote.id }}">Edit</button>
+                    {% endif %}
                 {% endfor %}
             </div>
         <div class="col-md-4 card mb-4  mt-3 ">
@@ -112,3 +113,8 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block extras %}
+{% load static %}
+<script src="{% static 'js/footnotes.js' %}"></script>
+{% endblock extras %}

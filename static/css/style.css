@@ -165,7 +165,8 @@ body {
 }
 
 .btn-delete {
-    border:#9d23bb;
+    border:#a410e8;
+    background: #E84610;
 }
 
 .btn-like:hover,

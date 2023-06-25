@@ -5,6 +5,7 @@ from .models import Idea, FootNote
 from .forms import FootNoteForm, IdeaForm
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 # @login_required
@@ -134,7 +135,7 @@ class IdeaLike(View):
 
 def footnote_delete(request, slug, footnote_id, *args, **kwargs):
     """
-    view to delete comment
+    view to delete footnote
     """
     queryset = Idea.objects.filter(status=1)
     post = get_object_or_404(queryset)
