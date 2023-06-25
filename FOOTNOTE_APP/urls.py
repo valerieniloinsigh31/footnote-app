@@ -7,8 +7,9 @@ app_name = 'FOOTNOTE_APP'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
+    path('medley/', include('medley.urls')), 
+    path('footnote/', include('footnote.urls')),      
     path('', include('writer_profile.urls')),
-    path('footnote/', include('footnote.urls')),   
     path('accounts/', include('allauth.urls')),
     path('', views.FOOTNOTE_APP, name='FOOTNOTE_APP'),
 ]

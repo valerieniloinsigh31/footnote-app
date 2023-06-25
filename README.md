@@ -644,6 +644,51 @@ Can create account with registration
 -NAV bar effectively allows user to navigate from summary page to idea page
 
 <b>Deployment, forking, cloning </b>
+PASTED IN FROM COFFEE_NOW:
+## Deployment
+
+### Github Deployment
+
+The website was delpoyed using GitHub. To do this I did the following;
+
+1. When on the websites GitHub repository, click on the settings tab
+2. Now on the settings page, on the left hand side of the page, click on the pages tab
+3. Under the Source section, click on the drop down menu titled Branch and select main
+4. The page is now published with a link available to use.
+
+(<https://github.com/Kieran132/Coffee_Now>)
+
+### Creating a Fork or Copying
+
+To clone/fork/copy the repository you click on the fork tab which is situated next to unwatch tab in the top right corner of the page
+
+### Copying the repositary on Github
+
+To create a clone of your project:
+
+1. Click the green 'Code' dropdown button beside the green 'Gitpod' button in the repositary page on github
+2. Select the clipboard/copy icon
+3. In the IED open GitBash
+4. Change the working directory to the location you prefer
+5. Add Git Clone with the copy of the repositrory name
+6. Clone has been created
+
+### Heroku
+
+- When you have reached the dashboard for Heroku.com, click New and then select 'Create New App' from the drop-down menu.
+- On the next page, onput you app anme, select your appropriate region and proceed to create app
+- Navigate to the settings tab and scroll to  the 'Reveal Config Vars' section. When there, add the key of 'Port' and the value of '8000'. 
+- Below this click Add buildpack and choose python and nodejs in that order. The importance of retaining this order is due to...
+
+#### Deployment of the app
+
+- Navigate to  the 'Deploy' tab and select Github-Connect to Github-this will enable automatic deployment.
+- Retrieve your respoitary by name, using the search function available.
+- Connect to your chosen repo.
+- If you elect to choose automatic deployment (as opposed to the manual deployment which is a once off deployment where in the process will need to be reperformed manually on each deployment) the app will automatically redeploy when you commit on Github.
+- Following deployment, you should now be able to access your deployed live project.
+
+
 <b>Steps</b>
 <b>On Github:</b>
 Disable debug...get rid of traceback which my compromise your site
@@ -681,6 +726,8 @@ Drew inspiration from the following projects:
 Roman:
 Coffee now: Kieran 123
 Fitness Booking
+
+Django documentation and W3 school
 
 Tutor Support
 Ensured to availa of the ninety minutes of weekly tutor support available to me when I had various queries/coding issues.
@@ -825,6 +872,39 @@ helps you when trying to understand what is going on
 
 import form
 run tests
+
+for views testing, longer and more involved testing as User model imported, Idea model imported, 
+
+running a set up
+
+can do set up method
+
+runs before other tests - creates a superuser in databse
+creates an idea (post) in db
+saves that idea(post)
+
+because self.user self.idea used in set up, can also use eslewhere
+
+first test = standard get idea list
+
+all methods must start with word 'tests' or won't be run as tests-'tests' reserved by django
+
+can do tear down method
+
+get idea list
+get idea detail (of idea created as part of setUp function)
+test like seeing if likes equals one after liking
+
+test footnote
+log in as user created in setUp
+post an idea to ideadetail with slug as argument
+
+red light green light method-always test it faisl rather than test if it passes
+because it might pass first without you knwoing it will fail
+
+test fcuntionality...not jsut decorative tests
+
+
 
 
 

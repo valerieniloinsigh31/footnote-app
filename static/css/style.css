@@ -52,6 +52,7 @@ body {
     background-color: peachpuff;
     justify-content: center;
     display: flex;
+    font-weight: 300;
 }
 
 .image-container {

@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <p class="card-text ">
+                <p class="thin">
                     {{ idea.content | safe }}
                 </p>
                 <div class="row">
@@ -83,7 +83,7 @@
                             {{ footnote.created_on }}
                         </span> noted <i class="fa-solid fa-shoe-prints"></i>:
                     </p>
-                    {{ footnote.content | linebreaks }}
+                <div class="thin">  {{ footnote.content | linebreaks }} </div>
                 </div>
                 {% endfor %}
             </div>
