@@ -1,19 +1,18 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Idea, FootNote
+from .models import Idea
 from .forms import FootNoteForm, IdeaForm
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
 
 def footnote_delete(request, slug, footnote_id, *args, **kwargs):
     """
     view to delete footnote
     """
     queryset = Idea.objects.filter(status=1)
-    post = get_object_or_404(queryset)
+    post = get_object_or_404(queryset, slug=slug)
     footnote = post.footnotes.filter(id=footnote_id).first()
 
     if footnote.name == request.user.username:
@@ -21,7 +20,6 @@ def footnote_delete(request, slug, footnote_id, *args, **kwargs):
         messages.add_message(request, messages.SUCCESS, 'Footnote deleted!')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own footnotes, you messer!')
-
     return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
 
 

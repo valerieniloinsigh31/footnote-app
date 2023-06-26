@@ -61,18 +61,10 @@ def footnote_history(request, content, created_on, user):
     }
 
     return render(request, template, context)
-  
-def delete_footnote(request, footnote_id): #unsure of whether self should be in here
+
+@login_required  
+def delete_footnote(request, footnote_id, *args, **kwargs): #unsure of whether self should be in here
             footnote = get_object_or_404(WriterProfile, id=footnote_id)   
             footnote.delete()
             return redirect (request, 'writerprofile')
 
-@login_required
-def delete_footnotefromlog(request, coffee_id):
-    """
-    This function only allows loggedin  users to be able to delete a logged footnote from
-    the private writer profile page of the logged in user
-    """
-    footnotes = get_object_or_404(FootNote, id=footnote_id)
-    footnote.delete()
-    return redirect('writer_profile')
