@@ -101,10 +101,10 @@
                 {% if user.is_authenticated %}
                 <h3><span class="odd">Foot</span><span class="thin">Note</span><span class="x"><sup>x</sup></span></span>:</h3>
                 <p>FootNote by: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
+                <form id="footnoteForm" method="post" style="margin-top: 1.3em;">
                     {{ footnote_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Foot<span class="thin">Note</span><sup>x</sup></button>
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Foot<span class="thin">Note</span><sup>x</sup></button>
                 </form>
                 {% endif %} 
                 {% endif %} 
@@ -112,6 +112,7 @@
         </div>
     </div>
 </div>
+
 <!--Defensive programming-->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">

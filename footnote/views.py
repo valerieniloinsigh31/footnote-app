@@ -35,10 +35,10 @@ def footnote_edit(request, slug, footnote_id, *args, **kwargs):
         footnote = post.footnotes.filter(id=footnote_id).first()
 
         footnote_form = FootNoteForm(data=request.POST, instance=footnote)
+
         if footnote_form.is_valid() and footnote.name == request.user.username:
             footnote = footnote_form.save(commit=False)
             footnote.post = post
-            footnote.approved = False
             footnote.save()
             messages.add_message(request, messages.SUCCESS, 'Footnote Updated!')
         else:
@@ -103,7 +103,7 @@ class IdeaDetail(View):
                     "footnotes": footnotes,
                     "footnoted": True,
                     "liked": liked,
-                    "footnote_form": FootNoteForm()
+                    "footnote_form": footnote_form
                 },
             ) 
  
