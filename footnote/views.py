@@ -64,23 +64,25 @@ class IdeaList(generic.ListView):
 class AddIdea(View):
     model = Idea
     template_name = 'add_idea.html'
+    idea_form = IdeaForm()
 
-    def add_idea(self, request, *args, **kwargs):
-        if request.method == 'POST':
-            idea_form = IdeaForm(request.POST)
-            if idea_form.is_valid():
-                idea.save()
-                messages.success(request, "Your idea had been added")
-            else:
-                idea_form = IdeaForm()
+    def get(self, request, *args, **kwargs):
+        idea_form = IdeaForm()
+        context = {
+            "idea_form": idea_form
+        }
+        return render(request, "add_idea.html", context)
+        
+    def post(self, request, *args, **kwargs):
+        idea_form = IdeaForm(request.POST)
+        if idea_form.is_valid():
+            idea_form.save()
+            messages.success(request, "Your idea has been submitted for approval!")
+        else:
+            pass
+        return redirect('add_idea')
+        
 
-            return render(
-                request,
-                "add_idea.html",
-                {
-                    "idea_form": idea_form
-                },
-            ) 
 
 class IdeaDetail(View):
     model = Idea                       
@@ -96,7 +98,7 @@ class IdeaDetail(View):
 
             return render(
             request,
-            "index.html",
+            "idea_detail.html",
                 {
                     "idea": idea,
                     "footnotes": footnotes,
@@ -136,15 +138,6 @@ class IdeaDetail(View):
                     "footnote_form": footnote_form
                 },
             ) 
-
-# class IdeaCreateView(CreateView):
-#    model = Idea
-#    form_class = IdeaForm
-#    template_name = 'index.html' # IS THIS OK TO HAVE THIS
-
-#    def form_valid(self, form):
-#        form.instance.author = self.request.user  # Might not need this as idea model does not have author as field
-#        return super().form_valid(form)
  
 class IdeaLike(View):
 

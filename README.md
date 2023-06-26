@@ -398,7 +398,7 @@ The purpose of the footnote is for users to give one sentence of constructive cr
 -CSS
 -Whitenoise
 
-When performing resarch, considered Flask also (particularly the CI Torin project)
+When deciding what to do for the project, I also considered Flask (particularly the CI Torin project).
 
 ## Testing
 
@@ -545,7 +545,12 @@ See below various browsers listed and detail on compatability with app:
                 <tr>
             </table> 
 
- Include screengrabs using developer tools           
+ Include screengrabs using developer tools   
+
+ Google: ![alt text](./static/media/kanban_board.png)
+ Safari: ![alt text](./static/media/kanban_board.png)
+ Firefox: ![alt text](./static/media/kanban_board.png)
+ Internet Explorer: ![alt text](./static/media/kanban_board.png)        
 <b>Bugs resolved and unresolved</b>
 
 Inbuilt PEP 8, errors detailed in Github as coding
@@ -595,10 +600,12 @@ Sure enough, received the message that PEP8 was already installed
 Also tried to ensure pylint requirement satisfied also,
 "python -m pip install pylint"
 
+## Agile methodology and user stores
+
 <b>User stories testing</b>
 As per the walkthrough, in support of Agile methodology, I set up a Kanban board to track what items I installed for the app.
 
-Three categories:
+Per the Kanban board on github, there are three segments of development, within which to place the user stories:
 To do, in progress, complete
 
 Kanban board-completed as I completed coding. As I was progressing through the coding of the application, this helped me to logically prioritise and gave me immediate visual feedback as to what remained left to be done.
@@ -609,7 +616,19 @@ Kanban board:
 
 <b>Prioritisation:</b>
 
-Focused on three categories of prioritisation:
+As suggested in the tutorials, I applied MOSCOW prioritisation:
+Must Have 
+Should Have 
+Could have
+Won't Have
+
+No more than 60% of the user stories should be classified as 'must haves'
+
+The colored labelling available on the kanban board, allows for quick and easy to understand presentaiton of the MOSCOW presentation:
+
+Labels on the kanban board:
+
+![alt text](./static/media/)
 
 <b>Need to have:</b>
 CRUD functionality-administrator interface mainly
@@ -680,6 +699,23 @@ To create a clone of your project:
 - Navigate to the settings tab and scroll to  the 'Reveal Config Vars' section. When there, add the key of 'Port' and the value of '8000'. 
 - Below this click Add buildpack and choose python and nodejs in that order. The importance of retaining this order is due to...
 
+Additional notes:
+
+<b>On Heroku</b>
+Go to settings-Reveal Config Vars
+
+Remove DISABLE_COLLECTSTATIC config variable
+
+Deploy tab, scroll to end, deploy branch
+
+View build log to ensure all working okay
+
+As per future features listed - still room for a lot of development
+
+Django...not everything needs to be in one app
+All app logic doesn't need to be in views.py file
+
+
 #### Deployment of the app
 
 - Navigate to  the 'Deploy' tab and select Github-Connect to Github-this will enable automatic deployment.
@@ -695,19 +731,6 @@ Disable debug...get rid of traceback which my compromise your site
 Install X-Frame Options=Same Origin...CORS cross origina resource sharing security feature
 Tells system resources are permitted to be loaded
 
-<b>On Heroku</b>
-Go to settings-Reveal Config Vars
-
-Remove DISABLE_COLLECTSTATIC config variable
-
-Deploy tab, scroll to end, deploy branch
-
-View build log to ensure all working okay
-
-As per future features listed - still room for a lot of development
-
-Django...not everything needs to be in one app
-All app logic doesn't need to be in views.py file
 
 # References
 
@@ -742,176 +765,3 @@ Had my three meetings for submissions and greatly assisted me with two additiona
 When implementing the additional CRUD functionality for resubmission, I found the following tutorial and code that the Code Institute made available with regard to the Blog walkthrough very useful: https://www.youtube.com/watch?v=YH--VobIA8c
 Hvaing considered the updated features included with this tutorial, I included the additional option of the logged in user being able to edit and delete the footnote that they leave (in faded format) prior to being approved by the admin.
 
-Also noted issues with Cloudinary were mentioned wherein the heroku deployed app became out of sync with Cludinary and accordingly whitenoise installation was presented as an option.
-
-In idea_detail.html template:
-Edit and delete buttons on footnote
-Javascript
-Little bit - in static folder of relevant app
-
-comments.js file in static folder
-
-footnotes.js...
-
-variable defintiions
-getting elements by class name (walking through the DOM)
-getting element by id
-getting element by tagname
-
-variables...getting a collection of HTML objects back
-because we might have multiple footnotes (comments) placed that we want edit and delete buttons to appear on
-so must be done for each button
-for each button, an EventListener is added -saw this in Jest content with Simon Says type game
-
-how does the js interact with the HTML template
-via ia footnote.id (comment id) is in js and also stored as an attribute in the button in the HTML template
-In JS= comment_id/ footnote_id
-In HTML= comment_id = {{ comment.id }}/ footnote_id={{ footnote.id }}
-
-so we know which comment we will be acting on when we edit/delete
-
-change the href of delete/confirm button
-
-standard Bootstrap modal also included as delete modal - defensive programming (user must doubly confirm they want to delete comment/footnote)
-
-a standard GET request through the view
-
-at bottom a collection of edit buttons
-when we click on edit button
-
-we get comment id
-getting text of comment innerText
-putting into tesxt area and changing submit button, instead of submit, update
-
-using javascript to improve the FrontEnd experience
-
-Separateion of concerns-commentart on django-used to be a newspaper
-dirrect app
-different files for test
-javascript as a tool to improve the front end-kept separate
-
-Views.py: (functions)
-
-views for delete
-
-def footnote_delete(request, clug, comment_id, *args, **kwargs)
-
-filter for comment with comment_id
-when doing a 
-'.first()' at end, to avoid it being returned as queryset object as opposed to an individual record
-brings it out as a record, not a queryset object
- 'You can only delete your own comments...consider adding this to the idea delete also' 
-
-
-
-
-
-and then for loop
-purpose of for loop
-
-
-automated testing:
-
-Lighthouse-sufficient
-if you want to take it furhter, buidl some Django unit tests, have been included to take a look at
-
-most simple test
-
-About
-
-Tests happen in a test view class
-
-files must begin with tests
-can be called anything but must inherit from TestCase ()
-
-from django.test import TestCase (automatic)
-
-class TestView(TestCase):
-  response = self.client.get(reverse('about')) //get about page
-  self.assertEqual(response.status_code, 200) //do I get status code of 200
-  self.assetTemplateUsed(response, 'about.html') //was template about.html
-
-testing to see if a page is accessible to us...if it returns status code 200-server confirming request is okay
-
-testing forms and login-more complex
-
-similar to hello Django test
-
-testing forms
-
-class TestFootNoteForm(TestCase):
-      def test_body_is_required(self): //
-        form = FootNoteForm({'body':''})
-        self.assertFalse(form.is_valid()) //
-        self.assertIn('body' in form.errors.keys()) //
-        self.assertEqual(form.errors['body'][0], 'This field is required') //  
-
-      def test_field_is_explicit_in_form_metaclass(self):
-        form = FootNoteForm({'body':''})  
-        self.assertEqual(form.Meta.fields, ('body,))
-
-when write tests
-in project level app, create new file called 'settings_test.py'
-same as main settings file (duplicate to begin) except in Database section, sues SQLite3 instead of Postgres
-
-reason is it is better to run tests against a non production database
-and postgres requires all kinds of environment variables
-
-copy of settings.py, database set back to SQLite
-
-to run tests, command is:
-
-python3 manage.py test -- settings=FOOTNOTE_APP.settings_test
-
-screengrab results and include in README
-
-explain results
-
-include testing legend
-
-tests in different apps
-
-tests files need to start with 'test' or 'tests'
-
-helps you when trying to understand what is going on
-
-import form
-run tests
-
-for views testing, longer and more involved testing as User model imported, Idea model imported, 
-
-running a set up
-
-can do set up method
-
-runs before other tests - creates a superuser in databse
-creates an idea (post) in db
-saves that idea(post)
-
-because self.user self.idea used in set up, can also use eslewhere
-
-first test = standard get idea list
-
-all methods must start with word 'tests' or won't be run as tests-'tests' reserved by django
-
-can do tear down method
-
-get idea list
-get idea detail (of idea created as part of setUp function)
-test like seeing if likes equals one after liking
-
-test footnote
-log in as user created in setUp
-post an idea to ideadetail with slug as argument
-
-red light green light method-always test it faisl rather than test if it passes
-because it might pass first without you knwoing it will fail
-
-test fcuntionality...not jsut decorative tests
-
-
-
-
-
-could test Idea form also       
-    
