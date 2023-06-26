@@ -49,7 +49,7 @@ def medley(request):
 
 def footnote_medley(request, content):
     """
-    render footnote medley
+    render footnote medley...try to use random function so one random footnote can be summoned from database
     """
 
     footnote = get_object_or_404(FootNote, content=content, user=request.user,)
