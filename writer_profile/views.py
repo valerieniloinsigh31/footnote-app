@@ -64,6 +64,7 @@ def footnote_history(request, content, created_on, user):
 
 @login_required  
 def delete_footnote(request, footnote_id, *args, **kwargs): #unsure of whether self should be in here
+    
             footnote = get_object_or_404(WriterProfile, id=footnote_id)   
             footnote.delete()
             return redirect (request, 'writerprofile')

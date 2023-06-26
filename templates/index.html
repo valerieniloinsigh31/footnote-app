@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -36,12 +38,17 @@
             </div>
         </div>
         <hr>
-        <h3>Create a new Idea to be Foot<em class="thin">Noted <sup class="odd">x</sup></em></h3>
         <div>
             <row>
-                <a href="{% url 'add_idea' %}" target=”_blank”>
-                    <button type="submit" class="odd">Add an <em class="thin">Idea</em> to Foot<em class="thin">Note</em><sup class="odd">x</sup></button>
-                </a>
+                {% if user.is_authenticated %}
+                <h3><span class="odd">Create a new</span><span class="thin"> Idea</span> to Foot<em class="thin">Note</em><sup class="odd">x</sup>:</h3>
+                <p>Idea by: {{ user.username }}</p>
+                <form id="ideaForm" method="post" style="margin-top: 1.3em;">
+                    {{ idea_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit Idea</button>
+                </form>
+                {% endif %}
                     <hr>
                 <h4>T<em class="thin">h</em>read softly because you t<em class="thin">h</em>read on my dreams... <i class="fa-solid fa-shoe-prints"></i></h4>
             </row>
