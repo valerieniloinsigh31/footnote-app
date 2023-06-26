@@ -83,7 +83,7 @@
                             {{ footnote.created_on }}
                         </span> noted <i class="fa-solid fa-shoe-prints"></i>:
                     </p>
-                <div class="thin">  {{ footnote.content | linebreaks }} </div>
+                <div id="footnote{{ footnote.id }}" class="thin">  {{ footnote.content | linebreaks }} </div>
 
                     {% if user.is_authenticated and footnote.name == user.username %}
                         <button class="btn btn-delete" footnote_id="{{ footnote.id }}">Delete</button>
