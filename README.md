@@ -223,12 +223,12 @@ Order of events and priorisation easier to understand, assisted eith understandi
 
 Lucidchart extracts:
 
-Lucidcharts 1: ![alt text](./static/images/lc_1.png)
-Lucidcharts 2: ![alt text](./static/images/lc_2.png)
-Lucidcharts 3: ![alt text](./static/images/lc_3.png)
-Lucidcharts 4: ![alt text](./static/images/lc_4.png)
-Lucidcharts 5: ![alt text](./static/images/lc_5.png)
-Lucidcharts 6: ![alt text](./static/images/lc_6.png)
+Lucidcharts 1: ![alt text](./static/media/lc_1.png)
+Lucidcharts 2: ![alt text](./static/media/lc_2.png)
+Lucidcharts 3: ![alt text](./static/media/lc_3.png)
+Lucidcharts 4: ![alt text](./static/media/lc_4.png)
+Lucidcharts 5: ![alt text](./static/media/lc_5.png)
+Lucidcharts 6: ![alt text](./static/media/lc_6.png)
 
 <b>Kanban board and user stories</b>
 
@@ -388,7 +388,7 @@ The purpose of the footnote is for users to give one sentence of constructive cr
 -Order idea cards on summary page by most liked
 -The main image that appears on the idea will be also uploaded by the app user, it will be connected to their mobile.
 
-<b>TECHNOLOGIES USED</b>
+## Technologies usex
 -Summernote
 -Django
 -Crispy forms
@@ -396,11 +396,11 @@ The purpose of the footnote is for users to give one sentence of constructive cr
 -Python
 -HTML
 -CSS
--Different websites for images
+-Whitenoise
 
 When performing resarch, considered Flask also (particularly the CI Torin project)
 
-<h1>TESTING</h1>
+## Testing
 
 <p>Using the tutorials on testing from the To-Do app walkthrough, I ensured to follow those steps to test the files.</p>
 
@@ -488,13 +488,13 @@ Please see below, a variety of responsiveness testing photos on different viewpo
 viewed online via Developer Tools:
 Sample photos:
 
-Iphone 12 pro: ![alt text](./static/images/iphone12_test.png)
+Iphone 12 pro: ![alt text](./static/media/iphone12_test.png)
 
-MacBook Pro: ![alt text](./static/images/macbook_pro_test)
+MacBook Pro: ![alt text](./static/media/macbook_pro_test)
 
-Ipad Air: ![alt text](./static/images/ipad_air_test.png)
+Ipad Air: ![alt text](./static/media/ipad_air_test.png)
 
-Nest Hub:  ![alt text](./static/images/nest_hub_test)
+Nest Hub:  ![alt text](./static/media/nest_hub_test)
 
 
 Cards stack on top of one another in a responsive fashion instead of becoming stretched or crushed and the visibility is not affected by the size of the viewport
@@ -563,7 +563,7 @@ Browser open as I coded, refreshed and received feedback into different types of
 
 Accessibilty low, could be improved
 
-Lighthouse test:  ![alt text](./static/images/lighthouse_test)
+Lighthouse test:  ![alt text](./static/media/lighthouse_test)
 
 <h1><b>Code validation</b></h1>
 
@@ -572,7 +572,7 @@ Lighthouse test:  ![alt text](./static/images/lighthouse_test)
  Only minor errors. 3 HTML files, code manually tested for each. Copied and pasted
  into validator
 
-![alt text](./static/images/html_validation.png) 
+![alt text](./static/media/html_validation.png) 
 
 <p>Javascript</p>
 <p>No javascript used for app</p>
@@ -580,7 +580,7 @@ Lighthouse test:  ![alt text](./static/images/lighthouse_test)
 <p>CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
 No errors found received when CSS code runthrough validator (via copy and paste)
 
-![alt text](./static/images/css_validation.png)
+![alt text](./static/media/css_validation.png)
 </p>
 
 <p>Python:</p>
@@ -604,7 +604,7 @@ To do, in progress, complete
 Kanban board-completed as I completed coding. As I was progressing through the coding of the application, this helped me to logically prioritise and gave me immediate visual feedback as to what remained left to be done.
 
 Kanban board:
-![alt text](./static/images/kanban_board.png)
+![alt text](./static/media/kanban_board.png)
 
 
 <b>Prioritisation:</b>
@@ -656,7 +656,7 @@ The website was delpoyed using GitHub. To do this I did the following;
 3. Under the Source section, click on the drop down menu titled Branch and select main
 4. The page is now published with a link available to use.
 
-(<https://github.com/Kieran132/Coffee_Now>)
+()
 
 ### Creating a Fork or Copying
 
@@ -709,24 +709,27 @@ As per future features listed - still room for a lot of development
 Django...not everything needs to be in one app
 All app logic doesn't need to be in views.py file
 
-<b>References</b>
+# References
 
 The images on the medley page were all pruned from pexels.com
 
 https://pixabay.com/photos/pocket-watch-time-sand-clock-3156771/
-A number of free open sources used for photos that appear as featured images on idea cards on the summary page. They are uploaded to admin interface when original idea is posted. If no image provided then there is code that defaults to a different image via url in code.
+A number of free open sources used for photos that appear as featured images on idea cards on the summary page.
+ They are uploaded to admin interface when original idea is posted. If no image provided then there is code that defaults to a different image via url in code. Whitenoise also installed to overcome any syncing issues between Cloudinary and Heroku.
+
 All Code Institute tutorials-particularly the blog walkthrough
+
 Stack comments and contributions, as well as various sample repositaries provided on slack.
 
-Footprint: https://codepen.io/bogers/pen/MWJjwJa?editors=1111
+Footprint image in background from the following source: https://codepen.io/bogers/pen/MWJjwJa?editors=1111
 
-Credits
+## Credits
 
 Stack community
 Particulary the peer code review page
 Drew inspiration from the following projects:
-Roman:
-Coffee now: Kieran 123
+Blade 5 Repositary Roman: Romanc
+Coffee Now repositary via peer code review: Kieran 123
 Fitness Booking
 
 Django documentation and W3 school
