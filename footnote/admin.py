@@ -16,15 +16,6 @@ class IdeaAdmin(SummernoteModelAdmin):
     def approve_ideas(self, request, queryset):
         queryset.update(approved=True)
 
-    # def add_ideas(self, request, queryset):
-        # queryset.update(approved=True)
-    # def delete_ideas(self, request, queryset):
-        # queryset.update(deleted=True)
-
-    # def edit_ideas(self, request, queryset):
-        # queryset.update(edit=True)
-
-
 @admin.register(FootNote)
 class FootNoteAdmin(admin.ModelAdmin):
 
@@ -35,6 +26,3 @@ class FootNoteAdmin(admin.ModelAdmin):
 
     def approve_footnotes(self, request, queryset):
         queryset.update(approved=True)
-
-    # def delete_footnotes(self, request, queryset):
-        # queryset.update(deleted=True)

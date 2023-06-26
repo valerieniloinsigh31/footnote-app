@@ -1,0 +1,43 @@
+{% extends 'base.html' %}{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<h1 class="container-fluid" style="background-color:peachpuff; margin-left:40%; color:blueviolet; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">MeDLeY</h1>
+<p>
+    <h3 class="container mt-6" style="background-color:peachpuff;">Samuel Beckett
+    <i style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Ever tried. Ever failed. No matter. Try again. Fail again. Fail better.</i>
+    <a href="https://en.wikipedia.org/wiki/Samuel_Beckett" target="_blank">
+        <img class="card-img-top" style="height:200px; width:200px; border-radius:50%" src="{% static 'media/failure_pexels.jpg' %}"
+            alt="A solemn looking young man looking downwards while seated">
+    </a>
+</p></h3>
+<p>
+    <h4 class="container mt-6" style="background-color:peachpuff;">
+    <a href="https://en.wikipedia.org/wiki/John_Grisham" target="_blank">
+            <img class="card-img-top" style="height:200px; width:200px; border-radius:50%" src="{% static 'media/past_pexels.jpg' %}"
+                alt="An archway under an old structure, with pillars on each side and sun spilling in">
+    </a>
+        'The Street Lawyer' by John Grisham
+    <i style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">I didn't dare think of the future; the past was still happening.</i>
+</p></h4>
+<p>
+    <h5 class="container mt-6" style="background-color:peachpuff;">'The Mai' by Marina Carr
+    <i style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">The name alone evokes a thousand memories in me.</i>
+    <a href="https://en.wikipedia.org/wiki/Marina_Carr" target="_blank">
+        <img class="card-img-top" style="height:200px; width:200px; border-radius:50%" src="{% static 'media/memories_pexels.jpg' %}"
+            alt="Two young girls who appear to be looking behind them, into the sunlight">
+    </a>
+</p></h5>
+
+<div class="col-md-6">
+    <h3 class="container-fluid" style="background-color:peachpuff; margin-left:40%;">Duly noted</h3>
+    <p class="container-fluid" style="background-color:peachpuff;">
+        Press the button below to bring up random FootNotes deposited to our database by our users.
+        See how inspiration is all around us, all we have to do is make note!
+        Don't walk in somebody else's <em style="color:black">foot</em>steps, but do heed their <em style="color:black">Foot</em>Notes!
+        <form style="margin-left:90%;">
+        <button type="submit">Medley!</button>
+        </form>
+    </p>
+</div>
+{% endblock content %}

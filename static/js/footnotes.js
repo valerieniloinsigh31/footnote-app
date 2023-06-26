@@ -1,8 +1,8 @@
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 var deleteButtons = document.getElementsByClassName("btn-delete");
-//var editButtons = document.getElementsByClassName("btn-edit");
+var editButtons = document.getElementsByClassName("btn-edit");
 var deleteConfirm = document.getElementById("deleteConfirm");
-//var footnoteText = document.getElementsByTagName("textarea")[0];
+var footnoteText = document.getElementsByTagName("textarea")[0];
 var footnoteForm = document.getElementById("footnoteForm");
 var submitButton = document.getElementById("submitButton");
 
@@ -18,12 +18,12 @@ for (let button of deleteButtons) {
     });
 }
 
-// for (let button of editButtons) {
-//    button.addEventListener("click", (e) => {
-//        let footnoteId = e.target.getAttribute("footnote_id");
-//        let footnoteContent = document.getElementById(`footnote${footnoteId}`).innerText;
-//        footnoteText.value = footnoteContent;
-//        submitButton.innerText = "Update";
-//        footnoteForm.setAttribute("action", `edit_footnote/${footnoteId}`);
-//    });
-//}
+for (let button of editButtons) {
+    button.addEventListener("click", (e) => {
+        let footnoteId = e.target.getAttribute("footnote_id");
+        let footnoteContent = document.getElementById(`footnote${footnoteId}`).innerText;
+        footnoteText.value = footnoteContent;
+        submitButton.innerText = "Update";
+        footnoteForm.setAttribute("action", `edit_footnote/${footnoteId}`);
+    });
+}

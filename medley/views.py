@@ -46,3 +46,21 @@ def medley(request):
     """
     template = 'medley.html'
     return render(request, template)
+
+def footnote_medley(request, content):
+    """
+    render footnote medley
+    """
+
+    footnote = get_object_or_404(FootNote, content=content, user=request.user,)
+
+    template = 'medley.html'
+    context = {
+        'footnote': footnote,
+        'content': content,
+        'from_footnote': True,
+        'user': request.user,
+    }
+
+    return render(request, template, context)
+  

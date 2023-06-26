@@ -711,6 +711,8 @@ All app logic doesn't need to be in views.py file
 
 <b>References</b>
 
+The images on the medley page were all pruned from pexels.com
+
 https://pixabay.com/photos/pocket-watch-time-sand-clock-3156771/
 A number of free open sources used for photos that appear as featured images on idea cards on the summary page. They are uploaded to admin interface when original idea is posted. If no image provided then there is code that defaults to a different image via url in code.
 All Code Institute tutorials-particularly the blog walkthrough

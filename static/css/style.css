@@ -165,8 +165,13 @@ body {
 }
 
 .btn-delete {
-    border:#a410e8;
+    color: #fff;
     background: #E84610;
+}
+
+.btn-edit {
+    background-color: #23BBBB;
+    color: #fff;
 }
 
 .btn-like:hover,
