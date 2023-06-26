@@ -6,6 +6,14 @@ from .forms import FootNoteForm, IdeaForm
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import (
+    ListView,
+    DeleteView,
+    DetailView,
+    CreateView,
+    UpdateView,
+)
 
 def footnote_delete(request, slug, footnote_id, *args, **kwargs):
     """
@@ -18,7 +26,7 @@ def footnote_delete(request, slug, footnote_id, *args, **kwargs):
     if footnote.name == request.user.username:
         footnote.delete()
         messages.add_message(request, messages.SUCCESS, 'Footnote deleted!')
-    else:
+    else:    # The else seems redundant as option only appears for their own footnote
         messages.add_message(request, messages.ERROR, 'You can only delete your own footnotes, you messer!')
     return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
 
@@ -52,9 +60,31 @@ class IdeaList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 3
 
+
+class AddIdea(View):
+    model = Idea
+    template_name = 'add_idea.html'
+
+    def add_idea(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            idea_form = IdeaForm(request.POST)
+            if idea_form.is_valid():
+                idea.save()
+                messages.success(request, "Your idea had been added")
+            else:
+                idea_form = IdeaForm()
+
+            return render(
+                request,
+                "add_idea.html",
+                {
+                    "idea_form": idea_form
+                },
+            ) 
+
 class IdeaDetail(View):
-    model = Idea                       # IS THIS NEEDED
-    template_name = 'idea_detail.html' # IS THIS NEEDED
+    model = Idea                       
+    template_name = 'idea_detail.html' 
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Idea.objects.filter(status=1)
@@ -66,7 +96,7 @@ class IdeaDetail(View):
 
             return render(
             request,
-            "idea_detail.html",
+            "index.html",
                 {
                     "idea": idea,
                     "footnotes": footnotes,
@@ -106,6 +136,15 @@ class IdeaDetail(View):
                     "footnote_form": footnote_form
                 },
             ) 
+
+# class IdeaCreateView(CreateView):
+#    model = Idea
+#    form_class = IdeaForm
+#    template_name = 'index.html' # IS THIS OK TO HAVE THIS
+
+#    def form_valid(self, form):
+#        form.instance.author = self.request.user  # Might not need this as idea model does not have author as field
+#        return super().form_valid(form)
  
 class IdeaLike(View):
 
@@ -118,20 +157,3 @@ class IdeaLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
-
-class AddIdea(View):
-    model = Idea
-    template_name = 'add_idea.html'
-#    fields = '__all__' NOT SURE DO WE NEED TO STIPULATE FIELDS
-
-    def post(self, request):
-        if request.method == 'POST': 
-            idea_form = IdeaForm(request.POST)
-            if idea_form.is_valid():
-                idea_form.save()
-                return redirect('idea_detail')
-        idea_form = IdeaForm()
-        context = {
-            'idea_form': idea_form
-         }   
-        return render(request, self.template_name, context)

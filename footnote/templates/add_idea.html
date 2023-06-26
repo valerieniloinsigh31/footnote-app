@@ -1,26 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %} 
+{% block title %} Create an Idea {% endblock %}
 {% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add an Idea</title>
-</head>
-<body>
- <form method="POST" action="add_idea">    <!--MAYBE add_idea better-->
-    {{ idea_form.as_p | crispy }} <!--can render as template variable because view code...consider as_p for vertical styling-->
-    {% csrf_token %}
-    {% if user.is_authenticated %}
-                <h3><span class="odd">Idea</span>:</h3>
-                <p>Idea by: {{ user.username }}</p>
-                <button class="btn btn-success">Submit your Idea</button>
- </form>
-    {% endif %}
-</body>
-</html>
-
-{% endblock content %}
+{% load crispy_forms_tags %}
+<!-- Create a new idea -->
+{% if user.is_authenticated %}
+<div class="container text-center mt-5 md-1">
+   <h1> Create an idea</h1>
+</div>
+<br />
+<div class="form-group">
+   <form method="POST">
+      {% csrf_token %}
+      {{ idea_form }}
+      <div class="col text-center">
+         <button class="btn btn-lime mt-2 mb-5" type="submit">Create Idea</button>
+      </div>
+   </form>
+</div>
+{% else %}
+<h3>Please register and login to view this page...</h3>
+{% endif %}
+{% endblock %}
