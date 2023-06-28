@@ -10,25 +10,25 @@
 
 
 <h1 class="text-center my-3" style="color:#a410e8;">My Writer Profile</h1>
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:peachpuff">
   <div class="row mx-auto mb-4">
     <div class="col-lg-6 col-md-12 mt-2">
-      <!-- collapsible feature -->
-      <div class="accordion" id="footnote-accordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
+      <!-- collapsible feature from bootstrap-->
+      <div>
+        <div>
+          <h2>
               <strong style="margin-left: 20%;">FootNote Log <i class="fa-solid fa-shoe-prints"></i> </strong>{{ footnote.content | linebreaks }}
           </h2>
         </div>
-        <!--need to ensure it's only footnotes by this specific user {{ user.username }}<-->
         <div class="table-responsive">
           <table class="table">
                     <thead>
                         <tr>
                           <th scope="col">#</th>
-                          <th scope="col" style="color:#a410e8;">Content</th>
-                          <th scope="col" style="color:#a410e8;">Date</th>
-                          <th scope="col" style="color:#a410e8;">By:</th>
+                          <th scope="col" style="color:#a410e8;">Idea:</th>
+                          <th scope="col" style="color:#a410e8;;">Content:</th>
+                          <th scope="col" style="color:#a410e8;">Date:</th>
+                          <th scope="col" style="color:#a410e8;;">By:</th>
                           <th scope="col" style="color:#a410e8;">Delete:</th>
                         </tr>
                     </thead>
@@ -41,20 +41,22 @@
                     aria-controls="collapseOne"
       >
                     <td class="expand-button"></td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
+                    <td scope="col" style="color:black; font-family:Arial, Helvetica, sans-serif;">What wast the  idea?</td>
+                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">What didst  the  footnote  sayeth?</td>
+                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">At which hour wast  the  footnote  hath made?</td>
+                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Who wroteth  the  footnote?</td>
+                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Out damned footnote!</td>
 
       </tr>
                     <tr class="hide-table-padding">
                     {% for footnote in footnotes %}
                           <td></td>
+                          <td style="color:#a410e8;">{{ footnote.idea}}</td>
                           <td>{{ footnote.content }}{{ content }}</td>
-                          <td>{{ footnote.created_on }}</td>
+                          <td style="color:#a410e8;">{{ footnote.created_on }}</td>
                           <td>{{ footnote.name }}</td>
                           <td><a href="/delete/{{ footnote.id }}">
-                            <button>Delete</button></a></td>
+                            <button type="button" class="btn btn-danger">Delete</button></a></td>
                       </tr>
                     {% endfor %}
                   </tbody>
@@ -62,7 +64,6 @@
               </div>
             </div>
 
-      <!-- accordion -->
     </div>
     <div class="col-lg-6 col-md-10 mt-2 ">
       <form method="POST" class="px-3" id="writerprofile-form">
