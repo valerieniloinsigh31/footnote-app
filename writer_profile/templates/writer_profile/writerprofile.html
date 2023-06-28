@@ -21,10 +21,11 @@
           </h2>
         </div>
         <!--need to ensure it's only footnotes by this specific user {{ user.username }}<-->
-              <div class="wrapper">
-                <table class="table">
+        <div class="table-responsive">
+          <table class="table">
                     <thead>
                         <tr>
+                          <th scope="col">#</th>
                           <th scope="col" style="color:#a410e8;">Content</th>
                           <th scope="col" style="color:#a410e8;">Date</th>
                           <th scope="col" style="color:#a410e8;">By:</th>
@@ -33,7 +34,13 @@
                     </thead>
                   <tbody>
                     {% for footnote in footnotes %}
-                      <tr>
+                      <tr class="accordion-toggle collapsed"
+                      id="accordion1"
+                      data-mdb-toggle="collapse"
+                      data-mdb-parent="#accordion1"
+                      href="#collapseOne"
+                      aria-controls="collapseOne">
+                          <td class="expand-button"></td>
                           <td>{{ footnote.content }}{{ content }}</td>
                           <td>{{ footnote.created_on }}</td>
                           <td>{{ footnote.name }}</td>
