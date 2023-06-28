@@ -34,15 +34,15 @@ tr.hide-table-padding td {
       position: relative;
     }
   
-    .accordion-toggle .expand-button:after
-    {
+    .accordion-button:not(.collapsed)  {
       position: absolute;
       left:.75rem;
       top: 50%;
       transform: translate(0, -50%);
       content: '-';
     }
-    .accordion-toggle.collapsed .expand-button:after
+  
+  .accordion-button:focus 
     {
       content: '+';
-    }
+    }  

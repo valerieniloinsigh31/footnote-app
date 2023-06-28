@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<h1>Delete Event</h1>
+
+<h3>Delete: {{ event.title }}</h3>
+{% if user.is_authenticated %}
+    {% if user.id == event.organiser.id %}
+        <div class="container">
+            <h3 class="text-center">Delete Event</h3>
+            <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <strong>Are you sure?</strong>
+            <button class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+    {% else %}
+        <div class="alert alert-danger alert-dismissable fade show" id="msg" role="alert">
+            You can't delete someone else's event!
+        </div>
+    {% endif %}
+{% endif %}
+
+{% endblock %}

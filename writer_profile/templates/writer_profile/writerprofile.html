@@ -13,14 +13,13 @@
 <div class="container-fluid" style="background-color:peachpuff">
   <div class="row mx-auto mb-4">
     <div class="col-lg-6 col-md-12 mt-2">
-      <!-- collapsible feature from bootstrap-->
       <div>
         <div>
           <h2>
               <strong style="margin-left: 20%;">FootNote Log <i class="fa-solid fa-shoe-prints"></i> </strong>{{ footnote.content | linebreaks }}
           </h2>
         </div>
-        <div class="table-responsive">
+        <div>
           <table class="table">
                     <thead>
                         <tr>
@@ -33,94 +32,87 @@
                         </tr>
                     </thead>
                   <tbody>
-                    <tr class="accordion-toggle collapsed"
-                    id="accordion1"
-                    data-mdb-toggle="collapse"
-                    data-mdb-parent="#accordion1"
-                    href="#collapseOne"
-                    aria-controls="collapseOne"
-      >
-                    <td class="expand-button"></td>
+                    <tr>
+                    <td></td>
                     <td scope="col" style="color:black; font-family:Arial, Helvetica, sans-serif;">What wast the  idea?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">What didst  the  footnote  sayeth?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">At which hour wast  the  footnote  hath made?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Who wroteth  the  footnote?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Out damned footnote!</td>
-
       </tr>
-                    <tr class="hide-table-padding">
-                    {% for footnote in footnotes %}
-                          <td></td>
-                          <td style="color:#a410e8;">{{ footnote.idea}}</td>
-                          <td>{{ footnote.content }}{{ content }}</td>
-                          <td style="color:#a410e8;">{{ footnote.created_on }}</td>
-                          <td>{{ footnote.name }}</td>
-                          <td><a href="/delete/{{ footnote.id }}">
-                            <button type="button" class="btn btn-danger">Delete</button></a></td>
-                      </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-    </div>
-    <div class="col-lg-6 col-md-10 mt-2 ">
-      <form method="POST" class="px-3" id="writerprofile-form">
-        {% csrf_token %}
-          <table class="table table-borderless mb-0">
-            <tbody>
-              <tr>
-                <th scope="row">Name:</th>
-                <td class="fw-bold text-capitalize">{{ writer_profile.user.username }}</td>
-              </tr>
-              <tr>
-                <th scope="row">Gender:</th>
-                <th><span class="d-none"> form gender</span>
-                  <label for="id_default_gender" style="color:#a410e8"> Gender <i class="fa-solid fa-person-half-dress"></i></label>
-                  <span class="d-none"> form gender</span>{{ form.default_gender|as_crispy_field }}
-                </th>
-              </tr>
-              <tr>
-                <th scope="row">Writing type | Genre </th>
-                <th><span class="d-none"> form writing type and genre</span>
-                  <label for="id_default_writingtype" style="color:#a410e8">Writing Style <i class="fa-solid fa-feather"></i></label>
-                  {{ form.default_writingtype|as_crispy_field }}
-                  <label for="id_default_genre" style="color:#a410e8">Fave Genre <i class="fa-solid fa-masks-theater"></i></label>
-                  {{ form.default_genre|as_crispy_field }}
-                </th>
-              </tr>
-              <tr>
-                <tr>
-                    <th scope="row">Fave Writer:</th>
-                    <th>
-                      <label for="id_default_favouriteauthor" style="color:#a410e8">Fave Writer <i class="fa-solid fa-crown"></i></label>
-                      <span class="d-none"> form favouriteauthor</span>{{ form.default_favouriteauthor|as_crispy_field }}
-                    </th>
-                  </tr>
-                <th scope="row">Town or City:</th>
-                <th>
-                  <label for="id_default_town_or_city" style="color:#a410e8">Town or City <i class="fa-solid fa-map-pin"></i></label>
-                  <span class="d-none"> form town_or_city</span>{{ form.default_town_or_city|as_crispy_field }}
-                </th>
-              </tr>
-              <tr>
-                <th scope="row">Country</th>
-                <th>
-                  <label for="id_default_country" style="color:#a410e8">Country <i class="fa-solid fa-globe"></i></label>
-                  {{ form.default_country|as_crispy_field }}
-                </th>
-              </tr>
-            </tbody>
-          </table>
-      </form>
-      <div class="d-flex justify-content-end px-4">
-        <button class="btn-dark p-1 px-2 fw-bold " type="submit" form="writerprofile-form">
-          Update profile
-          <i class="bi bi-person"></i>
-        </button>
-      </div>
-    </div>
+        {% for footnote in footnotes %}
+              <td></td>
+              <td>{{ footnote.idea}}</td>
+              <td>{{ footnote.content }}{{ content }}</td>
+              <td>{{ footnote.created_on }}</td>
+              <td>{{ footnote.name }}</td>
+              <td><a href="/delete/{{ footnote.id }}">
+                <button type="button" class="btn btn-danger">Delete</button></a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
+</div>
+
+<!-- Profile form section -->
+</div>
+<div class="col-lg-6 col-md-10 mt-2 ">
+<form method="POST" class="px-3" id="writerprofile-form">
+{% csrf_token %}
+<table class="table table-borderless mb-0">
+<tbody>
+  <tr>
+    <th scope="row">Name:</th>
+    <td class="fw-bold text-capitalize">{{ writer_profile.user.username }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Gender:</th>
+    <th><span class="d-none"> form gender</span>
+      <label for="id_default_gender" style="color:#a410e8"> Gender <i class="fa-solid fa-person-half-dress"></i></label>
+      <span class="d-none"> form gender</span>{{ form.default_gender|as_crispy_field }}
+    </th>
+  </tr>
+  <tr>
+    <th scope="row">Writing type | Genre </th>
+    <th><span class="d-none"> form writing type and genre</span>
+      <label for="id_default_writingtype" style="color:#a410e8">Writing Style <i class="fa-solid fa-feather"></i></label>
+      {{ form.default_writingtype|as_crispy_field }}
+      <label for="id_default_genre" style="color:#a410e8">Fave Genre <i class="fa-solid fa-masks-theater"></i></label>
+      {{ form.default_genre|as_crispy_field }}
+    </th>
+  </tr>
+  <tr>
+    <tr>
+        <th scope="row">Fave Writer:</th>
+        <th>
+          <label for="id_default_favouriteauthor" style="color:#a410e8">Fave Writer <i class="fa-solid fa-crown"></i></label>
+          <span class="d-none"> form favouriteauthor</span>{{ form.default_favouriteauthor|as_crispy_field }}
+        </th>
+      </tr>
+    <th scope="row">Town or City:</th>
+    <th>
+      <label for="id_default_town_or_city" style="color:#a410e8">Town or City <i class="fa-solid fa-map-pin"></i></label>
+      <span class="d-none"> form town_or_city</span>{{ form.default_town_or_city|as_crispy_field }}
+    </th>
+  </tr>
+  <tr>
+    <th scope="row">Country</th>
+    <th>
+      <label for="id_default_country" style="color:#a410e8">Country <i class="fa-solid fa-globe"></i></label>
+      {{ form.default_country|as_crispy_field }}
+    </th>
+  </tr>
+</tbody>
+</table>
+</form>
+<div class="d-flex justify-content-end px-4">
+<button class="btn-dark p-1 px-2 fw-bold " type="submit" form="writerprofile-form">
+Update profile
+<i class="bi bi-person"></i>
+</button>
+</div>
+</div>
+</div>
 </div>
 {% endblock %}
