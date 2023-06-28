@@ -2,18 +2,23 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'medley/css/medley.css' %}">
+{% endblock %}
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
+        <img src="/static/media/pen_pexels.jpg" class="d-block w-100" alt="An expensive pen in good lighting">
     </div>
+    </div>
+    <div class="carousel-item">
+        <img src="/static/media/past_pexels.jpg" class="d-block w-100" alt="An archway under an old structure, with pillars on each side and sun spilling in">
+    </div>
+    <div class="carousel-item">
+        <img src="/static/media/memories_pexels.jpg" class="d-block w-100" alt="Two young girls who appear to be looking behind them, into the sunlight">
+    </div>
+</div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
