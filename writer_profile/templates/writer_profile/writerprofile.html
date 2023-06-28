@@ -33,14 +33,25 @@
                         </tr>
                     </thead>
                   <tbody>
+                    <tr class="accordion-toggle collapsed"
+                    id="accordion1"
+                    data-mdb-toggle="collapse"
+                    data-mdb-parent="#accordion1"
+                    href="#collapseOne"
+                    aria-controls="collapseOne"
+      >
+                    <td class="expand-button"></td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+
+      </tr>
                     {% for footnote in footnotes %}
-                      <tr class="accordion-toggle collapsed"
-                      id="accordion1"
-                      data-mdb-toggle="collapse"
-                      data-mdb-parent="#accordion1"
-                      href="#collapseOne"
-                      aria-controls="collapseOne">
-                          <td class="expand-button"></td>
+                    <tr class="hide-table-padding">
+                      <td></td>
+                      <td>
+                        <div id="collapseOne" class="collapse">
                           <td>{{ footnote.content }}{{ content }}</td>
                           <td>{{ footnote.created_on }}</td>
                           <td>{{ footnote.name }}</td>
