@@ -5,16 +5,20 @@
 {% load crispy_forms_tags %}
 <!-- Create a new idea -->
 {% if user.is_authenticated %}
-<div class="container text-center mt-5 md-1">
-   <h1> Create an idea</h1>
+<div class="container-fluid" style="background-color: peachpuff">
+   <div class="container text-center mt-5 md-1">
+   <h3>
+      Create an Idea
+      <small class="text-muted">To be <b style="color:#a410e8;">Foot</b>Noted<sup>x</sup></small> <i class="fa-solid fa-shoe-prints"></i>
+    </h3>
 </div>
 <br />
 <div class="form-group">
-   <form method="POST">
+   <form method="POST" style="color:#a410e8;">
       {% csrf_token %}
       {{ idea_form }}
       <div class="col text-center">
-         <button class="btn btn-lime mt-2 mb-5" type="submit">Create Idea</button>
+         <button type="button" class="btn btn-success">Create Idea</button>
       </div>
    </form>
 </div>
@@ -22,3 +26,4 @@
 <h3>Please register and login to view this page...</h3>
 {% endif %}
 {% endblock %}
+</div>
