@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from footnote.models import Idea, FootNote
 from writer_profile.models import WriterProfile
-
+from footnote.forms import FootNoteForm
 
 
 

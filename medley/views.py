@@ -10,7 +10,14 @@ from writer_profile.models import WriterProfile
 from footnote.models import FootNote, Idea
 from .models import Medley
 
-
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, HttpResponseRedirect
+from django.utils import timezone
+import random
+from footnote.forms import FootNoteForm
 
 # def medley(request):
 #    """
@@ -23,7 +30,7 @@ from .models import Medley
 #    model = 'Medley'
 #    template_name = 'medley.html'
 
-@login_required # consider deleting this so any user can view medley (anonymous)
+# @login_required # consider deleting this so any user can view medley (anonymous)
 # def medley(request):
 #    """
 #    view handling medley 
@@ -64,3 +71,14 @@ def footnote_medley(request, content):
 
     return render(request, template, context)
   
+
+
+def random_footnote(request):
+    """
+    generate random idea for medley 
+    """
+    footnote_ids= FootNote.objects.all().values_list('footnote_id',flat=True)
+    random_obj = FootNote.objects.get(footnote_id=random.choice(list(footnote_ids)))
+    context = {
+    'random_obj':random_obj,}
+    return render(request, 'medley/medley.html', context)

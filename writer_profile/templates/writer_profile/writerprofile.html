@@ -47,11 +47,9 @@
                     <td>Cell</td>
 
       </tr>
-                    {% for footnote in footnotes %}
                     <tr class="hide-table-padding">
-                      <td></td>
-                      <td>
-                        <div id="collapseOne" class="collapse">
+                    {% for footnote in footnotes %}
+                          <td></td>
                           <td>{{ footnote.content }}{{ content }}</td>
                           <td>{{ footnote.created_on }}</td>
                           <td>{{ footnote.name }}</td>
