@@ -77,8 +77,27 @@ def random_footnote(request):
     """
     generate random idea for medley 
     """
-    footnote_ids= FootNote.objects.all().values_list('footnote_id',flat=True)
-    random_obj = FootNote.objects.get(footnote_id=random.choice(list(footnote_ids)))
-    context = {
-    'random_obj':random_obj,}
+        footnote_ids= FootNote.objects.all().values_list('footnote_id',flat=True)
+        random_obj = FootNote.objects.get(footnote_id=random.choice(list(footnote_ids)))
+        context = {
+        'random_obj':random_obj,
+        }
     return render(request, 'medley/medley.html', context)
+
+class AddMedley(View):
+    model = FootNote
+    template_name = 'medley.html'
+    
+
+    def get(self, request, *args, **kwargs):
+        footnote = FootNote()
+        context = {
+            "footnote": footnote
+        }
+        return render(request, "medley.html", context)
+        
+    def post(self, request, *args, **kwargs):
+        { footnote.random() }
+        else:
+            pass
+        return redirect('medley.html')

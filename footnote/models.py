@@ -37,9 +37,6 @@ class Idea(models.Model):
     def delete_idea(self):
         return self.idea.delete()
 
-    #def add_idea(self):
-    #    return self.idea.add('add_idea.html') #IS THIS EVEN NEEDED?
-
 
 class FootNote(models.Model):
     idea = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='footnotes')

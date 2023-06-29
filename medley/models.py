@@ -16,3 +16,9 @@ class Medley(models.Model):
     
     def __str__(self):
         return self.title
+
+class Medley_random(models.Model):
+    content = models.TextField(max_length=280)
+    
+    def __str__(self):
+        return self.title

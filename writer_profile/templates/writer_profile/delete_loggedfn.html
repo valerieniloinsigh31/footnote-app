@@ -6,11 +6,11 @@
 
 <h1>Delete Event</h1>
 
-<h3>Delete: {{ event.title }}</h3>
+<h3>Delete: {{ footnote }}</h3>
 {% if user.is_authenticated %}
-    {% if user.id == event.organiser.id %}
+    {% if user.id == name.id %}
         <div class="container">
-            <h3 class="text-center">Delete Event</h3>
+            <h3 class="text-center">Delete Footnote</h3>
             <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <strong>Are you sure?</strong>
@@ -19,7 +19,7 @@
         </div>
     {% else %}
         <div class="alert alert-danger alert-dismissable fade show" id="msg" role="alert">
-            You can't delete someone else's event!
+            You can't delete someone else's footnote!
         </div>
     {% endif %}
 {% endif %}
