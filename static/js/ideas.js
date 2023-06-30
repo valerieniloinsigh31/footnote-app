@@ -12,7 +12,7 @@ ideaText.value = "";
 
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
-        let ideaId = e.target.getAttribute("idea_id"); // what about slug?
+        let ideaId = e.target.getAttribute("idea_id"); 
         deleteConfirm.href = `delete_idea/${ideaId}`;
         deleteModal.show();
     });
