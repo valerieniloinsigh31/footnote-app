@@ -105,10 +105,7 @@ Milestones 3: ![alt text](./static/media/footnote_milestonesv3.png)
 As I was progressing through the Kanban board of user stories, I bore in mind the MOSCOW prioritisation emphasised in the Agile methodology module:
 I was always thinking about what is a must-have, what would be nice to have and what would be a feature added only if we had time.
 
-Labels and MOSCOW Prioritisation: ![alt text](./static/media/
-
-
-As advised in the tutorials, I applied MOSCOW prioritisation:
+As advised in the tutorials, I applied MOSCOW prioritisation.
 I divided my user stories into the following subsections:
 Must Have (Ability to post an idea or footnote, separate writer profile page, log in and out and registration functionality. Abilty to edit and delete own comments)
 Should Have (Medley button that is inkeeping with the out of context inspiration the app promotes. The writerprofile links to the relevant writers (Marina Carr, John Grisham, Samuel Beckett))
@@ -124,9 +121,9 @@ Yellow: Should Have
 Orange: Could Have
 Red: Won't Have
 
-Labels on the kanban board:
+Labels and MOSCOW Prioritisation (extract from the kanban board)
 
-![alt text](./static/media/)
+![alt text](./static/media/footnote_labels.png)
 
 <b>Must have:</b>
 Can create an original idea
@@ -277,7 +274,7 @@ With Django, I focussed on convention over configuration, wherein I only specifi
 
 If the developer wishes to stray from convention, explicit code needs to be added.
 
-Views:
+- Views:
 As per the blog walkthrough, I used class-based views but I did also include a number of views which are solely definition based (e.g. function based views)
 
 The class based views allowed me to use code that is reusable and that inherits from one another.
@@ -378,7 +375,7 @@ To further establish the aforemtioned fast-moving and transient nature of what t
 
 The writer profile is also an important aspect of the design, it is intended for writers who seek feedback so, accordingly having their own page where they can have their own information stored (which they can readily udpate) and that the footnotes feed in from the main site and they can mark the ones they consider more inspirational/useful from their own perspective (currently this is done with a check button in a 'favourite column' where they can denote the footnotes that are their favourite so that they can refer to them at a quick glance). Future designs will also include a star rating for each.
 
-## Logo on Look
+## Logo on Looka
 
 Having used Look for a logo in a separate project, I considered it to be a good investment and purchased a logo from Looka for this app. I stipulated the theme and colour preferences and was presented with the following (which I have incorporated as a favicon):
 
@@ -516,6 +513,7 @@ Flex
 Overflow:hidden
 Margin
 
+
 vh and vw used- which sizes things relative to the viewport height(vh) and viewport width(vw)
 
 Please see below, a variety of responsiveness testing photos on different viewports,
@@ -589,7 +587,7 @@ See below various browsers listed and detail on compatibility with app:
 
 One of the useful inbuilt features of Github with regard to python code is that the PEP 8 errors are detailed under problems.
 
-PEP8 errors: ![alt text](./static/media/kanban_board.png) 
+PEP8 errors: ![alt text](./static/media/)
 
  Go into each file and check these. Usually issues with line being too long, whitespace left after code lines, not enough spaces before a line of code etc.
 
@@ -620,12 +618,11 @@ Different validators used for each language type (HTML, CSS, Javascript, Python)
 
  Please see the results for the HTML validation testing for the various HTML templates below:
 
- base.html: ![alt text](./static/media/)
- index.html: ![alt text](./static/media/)
- idea_detail.html: ![alt text](./static/media/) 
- add_idea.html: ![alt text](./static/media/)
- medley.html: ![alt text](./static/media/)
- writerprofile.html: ![alt text](./static/media/)
+ Landing Page:
+ Idea Detail:
+ Sign In/Out:
+ Medley:
+ Writer Profile:
  
 
 <p>Javascript testing</p>
