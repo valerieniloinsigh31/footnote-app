@@ -121,13 +121,13 @@ class IdeaDetail(View):
         footnote_form = FootNoteForm(data=request.POST)
 
         if footnote_form.is_valid():
-                footnote_form.instance.email = request.user.email 
-                footnote_form.instance.name = request.user.username
-                footnote = footnote_form.save(commit=False)
-                footnote.idea = idea
-                footnote.save()
+            footnote_form.instance.email = request.user.email 
+            footnote_form.instance.name = request.user.username
+            footnote = footnote_form.save(commit=False)
+            footnote.idea = idea
+            footnote.save()
         else:
-                footnote_form = FootNoteForm()
+            footnote_form = FootNoteForm()
 
         return render(
                 request,

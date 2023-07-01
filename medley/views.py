@@ -27,5 +27,5 @@ def medley(request):
     template = 'medley.html'
     random_footnote = FootNote.objects.order_by('?').first 
     context = {
-        'random_footnote' : random_footnote,}
+        'random_footnote': random_footnote, }
     return render(request, template, context)

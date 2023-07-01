@@ -534,15 +534,16 @@ vh and vw used- which sizes things relative to the viewport height(vh) and viewp
 Please see below, a variety of responsiveness testing photos on different viewports,
 viewed online via Developer Tools:
 
-Sample photos:
+Sample photos on different viewports:
 
-Iphone 12 pro: ![alt text](./static/media/iphone12_test.png)
+Iphone 12 pro: ![alt text](./static/media/footnote_iphone12.png)
 
-MacBook Pro: ![alt text](./static/media/macbook_pro_test)
+MacBook Pro: ![alt text](./static/media/footnote_macbookpro.png)
 
-Ipad Air: ![alt text](./static/media/ipad_air_test.png)
+Ipad Air: ![alt text](./static/media/footnote_ipadair.png);
+![alt text](./static/media/footnote_ipadair2.png)
 
-Nest Hub:  ![alt text](./static/media/nest_hub_test)
+Nest Hub:  ![alt text](./static/media/footnote_nesthub.png)
 
 On small devices, on the landing page, the summary cards stack on top of one another in a responsive fashion instead of becoming stretched or crushed and the visibility is not affected by the size of the viewport.
 
@@ -592,10 +593,10 @@ See below various browsers listed and detail on compatibility with app:
 
  Include screengrabs using developer tools   
 
- Google: ![alt text](./static/media/kanban_board.png)
- Safari: ![alt text](./static/media/kanban_board.png)
- Firefox: ![alt text](./static/media/kanban_board.png)
- Internet Explorer: ![alt text](./static/media/kanban_board.png)        
+ Google: ![alt text](./static/media/footnote_google.png)
+ Safari: ![alt text](./static/media/footnote_safari.png)
+ Firefox: ![alt text](./static/media/)
+ Internet Explorer: ![alt text](./static/media/)        
 
 ## Bugs resolved and unresolved
 
@@ -615,30 +616,42 @@ Browser open as I coded, refreshed and received feedback into different types of
 
 ## Lighthouse testing outcomes
 
-Completed Lighthouse testing of the application via google developer tools:
-Right click webpage-click inpect-navigate to ‘Lighthouse’, click test
+I completed Lighthouse testing of the application via google developer tools:
+I did this via Google developer tools and was satisifed with the result of 97% performance.
 
-Lighthouse test:  ![alt text](./static/media/lighthouse_test)
-
-What I have deduced from Lighthouse testing results:
+Lighthouse test:  ![alt text](./static/media/footnote_lighthouse.png)
 
 ## Code validation
 
-Different validators for each language type (HTML, CSS, Javascript, Python) Please see below a screengrab of the results for each:
-<b>HTML</b>
+Different validators used for each language type (HTML, CSS, Javascript, Python) Please see below a screengrab of the results for each:
+
+## HTML
 <p>[W3 Markup Validation] https://validator.w3.org
  Only minor errors. 3 HTML files, code manually tested for each. Copied and pasted
  into validator
 
-![alt text](./static/media/html_validation.png) 
+ Please see the results for the HTML validation testing for the various HTML templates below:
 
-<p>Javascript</p>
-<p>No javascript used for app</p>
+ base.html: ![alt text](./static/media/)
+ index.html: ![alt text](./static/media/)
+ idea_detail.html: ![alt text](./static/media/) 
+ add_idea.html: ![alt text](./static/media/)
+ medley.html: ![alt text](./static/media/)
+ writerprofile.html: ![alt text](./static/media/)
+ 
+
+<p>Javascript testing</p>
+
+jshint.com: ![alt text](./static/media/jshint_footnote.png)
+
+No errors
 
 <p>CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
+
 No errors found received when CSS code runthrough validator (via copy and paste)
 
-![alt text](./static/media/css_validation.png)
+medley css: [alt tex](./static/media/footnote_css.png)
+
 </p>
 
 <p>Python:</p>
@@ -654,7 +667,7 @@ Also tried to ensure pylint requirement satisfied also,
 "python -m pip install pylint"
 
 
- I completed additional python testing on the Code Institute pytest tool, please see below:
+ I completed additional python testing on the Code Institute python testing tool: (https://pep8ci.herokuapp.com/)
 
 ![alt text](./static/media/css_validation.png)
 
