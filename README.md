@@ -686,18 +686,35 @@ views: ![alt text](./static/media/medleyviews_pytest.png)
 urls: ![alt text](./static/media/medleyurls_pytest.png)
 
 
+WAVE Accessibility testing:
+ I performed accessibility testing at wavewabaim.org. I learned about this additional testing piece when researching on Slack. I noted other students were completing this and thought that it would be useful for my project also.
+
+
 ## Features testing
 
--Post FootNote
--Counters reflect number of likes an idea received and how many FootNotes were left on an idea
+Having considered the must-have users stories, I ensured to test the following functionalities on the website:
+
+-I ensured to test the ability to 'Create an Idea'. I ensured that the initial call to action button was functional in that it opened the relevant form. I ensured that the placeholders in the form were correct and information. I ensured the submit button worked and that a modal appeared alerting me that I had submitted an idea. When this was complete, I logged into the admin interface and confirmed that the idea had been posted there for approval.
+-I ensured that the counters on the ideas accurately reflected the number of likes an idea received (I tested whether this changed when I clicked it, decreasing and increasing in number accordingling). I also checked how many FootNotes were left on an idea. I manually counted them and checked the number on the counter to ensure accuracy.
 -Summary cards open up more detail idea post when clicked
--Pagination works effectively
--Account regisation works
--Log in, log off works
--Messages work and disappear by themselves after specified time (6 seconds-6000)
+-I checked that the pagination worked as intended (three ideas per summary page)
+-I checked the the max footnote function was wokring
+-I checked that the account regisation worked. I registered an account and ensured I could log in after that with those details
+-I checked that I could log in with my registered account, log out and then back in again.
+-I checked that the mssages worked and disappeared by themselves after the time i ahd specified in the code (6 seconds-6000)
 -FootNotes give detail on who posted them and when they were posted
--Facebook/Tiktok/Instgram at bottom
--NAV bar effectively allows user to navigate from summary page to idea page
+-I checked that the links to socials, Facebook, Tiktok, Instagram and Twitter, as well as personal website, that were listed in the footer all successfully oepend on a separate page
+-I checked that the NAV bar effectively allowed me to navigate to the pages that it indicated. I also checked the the FootNote in the corner led to the landing page as I ahd intended.
+-I checked that the dropdown gave me options
+-I checked that i could post a footnote to an idea (Enter the idea page, enter text in the footnote content box and submit footnote). I ensured I received a message confirming submission and checked the admin interface afterwards also. 
+-I checked did all of my footnoes show that I had the capaability of editing them and deleting them (the edit and delete buttons should automatically appear under footnotes that the logged in user has left)
+-I checked did the edit button function as intended (autopopulate the content box with my previous footnote, enable editing and have the text on the button change from submit to update.) I ensured the footnote matched the updated text once submitted.
+-I checked did the delete button work as intended. Once delete is clicked, defensive programming was provoked, asking me to confirm whether I would like to permanently delete my footnote. Once confirmed, the footnote was deleted and no longer appeared under the idea.
+-I checked on the writer profile tab could I freely update my personal details. The field updated accordingly once update was clicked and the answers remained that way even when navigating away form the page and back again
+-I checked did the collapsible work as intended in the footnote log on the writer profile page. As intended, it revealed and hid the footnotes that pulled in from the main site as intended
+-I checked did the checkbox inserted beside the footnotes in the footnote log work. These are currently just for aesthetic reasons. It is to be helpful to the writer to tick particular footnotes they are interested in so they can asily transfer them to a laptop etc without losing their place as there are a lot of footnotes. The check box does not remain ticked once the page is refreshed
+-I checked did the carousel feature on the Medley page work as intended. As intended, I could flick from one slide to the next using the controls.
+-I checked did the medley button work, as intended when the medley button is clicked it pulls in and displays a random footnote from the ideas posted to the app.  It denotes solely the content the the person who left the footnote. It is designed to provide quick moments of out of context inspiration.
 
 # Deployment
 <b>Deployment, forking, cloning </b>
