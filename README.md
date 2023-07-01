@@ -548,7 +548,7 @@ On small devices, on the landing page, the summary cards stack on top of one ano
 
 The user has the ability to scroll down.
 
-<b>Compatibility testing</b>
+## Compatibility testing
 
 I tested the FootNote app on various browsers to check compatibility.
 See below various browsers listed and detail on compatibility with app:
@@ -597,7 +597,7 @@ See below various browsers listed and detail on compatibility with app:
  Firefox: ![alt text](./static/media/kanban_board.png)
  Internet Explorer: ![alt text](./static/media/kanban_board.png)        
 
-<b>Bugs resolved and unresolved</b>
+## Bugs resolved and unresolved
 
 One of the useful inbuilt features of Github with regard to python code is that the PEP 8 errors are detailed under problems.
 
@@ -613,7 +613,7 @@ PEP8 errors: ![alt text](./static/media/kanban_board.png)
 Browser open as I coded, refreshed and received feedback into different types of errors and reasons for them
 
 
-<b>Lighthouse testing outcomes</b>
+## Lighthouse testing outcomes
 
 Completed Lighthouse testing of the application via google developer tools:
 Right click webpage-click inpect-navigate to ‘Lighthouse’, click test
@@ -622,7 +622,8 @@ Lighthouse test:  ![alt text](./static/media/lighthouse_test)
 
 What I have deduced from Lighthouse testing results:
 
-<h1><b>Code validation</b></h1>
+## Code validation
+
 Different validators for each language type (HTML, CSS, Javascript, Python) Please see below a screengrab of the results for each:
 <b>HTML</b>
 <p>[W3 Markup Validation] https://validator.w3.org
@@ -734,7 +735,7 @@ To create a clone of your project:
 
 Additional notes:
 
-<b>On Heroku</b>
+## On Heroku
 Go to settings-Reveal Config Vars
 
 Remove DISABLE_COLLECTSTATIC config variable
@@ -749,7 +750,7 @@ Django...not everything needs to be in one app
 All app logic doesn't need to be in views.py file
 
 
-Deployment of the app
+# Deployment of the app
 
 - Navigate to  the 'Deploy' tab and select Github-Connect to Github-this will enable automatic deployment.
 - Retrieve your respoitary by name, using the search function available.
@@ -763,9 +764,6 @@ Deployment of the app
 Disable debug...get rid of traceback which my compromise your site
 Install X-Frame Options=Same Origin...CORS cross origina resource sharing security feature
 Tells system resources are permitted to be loaded
-
-
-
 
 # Credit and Thanks
 
