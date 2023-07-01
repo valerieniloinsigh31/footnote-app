@@ -1,28 +1,28 @@
 {% extends 'base.html' %}{% block content %}
-{% block title %}{% endblock %}
 {% load static %}
 {% load crispy_forms_tags %}
 <!-- Create a new idea -->
-{% if user.is_authenticated %}
+
 <div class="container-fluid" style="background-color: peachpuff">
-   <div class="container text-center mt-5 md-1">
+<div class="container text-center mt-5 md-1">
    <h3>
       Create an Idea
       <small class="text-muted">To be <b style="color:#a410e8;">Foot</b>Noted<sup>x</sup></small> <i class="fa-solid fa-shoe-prints"></i>
     </h3>
 </div>
-<br />
-<div class="form-group">
-   <form method="POST" style="color:#a410e8;">
-      {% csrf_token %}
-      {{ idea_form.as_p }}
-      <div class="col text-center">
-         <button type="button" class="btn btn-success">Create Idea</button>
-      </div>
-   </form>
-</div>
+<br/>
+{% if user.is_authenticated %}
+   <div class="form-group">
+      <form method="POST" action="{% url 'add_idea' %}" style="color:#a410e8;">
+         {% csrf_token %}
+         {{ idea_form.as_p }}
+         <div class="col text-center">
+         <button type="submit" class="btn btn-success">Create Idea</button>
+         <div>
+      </form>
+   </div>
 {% else %}
-<h3>Please register and/or login to submit an idea...</h3>
+   <h3>Please register and/or login to submit an idea...</h3>
 {% endif %}
 {% endblock %}
 </div>

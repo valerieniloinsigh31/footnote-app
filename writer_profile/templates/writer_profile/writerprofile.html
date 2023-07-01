@@ -99,7 +99,7 @@
                           <th scope="col" style="color:#a410e8;;">Content:</th>
                           <th scope="col" style="color:#a410e8;">Date:</th>
                           <th scope="col" style="color:#a410e8;;">By:</th>
-                          <th scope="col" style="color:#a410e8;">Rating:</th>
+                          <th scope="col" style="color:#a410e8;">Delete:</th>
                         </tr>
                     </thead>
                   <tbody>
@@ -109,7 +109,7 @@
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">What didst  the  footnote  sayeth?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">At which hour wast  the  footnote  hath made?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Who wroteth  the  footnote?</td>
-                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Rating!</td>
+                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">  Favourite</td>
 
       </tr>
               <div>
@@ -120,13 +120,8 @@
                           <td>{{ footnote.content }}{{ content }}</td>
                           <td style="color:#a410e8;">{{ footnote.created_on }}</td>
                           <td>{{ footnote.name }}</td>
-                          <td><a href="">
-                           <div class="stars"><a>⭐</a>
-                            <a>⭐</a>
-                            <a>⭐</a>
-                            <a>⭐</a>
-                            <a>⭐</a>
-                            </div>
+                          <td><a class="stars">⭐</a> </td>
+          
                         </td>
                             
                       </tr>
@@ -141,5 +136,5 @@
 
 {% block extras %}
 {% load static %}
-<script src="{% static 'writer_profild/js/writerprofile.js' %}"></script>
+<script src="{% static 'writer_profile/js/writerprofile.js' %}"></script>
 {% endblock extras %}
