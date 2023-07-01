@@ -25,7 +25,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['footnote.herokuapp.com', '8000-valerienilo-footnoteapp-rudralocqle.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['https://footnote.herokuapp.com/', '8000-valerienilo-footnoteapp-rudralocqle.ws-eu101.gitpod.io']
 
 
 # Application definition
