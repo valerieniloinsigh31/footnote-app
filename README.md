@@ -716,6 +716,7 @@ Having considered the must-have users stories, I ensured to test the following f
 -I checked did the carousel feature on the Medley page work as intended. As intended, I could flick from one slide to the next using the controls.
 -I checked did the medley button work, as intended when the medley button is clicked it pulls in and displays a random footnote from the ideas posted to the app.  It denotes solely the content the the person who left the footnote. It is designed to provide quick moments of out of context inspiration.
 
+
 # Deployment
 <b>Deployment, forking, cloning </b>
 
@@ -748,14 +749,12 @@ Had a few different versions of the app on Heroku and had connected the database
 
 ### Github Deployment
 
-The website was delpoyed using GitHub. To do this I did the following;
+The website was deployed using GitHub. To do this I did the following;
 
-1. When on the websites GitHub repository, I clicked on the settings tab
-2. Then on the settings page, on the left hand side of the page, I clicked on the pages tab
-3. Under the Source section, click on the drop down menu titled Branch and select main
-4. The page is now published with a link available to use.
-
-()
+1. When on the websites GitHub repository, I clicked on the 'settings' tab.
+2. Then on the settings page, on the left hand side of the page, I clicked on the 'pages' tab.
+3. Under the Source section,  I selected 'main' as the branch.
+4. This procured a published link.
 
 ### Creating a Fork or Copying
 
@@ -774,12 +773,11 @@ To create a clone of your project:
 
 ### Heroku
 
-- When you have reached the dashboard for Heroku.com, click New and then select 'Create New App' from the drop-down menu.
-- On the next page, onput you app anme, select your appropriate region and proceed to create app
-- Navigate to the settings tab and scroll to  the 'Reveal Config Vars' section. When there, add the key of 'Port' and the value of '8000'. 
-- Below this click Add buildpack and choose python and nodejs in that order. The importance of retaining this order is due to...
-
-Additional notes:
+- I logged into my account on Heroku.com.
+- I clicked new on the dashboard and selected, 'Create New App' from the drop-down menu.
+- I entered an app name, chose my region and proceeded to create the app.
+- I navigated to the settings tab and the 'Reveal Config Vars' section. When there, I added the key of 'Port' and the value of '8000'. 
+- On the same page, I selected, 'Add buildpack' and selected 'python' first and once that was added, I selected 'nodejs' in that order. The order these are added was important.
 
 ## On Heroku
 Go to settings-Reveal Config Vars
@@ -788,29 +786,21 @@ Remove DISABLE_COLLECTSTATIC config variable
 
 Deploy tab, scroll to end, deploy branch
 
-View build log to ensure all working okay
+As the app was deploying, I scrolled to the activity tab and monitored the build log to ensure all was working okay.
 
-As per future features listed - still room for a lot of development
+# Deployment of the app on Heroku
 
-Django...not everything needs to be in one app
-All app logic doesn't need to be in views.py file
-
-
-# Deployment of the app
-
-- Navigate to  the 'Deploy' tab and select Github-Connect to Github-this will enable automatic deployment.
-- Retrieve your respoitary by name, using the search function available.
-- Connect to your chosen repo.
-- If you elect to choose automatic deployment (as opposed to the manual deployment which is a once off deployment where in the process will need to be reperformed manually on each deployment) the app will automatically redeploy when you commit on Github.
-- Following deployment, you should now be able to access your deployed live project.
+- I navigated to  the 'Deploy' tab and selected 'Github-Connect to Github' so that for each subsequent commit on Github would be automatically deployed to Herkoku.
+- When linking, I retrieved my repositary using the search function available, then connected.
+- Following deployment, I could access the deployed live project.
 
 
-<b>Steps</b>
-<b>On Github:</b>
-Disable debug...get rid of traceback which my compromise your site
-Install X-Frame Options=Same Origin...CORS cross origina resource sharing security feature
-Tells system resources are permitted to be loaded
-Remove disable collect static
+## Additional steps for dpeloyment on Github
+- There were a number of tasks to be completed prior to deployment as the project was moved from development to production phase.
+- I disablef debug. This gets rid of the traceback which may have compromised the site.
+-Install 'X-Frame Options=Same Origin'. This is a CORS(Cross Origin Resource Sharing) security feature.
+- Tells system resources are permitted to be loaded
+- I removed the DISABLE_COLLECT STATIC field from Heroku
 
 # Credit and Thanks
 
