@@ -744,7 +744,7 @@ The website was deployed using GitHub. To do this I did the following;
 
 ### Creating a Fork or Copying
 
-To clone/fork/copy the repository you click on the fork tab which is situated next to unwatch tab in the top right corner of the page
+To fork the repository you click on the fork tab which is situated next to unwatch tab in the top right corner of the page
 
 ### Copying the repositary on Github
 
@@ -781,7 +781,7 @@ As the app was deploying, I scrolled to the activity tab and monitored the build
 - Following deployment, I could access the deployed live project.
 
 
-## Additional steps for dpeloyment on Github
+## Additional steps for deployment on Github
 - There were a number of tasks to be completed prior to deployment as the project was moved from development to production phase.
 - I disablef debug. This gets rid of the traceback which may have compromised the site.
 -Install 'X-Frame Options=Same Origin'. This is a CORS(Cross Origin Resource Sharing) security feature.
@@ -792,25 +792,33 @@ As the app was deploying, I scrolled to the activity tab and monitored the build
 
 ## References
 
-The images on the medley page were all pruned from pexels.com
+- The images on the medley page were all pruned from pexels.com
 Other images were pruned from pixabay:
 https://pixabay.com/photos/pocket-watch-time-sand-clock-3156771/
+The rap blogpost image was prunded from Shuttershock.
 A number of free open sources used for photos that appear as featured images on idea cards on the summary page.
- They are uploaded to admin interface when original idea is posted. If no image provided then there is code that defaults to a different image via url in code. Whitenoise also installed to overcome any syncing issues between Cloudinary and Heroku.
+ 
+If no image was uploaded with the original post then the code ensures that defaults to a different image via url in code. 
+
+Whitenoise also installed to overcome any syncing issues between Cloudinary and Heroku.
+
 Footprint image in background from the following source: https://codepen.io/bogers/pen/MWJjwJa?editors=1111
+
 All Code Institute tutorials-particularly the blog walkthrough and ‘to-do’ walkthrough.
+
 Also an additional webinar was provided for PP4 which further detailed requirements and provided an updated blog walkthrough repository with additional features. When implementing the additional CRUD functionality for resubmission, I found the following tutorial and code that the Code Institute made available with regard to the Blog walkthrough very useful: https://www.youtube.com/watch?v=YH--VobIA8c
-Agile methodology webinar provided by Code Institute:
+
+Agile methodology webinar provided by Code Institute 'The Guide to the Github Agile Tool' : (https://www.youtube.com/watch?v%253DU_dMihBgUNY)
 
 
 ## Credits
 
 -Slack community
-I derived a huge amount of inspiration from Slack. Particularly the PP4 page, the peer code review page and the MSLETB page. Feedback/encouragement was provided via comments/review of various projects on peer code review page/searching for keywords with regard to my query and looking over old threads.
-Drew inspiration from the following projects on the Peer Code Review page, in particular:
-Blade 5 Repositary Roman: Romanc
+I derived a huge amount of inspiration from Slack. Particularly the PP4 page, the peer code review page and the Msletbb June 2022 page. Feedback/encouragement was provided via comments/review of various projects on peer code review page/searching for keywords with regard to my query and looking over old threads.
+I drew inspiration from the following projects on the Peer Code Review page, in particular:
+Blade 5 Repositary Roman Rakic
 Coffee Now repositary via peer code review: Kieran 123
-Fitness Booking
+
 -Django documentation and W3 school
 -Tutor Support
 Ensured to avail of the ninety minutes of weekly tutor support available to me when I had various queries/coding issues. I was always pointed in the right direction.
@@ -820,6 +828,6 @@ Had my three meetings for submissions and greatly assisted me with two additiona
 Having considered the updated features included with this tutorial, I included the additional option of the logged in user being able to edit and delete the footnote that they leave (in faded format) prior to being approved by the admin.
 
 
--Code open for cloud design on Medley page: [Title](https://codepen.io/fershocastro/pen/dVBgxQ)
--Code tutorial on adding star rating: 
--Codemy video on styling form: [Title](https://www.youtube.com/watch?v%253D6-XXvUENY_8)
+-Code open for cloud design on Medley page: (https://codepen.io/fershocastro/pen/dVBgxQ)
+-Code tutorial on adding star rating: (https://www.youtube.com/watch?v%253DdsRJTxieD4U)
+-Codemy video on styling form: (https://www.youtube.com/watch?v%253D6-XXvUENY_8)
