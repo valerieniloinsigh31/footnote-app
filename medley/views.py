@@ -19,87 +19,13 @@ from django.utils import timezone
 import random
 from footnote.forms import FootNoteForm
 
-# def medley(request):
-#    """
-#    view to render the Medley Page
-#    """
-#    template = 'medley.html'
-#    return render(request, template)
-
-# class MedleyList(generic.ListView):
-#    model = 'Medley'
-#    template_name = 'medley.html'
-
-# @login_required # consider deleting this so any user can view medley (anonymous)
-# def medley(request):
-#    """
-#    view handling medley 
-#    """
-#    medley = get_object_or_404(Medley)
-#    footnotes = FootNote.objects.all()  
-#    template = 'medley.html'
-#    context = {
-
-#        'footnotes': footnotes,
-#        'medley': medley,
-#        'on_medley_page': True
-
-#    }
-#    return render(request, template, context)
 
 def medley(request):
     """
-    view to render the landing page
+    view to render the landing page and generate random footnote
     """
     template = 'medley.html'
     random_footnote = FootNote.objects.order_by('?').first 
     context = {
-        'random_footnote' : random_footnote,
-}
+        'random_footnote' : random_footnote,}
     return render(request, template, context)
-
-#def footnote_medley(request, content):
-#    """
-#    render footnote medley...try to use random function so one random footnote can be summoned from database
-#    """
-
-#    footnote = get_object_or_404(FootNote, content=content, user=request.user,)
-
-#    template = 'medley.html'
-#    context = {
-#        'footnote': footnote,
-#        'content': content,
-#        'from_footnote': True,
-#        'user': request.user,
-#    }
-
-#    return render(request, template, context)
-  
-
-
-# def random_footnote(request):
-#    """
-#    generate random idea for medley 
-#    """
-#    footnote_ids= FootNote.objects.all().values_list('footnote_id',flat=True)
-#    random_obj = FootNote.objects.get(footnote_id=random.choice(list(footnote_ids)))
-#    context = {
-#        'random_obj':random_obj,
-#        }
-#    return render(request, 'medley/medley.html', context)
-
-class AddMedley(View):
-    model = FootNote
-    template_name = 'medley.html'
-    
-
-    def get(self, request, *args, **kwargs):
-        footnote = FootNote.random(FootNote)
-        context = {
-            "footnote": footnote
-        }
-        return render(request, "medley.html", context)
-
-    def post(self, request, *args, **kwargs):
-        { footnote.random() }
-        return redirect('medley.html')

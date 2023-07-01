@@ -11,6 +11,5 @@ class FootNoteForm(forms.ModelForm):
 class IdeaForm(forms.ModelForm):
     class Meta:
         model = Idea
-        fields = ('title', 'slug', 
-        'content','featured_image',)
-
+        fields = ('title', 'slug',
+                  'content', 'featured_image',)

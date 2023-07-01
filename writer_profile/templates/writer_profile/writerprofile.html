@@ -99,7 +99,7 @@
                           <th scope="col" style="color:#a410e8;;">Content:</th>
                           <th scope="col" style="color:#a410e8;">Date:</th>
                           <th scope="col" style="color:#a410e8;;">By:</th>
-                          <th scope="col" style="color:#a410e8;">Delete:</th>
+                          <th scope="col" style="color:#a410e8;">Rating:</th>
                         </tr>
                     </thead>
                   <tbody>
@@ -109,7 +109,7 @@
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">What didst  the  footnote  sayeth?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">At which hour wast  the  footnote  hath made?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Who wroteth  the  footnote?</td>
-                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Out damned footnote!</td>
+                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Rating!</td>
 
       </tr>
               <div>
@@ -137,8 +137,9 @@
               </div>
       </div>
       </div>
-      <script src="writerprofile.js"></script>
-      <script>
-          document.write()
-      </script>
 {% endblock %}
+
+{% block extras %}
+{% load static %}
+<script src="{% static 'writer_profild/js/writerprofile.js' %}"></script>
+{% endblock extras %}

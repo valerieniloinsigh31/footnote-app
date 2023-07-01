@@ -8,7 +8,6 @@
 
 <h3>Delete: {{ footnote }}</h3>
 {% if user.is_authenticated %}
-    {% if user.id == name.id %}
         <div class="container">
             <h3 class="text-center">Delete Footnote</h3>
             <form action="" method="POST" enctype="multipart/form-data">
@@ -17,11 +16,6 @@
             <button class="btn btn-primary">Delete</button>
             </form>
         </div>
-    {% else %}
-        <div class="alert alert-danger alert-dismissable fade show" id="msg" role="alert">
-            You can't delete someone else's footnote!
-        </div>
-    {% endif %}
 {% endif %}
 
 {% endblock %}

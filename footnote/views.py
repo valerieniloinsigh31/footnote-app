@@ -1,12 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import Idea
 from .forms import FootNoteForm, IdeaForm
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
     DeleteView,
@@ -14,6 +13,8 @@ from django.views.generic import (
     CreateView,
     UpdateView,
 )
+import requests 
+
 
 def footnote_delete(request, slug, footnote_id, *args, **kwargs):
     """
@@ -53,6 +54,7 @@ def footnote_edit(request, slug, footnote_id, *args, **kwargs):
             messages.add_message(request, messages.ERROR, 'Error updating footnote!')
 
     return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
+
 
 class IdeaList(generic.ListView):
     model = Idea
@@ -96,9 +98,9 @@ class IdeaDetail(View):
         if idea.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-            return render(
-            request,
-            "idea_detail.html",
+        return render(
+                request,
+                "idea_detail.html",
                 {
                     "idea": idea,
                     "footnotes": footnotes,
@@ -139,6 +141,7 @@ class IdeaDetail(View):
                 },
             ) 
  
+
 class IdeaLike(View):
 
     def post(self, request, slug):

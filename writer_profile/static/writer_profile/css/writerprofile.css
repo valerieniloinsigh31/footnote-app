@@ -10,20 +10,18 @@
   pointer-events:none;
 }
 
-
-
 .stars a {
   opacity: var(--opacity);
   cursor:pointer;
   padding:3px;
 }
 
-.stars hover a {
-  opacity: 100%
+.stars:hover a {
+  opacity: 100%;
 }
 
 .stars a:hover {
-  opacity: 100%
+  opacity: 100%;
 }
 
 /* makes stars following the one hovered on less opaque*/

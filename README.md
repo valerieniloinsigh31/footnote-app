@@ -737,3 +737,4 @@ Had my three meetings for submissions and greatly assisted me with two additiona
 Having considered the updated features included with this tutorial, I included the additional option of the logged in user being able to edit and delete the footnote that they leave (in faded format) prior to being approved by the admin.
 
 
+-Code open for cloud design on Medley page: [Title](https://codepen.io/fershocastro/pen/dVBgxQ)

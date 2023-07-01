@@ -8,6 +8,5 @@ urlpatterns = [
     path('<slug:slug>/', views.IdeaDetail.as_view(), name='idea_detail'),
     path('like/<slug:slug>', views.IdeaLike.as_view(), name='idea_like'),
     path('<slug:slug>/delete_footnote/<int:footnote_id>', views.footnote_delete, name='footnote_delete'),
-    path('<slug:slug>/edit_footnote/<int:footnote_id>', views.footnote_edit, name='footnote_edit')
+    path('<slug:slug>/edit_footnote/<int:footnote_id>', views.footnote_edit, name='footnote_edit'),
 ]
-

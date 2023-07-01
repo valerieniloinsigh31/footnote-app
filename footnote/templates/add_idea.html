@@ -1,7 +1,6 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %}{% block content %}
 {% block title %} Create an Idea {% endblock %}
-{% block content %}
+{% load static %}
 {% load crispy_forms_tags %}
 <!-- Create a new idea -->
 {% if user.is_authenticated %}
@@ -16,7 +15,7 @@
 <div class="form-group">
    <form method="POST" style="color:#a410e8;">
       {% csrf_token %}
-      {{ idea_form }}
+      {{ idea_form.as_p }}
       <div class="col text-center">
          <button type="button" class="btn btn-success">Create Idea</button>
       </div>
