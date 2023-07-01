@@ -738,3 +738,5 @@ Having considered the updated features included with this tutorial, I included t
 
 
 -Code open for cloud design on Medley page: [Title](https://codepen.io/fershocastro/pen/dVBgxQ)
+-Code tutorial on adding star rating: 
+-Codemy video on styling form: [Title](https://www.youtube.com/watch?v%253D6-XXvUENY_8)
