@@ -2,11 +2,12 @@ README FOOTNOTE
 
 # FootNote App - Portfolio Project Four - Full Stack Toolkit
 
-<img src="static/media/" -put in image from AmIResponsive
+<img src="static/media/AMIResponsive_footnote.png">
 
 ## Live Site: 
 
-## Repositary: [Title](https://github.com/valerieniloinsigh31/footnote-app)
+## Repositary:  
+https://github.com/valerieniloinsigh31/footnote-app
 
 ## Contents
 
@@ -37,7 +38,7 @@ The FootNote app is designed to assist creative minds to nudge one another in th
 In summary, the purpose of the FootNote app is to connect creative people. It has the target audience of creative writers, who want to share their original ideas and to get instant feedback from similarly minded people in a useful footnote format, with a maximum amount of characters so that the contribution provided by other app users is a helpful nod as opposed to providing an idea to plagiarise. 
   The evident emphasis on feedback transparency (with every footnote being attributed to the footnote giver) is in place to ensure that nobody abuses the app or tries to use it as a method of stealing the original thoughts of others/to offer unconstructive negative feedback. Equally the ideas left are anonymous so that the ideas are judged/assessed/reacted to exclusively from a creative perspective. The anonymous nature of the idea itself guarantees unbiased footnotes will be provided.
 
-##Goals
+## Goals
 ## Functionalities to include:
 Based on the Minimum Viable Product documentation on Project 4, I concluded that I would have to have the following functionalities available in my FootNote app:
    Both the user and superuser/administrator of my FootNote application, should have the ability to create, read, update and delete items. (CRUD functionality) Albeit, this is applied in different ways.
@@ -63,6 +64,7 @@ User
 -The signed in registered user can submit a profile form and update this profile form on the ‘Profile’ page. There is no limit to how often they can update their profile form and no approval from admin is required
 -They registered user can delete any footnotes that they wish to from the footnote log on their profile page that feeds into their profile page from the main site
 -The user can click a button on the Medley page that will generate a random idea from the current database. This is designed to provide a quick injection of out of context inspiration
+
 ##  Future/goal functionalities to have in future iterations of the app:
  -The user will be able to update or delete their idea at any point they want to (Will add edit/delete button to idea which becomes visible of the user matches the original poster)
  -They will be able to click like or unlike on FootNotes posted by other users (Will add tick buttons to footnotes also)
@@ -79,6 +81,7 @@ User
 -Acceptable Criteria
 -Tasks
 -To do/in progress/done
+
 <b>Kanban board and user stories</b>
 Agile methodology
 Helped me to form logic
@@ -91,12 +94,13 @@ I was always thinking about what is a must-have, what would be nice to have and 
 
 -MOSCOW prioritisation
 -Kanban board (user stories, themes, epics, milestones and sprints)
+
 SCREENGRABS:
-Kanban board:
-User stories (Tasks and acceptance criteria)
-Epics:
-Milestones:
-Labels and MOSCOW Prioritisation:
+Kanban board: ![alt text](./static/media/kanban_board.png)
+User stories (Tasks and acceptance criteria): ![alt text](./static/media/)
+Epics: ![alt text](./static/media/)
+Milestones: ![alt text](./static/media/)
+Labels and MOSCOW Prioritisation: ![alt text](./static/media/)
 
 ## Agile methodology and user stores
 
@@ -109,45 +113,56 @@ To do, in progress, complete
 Kanban board:
 ![alt text](./static/media/kanban_board.png)
 
-<b>Prioritisation:</b>
+## Prioritisation:
 
 As suggested in the tutorials, I applied MOSCOW prioritisation:
-Must Have 
-Should Have 
-Could have
-Won't Have
+Must Have (Ability to post an idea or footnote, separate writer profile page, log in and out and registration functionality. Abilty to edit and delete own comments)
+Should Have (Medley button that is inkeeping with the out of context inspiration the app promotes. The writerprofile links to the relevant writers (Marina Carr, John Grisham, Samuel Beckett))
+Could have (Ability to like footnotes. Ability to delete and edit ideas)
+Won't Have (Ability to delete footnotes from the footnote log on the writer profile-to be implemented in future iterations)
 
 No more than 60% of the user stories should be classified as 'must haves'
 
 The colored labelling available on the kanban board, allows for quick and easy to understand presentation of the MOSCOW presentation:
+
+Green: Must Have
+Yellow: Should Have
+Orange: Could Have
+Red: Won't Have
 
 Labels on the kanban board:
 
 ![alt text](./static/media/)
 
 <b>Must have:</b>
-CRUD functionality-administrator interface mainly
-Can create also via footnotes as a user
-Can create account with registration
+Can create an original idea
+Can create an original footnote
+Can edit own footnote
+Can delete own footnote 
+Can register of the app
+Can log in/out
+Can visit different pages via navigation bar
+Can like an idea posted
 
--Admin interface
--Account registration
--Different views via navigation bar
--Users ability to submit footnotes for approval
 
-
-<b>Should have</b>
+<b>Should Have</b>
 -Counters to display number of ticks on an idea
 -Counter to show how many footnotes left on an idea
+-Medley button that is inkeeping with the out of context inspiration the app promotes.
+- The writerprofile links to the relevant writers (Marina Carr, John Grisham, Samuel Beckett)
+-Links to socials in the footer
 
-<b>Could have</b>
--have mentioned future features
--Ability to like footnotes left
+<b>Could Have</b>
+-Ability to like footnotes. 
+-Ability to delete and edit ideas
+
 <b> Won’t Have </b>
-
+-Ability to delete footnotes from the footnote log on the writer profile tab
+-Ability to rate footnotes on writer profile tab
+-Only footnotes that relate to ideas the logged in user posted pulls into their footnote log
 
  ## Existing Features
--Landing page
+## Landing page
 Create an idea button
 See three ideas, enter to find out more
 Navigate to next/previous page
@@ -155,57 +170,81 @@ Navigate to next/previous page
 -Dropdown to log in/log out/register
 -Summary Page
 Shows latest three ideas and how many likes they received
--Idea detail 
+
+## Idea detail 
 Idea detailed within
 One idea per page.
 Footnotes posted below
 Ability to create a footnote
 If you have posted a footnote, ability to edit and delete your own footnotes
--Writer profile - footnote log and writer profile
+
+## Writer profile - footnote log and writer profile
 User can fill out your personal profile form. These details will be used in future features to implement filters etc
 User can update this form whenever they wish
 Footnote log-wherein footnotes feed in (designed by the date they were created). User can delete these as they wish with their delete button…how to ensure only deleted from profile page…can’t use delete…must use hidden?
--Sign Up – form
+
+## Sign Up – form
 Fill out a registration form and receive a confirmation email
--Log in/out 
+
+## Log in/out 
 Use your registered details to log in by entering your stored email and password.
 Log out of the app
--Medley page - random footnotes generated-button
+
+## Medley page - random footnotes generated-button
 Click medley to be presented with a random out of context idea/footnote from the app. Designed to inspire
--Pagination
+
+## Pagination
 Three idea summaries per page, then pagination comes into force.
 This is so the user does not become overwhelmed.
 It is an app designed to be used on a small, mobile device so visually, summary cards for three ideas seems most appropriate, to avoid unnecessary scrolling.
 Once the idea card is clicked into, there will be one idea per page and up to ten footnotes. (has ten footnotes limit been enforced?) A bootstrap collapsible element has been applied to the foonotes so the ability to writer a footnote pops up immediately without having to scroll down the page
--Navigation bar. Summary page with summary cards for different ideas (revealing amount of likes/footnotes on an idea). Login/Logoff function. Register function. Medley tab, this is a decorative tab, to provide quick inspiration-quotes from famous writers and a button which generates random footnotes from the database once clicked
 
-- Max length 280 characters for both idea and footnotes as the focus of the website is on giving helpful nuggets on fast-occurring ideas as opposed to crossing the territory into elaborate collaboration/plagiarism.
+## Navigation bar. 
+Summary page with summary cards for different ideas (revealing amount of likes/footnotes on an idea). Login/Logoff function. Register function. Medley tab, this is a decorative tab, to provide quick inspiration-quotes from famous writers and a button which generates random footnotes from the database once clicked
+
+## Max length under 500 characters for both idea and footnotes
+ As the focus of the website is on giving helpful nuggets on fast-occurring ideas as opposed to crossing the territory into elaborate collaboration/plagiarism.
+
+ -Additional model for 'connect with my profile'...people who leave ideas will be able to set up a profile, containing only their ideas.
+-Additional model 'Make this my favourite idea'...function of the FootNote website, users can choose one idea per per day as their favourite.
+-Authentication-an additional future feature to be added is that only those who like the original idea will be able to leave a footnote-this will be to for website moderation purposes-the focus of the website is to focus on providing small nuggets of inspiration, a nod in the right direction as opposed to negative or frivolous vitriolic comments.
 
 
 ## Future Features
--Everyone who joins the FootNote app has the choice of having their own FootNote profile, where they post their ideas and are susceptible to criticism/feedback by the other FootNote app members who they have accepted as feedback givers on their profile. Additionally, they will be capable of applying to be a feedback giver on the profiles or other writers who they match with. They will need to be accepted as a feedback giver before they can see the ideas, vote the idea green/red and give feedback on the profiles of other FootNote members.
 
-Use of profiles/connecting profiles: Similarly to the preferences section of Tinder, upon joining the app, the FootNote member is presented with several questions, encouraging them to stipulate their area of interest, the genres they are interested in and writers they are similar to/inspired by and their form of writing (novel/songwriter/screenwriter/poet). Based on the preferences that they list, they will unlock a pool of other profiles that they can apply to be feedback givers on. The owners of the profiles they apply to be feedback givers to, will be able to see their site statistics (how much interaction they have had on the FootNote application (e.g. what ratio of green/red votes on other people's original ideas they have had, how many FootNotes they have posted as feedback to other people's profiles, how many original ideas have they posted to their own profile, when did they join the site etc.) The owner of the profile, who decides whether or not to accept the applicant as a feedback-giver on their own profile will be able to make an informed decision about whether to accept them or not based on their statistics. (e.g. if a profile owners sees that the member who has applied to be a feedback giver on their page, joined three years ago and has yet to post their own original thought and has voted 100% red on other people's original ideas without providing any Footnotes, the profile owner may not be inclined to accept them to their profile as the impression created is that they are there to steal ideas, to offer exclusively negative feedback and not to contribute anything themselves).
--Private view- a separate offline view for the idea owner. Can soft delete the idea at an point and due to CASCADE.DELETE function, all related footnotes will soft delete also. By soft delete, this means becomes private and visible only to the user who posted the original idea and not to the general users. Once hard deleted, the idea and all footnotes would be deleted from the app.
--View-bits of inspiration (things we liked). A separate view created by the moderator/administrator, showcases the most popular idea of the day and has a variety of quotes from writers and pictures of famous writers. It will also have a button called 'Inspire me'. This button will generate three random footnotes (of all of the hundreds of footnotes stored on the database for the apps) and post three of them at a time. One in each circular shaped bubble, to create a dream like effect. The footnotes will be deliberately without context and the randomness/incongruity/unrelatedness with one another may be humorous or profound and hopefully inspire the user.
--Filter on FootNotes under idea for different users
--Order footnotes by amount of likes
--Order idea cards on summary page by most liked
--The main image that appears on the idea will be also uploaded by the app user, it will be connected to their mobile.
-Future features: Additional model for the person who owns the idea can soft-delete their idea and all corresponding footnotes at any time so that that the view becomes private and visible to only them...this will be a good way to ensure that the summary page doesn't become oversaturated.
+## Development of writer profile page
+Everyone who joins the FootNote app has the choice of having their own FootNote profile, where they post their ideas and are susceptible to criticism/feedback by the other FootNote app members who they have accepted as feedback givers on their profile. Additionally, they will be capable of applying to be a feedback giver on the profiles or other writers who they match with. They will need to be accepted as a feedback giver before they can see the ideas, vote the idea green/red and give feedback on the profiles of other FootNote members.
+
+## Use of profiles/connecting profiles: 
+
+Similarly to the preferences section of Tinder, upon joining the app, the FootNote member is presented with several questions, encouraging them to stipulate their area of interest, the genres they are interested in and writers they are similar to/inspired by and their form of writing (novel/songwriter/screenwriter/poet). Based on the preferences that they list, they will unlock a pool of other profiles that they can apply to be feedback givers on. The owners of the profiles they apply to be feedback givers to, will be able to see their site statistics; how much interaction they have had on the FootNote application (e.g. what ratio of green/red votes on other people's original ideas they have had, how many FootNotes they have posted as feedback to other people's profiles, how many original ideas have they posted to their own profile, when did they join the site etc.) The owner of the profile, who decides whether or not to accept the applicant as a feedback-giver on their own profile will be able to make an informed decision about whether to accept them or not based on their statistics. (e.g. if a profile owners sees that the member who has applied to be a feedback giver on their page, joined three years ago and has yet to post their own original thought and has voted 100% red on other people's original ideas without providing any Footnotes, the profile owner may not be inclined to accept them to their profile as the impression created is that they are there to steal ideas, to offer exclusively negative feedback and not to contribute anything themselves).
+
+## Private view- a separate offline view for the idea owner. 
+Can soft delete the idea at an point and due to CASCADE.DELETE function, all related footnotes will soft delete also. By soft delete, this means becomes private and visible only to the user who posted the original idea and not to the general users. Once hard deleted, the idea and all footnotes would be deleted from the app.
+
+## View-bits of inspiration (things we liked). 
+A separate view created by the moderator/administrator, showcases the most popular idea of the day and has a variety of quotes from writers and pictures of famous writers. It will also have a button called 'Inspire me'. This button will generate three random footnotes (of all of the hundreds of footnotes stored on the database for the apps) and post three of them at a time. One in each circular shaped bubble, to create a dream like effect. The footnotes will be deliberately without context and the randomness/incongruity/unrelatedness with one another may be humorous or profound and hopefully inspire the user.
+
+## Filter on FootNotes under idea for different users
+
+## Order footnotes by amount of likes
+
+## Order idea cards on summary page by most liked
+
+## The main image that appears on the idea will be also uploaded by the app user, it will be connected to their mobile.
+F
+uture features: Additional model for the person who owns the idea can soft-delete their idea and all corresponding footnotes at any time so that that the view becomes private and visible to only them...this will be a good way to ensure that the summary page doesn't become oversaturated.
 
 Summary page, there will be a filter option inserted to order ideas either by how many green ticks they received or how many FootNotes they received.
 
 The cascade delete effect is in place so once an idea is deleted, all accompanying footnotes will be deleted as well.
 
--Additional model for 'connect with my profile'...people who leave ideas will be able to set up a profile, containing only their ideas.
--Additional model 'Make this my favourite idea'...function of the FootNote website, users can choose one idea per per day as their favourite.
--Authentication-an additional future feature to be added is that only those who like the original idea will be able to leave a footnote-this will be to for website moderation purposes-the focus of the website is to focus on providing small nuggets of inspiration, a nod in the right direction as opposed to negative or frivolous vitriolic comments.
-
 # UX Design
+
 ## Initial design – Balsamiq wireframes and lucidcharts ERDs
 
 Having used both Balsamiq and Lucidcharts for design at planning phase for apps in the past, I decided to use Balsamiq for design of the wireframes and Lucidcharts to create the entity relationship diagrams for the models.
+
 ## BALSAMIQ WIREFRAMES
  Please see below the various balsamiq wireframes for each of the pages in the FootNote app, from the perspective of a desktop as well as from a mobile viewport. Not all planned pages were included in final app(not Must Haves):
 
@@ -218,13 +257,14 @@ Balsamiq 6(Writer Profile page) ![alt text](./static/media/FN_Bals_WriterProfile
 Balsamiq 7(Medley page) ![alt text](./static/media/FN_Bals_Medley.png)
 
 
-<b>LUCIDCHARTS</b>
+## LUCIDCHARTS
 
 -When considering how to start designing the models for FootNote, the Lucidchart Entity Relationship Diagrams and the workflow, I also implemented the aforementioned agile methodology and MOSCOW prioritisation. I considered what was realistic with time being the primary constraint. Additionally, I considered which aspects of the app were considered to be ‘Must Have’ features and accordingly were of absolute importance to adjust the fields in the model to suit this.
 -I considered the MOSCOW categorisation of the features when designing the models.
 -The blog walkthrough and Kanban board feature assisted me in thinking about what features I would include in project four and how to go about implementing these/dividing these into sections that I could apply in a structured manner and what needed to be prioritised at different points. The Kanban board is an excellent time management tool.
 -Inspired by the walkthrough projects (Django ‘to do’ app for CRUD functionality as well as the blog walkthrough), I planned on having the design for the model classes neatly planned and laid out in tabular format in  Lucidchart, which would help me to formulate the structure of the models in my own head when designing the code for the app:
 When designing the models, I delved deeply into the tutorials and suggested readings inserted, referenced on the LMS to try to ensure that I had a good level of Django/the Django structure prior to writing/designing the models:
+
  -My understanding of Django:
 Django, as per most python frameworks follows a model-view-template structure:
 <b>Model-View-Template</b>
@@ -235,44 +275,51 @@ The views contains logic, it is the controller of the app. The view defines the 
 <b>Template</b>
 The HTML templates are the user interface. The templates impact the presentation layer- how info is displayed to the user. The HTML files should be filled with designer-friendly syntax for rendering information to be presented to user. 
 The business logic (contained in the views) should be separated from the presentation logic(contained in the HTML files.)
- Separation of concerns is a core concept/feature of Django. Django was initially used for newspaper functionality, which contributed (I imagine) to the emphasis on separation of concerns (separating different features of projects into different apps, separating the test files from what the files they are testing (e.g. adding a test_views.py file) and having a separate test file for each type of testing (e.g. test_views.py and then separately, test_models.py and separately test_forms.py). I certainly tried to accommodate this trend/approach. I maintained separate files as necessary, separate test files and also separate apps. For example, I created a separate app for the Medley page despite it only being one model, to be inkeeping with the Django separation of concerns approach.
+ Separation of concerns is a core concept/feature of Django. Django was initially used for newspaper functionality, which contributed (I imagine) to the emphasis on separation of concerns; separating different features of projects into different apps, separating the test files from what the files they are testing (e.g. adding a test_views.py file) and having a separate test file for each type of testing (e.g. test_views.py and then separately, test_models.py and separately test_forms.py). I certainly tried to accommodate this trend/approach. I maintained separate files as necessary, separate test files and also separate apps. For example, I created a separate app for the Medley page despite it only being one model, to be inkeeping with the Django separation of concerns approach.
 
 ## What is expected of the developer with regard to Django?:
 With Django, the designers are assumed to be comfortable with HTML and Javascript code. The syntax is embedded within the HTML files, which is subsequently used to inject data into the webpage. 
-In summary, with Django, the focus is on being implicit and hiding the plumbing (which goes against the usual Python approach of better to see something). The Django approach is to offer enough functionality (branching and looping) to allow us to make gooey decisions. Django certainly supports the DRY (Don’t Repeat Yourself) approach to ‘lazy’ (😉) developers. Code need not be rewritten as the foundation html, the ‘base.html’ file can be extended into other files with {% extends base.html %} with additional slices of specific, page specific code splice in (e.g. {% extra title%}
+In summary, with Django, the focus is on being implicit and hiding the plumbing (which goes against the usual Python approach of better to see something). The Django approach is to offer enough functionality (branching and looping) to allow us to make gooey decisions. Django certainly supports the DRY (Don’t Repeat Yourself) approach to ‘lazy’ (😉) developers. Code need not be rewritten as the foundation html, the ‘base.html’ file can be extended into other files with {% extends base.html %} with additional slices of specific, page specific code splice in (e.g. {% extra title%})
 Routing between different templates to avoid duplicating/repeating code...extends %%
 Base.html is the premise and other html files used, %% block quotes slotted into base.html file. Base.html file extended.
 
-With Django, the focus is on convention over configuration, the developer need only specify the unconventional aspect and can draw the conventional aspects in directly from the Django framework (e.g. django_countries)
+With Django, I focussed on convention over configuration, wherein I only specified the unconventional aspect and tried to draw the conventional aspects in directly from the Django framework (e.g. django_countries).
+
 If the developer wishes to stray from convention, explicit code needs to be added.
+
  Views-function based versus class-based views:
 As per the blog walkthrough, I used class-based views but I did also include a number of views which are solely definition based (e.g.)
-Class based:
-Allow us to use code that is reusable and that inherits from one another.
+
+The class based views allowed me to use code that is reusable and that inherits from one another.
 'Generic views' (built in Django feature) used, batteries included philosophy of Django.
 
-Connecting cloudinary, used cloudinary for image storage and for quick urls. Due to some syncing issues between Heroku and Cloudinary, also installed whitenoise to circumvent having and problems.
+Connecting cloudinary, used cloudinary for image storage and for quick urls. Due to some syncing issues between Heroku and Cloudinary, also installed whitenoise to circumvent having any syncing problems.
 
 Package=plugs into code already written (use as much/little as possible)
-Django framework=code is already written, you plug your code into it...Provides basic structure, customize within reason
 
+I summary the Django framework was extremely useful and time-saving, the code is already written, plugged app specific code into it. The django framework provided the basic structure and I customized within reason.
 
 <b>Class Models</b>
 Class-based models defined within models.py file and additional definitions included within those models.(specifications)
 
-Two models derived closely from the blog walkthrough project but customised accordingly and tailored code to suit my project which were the 'idea' model and the 'footnote' model.
-I added an additional functionality to the footnote model that a counter was attached to each idea and this was displayed under the idea, to show how many footnotes were received on a comment. Also placed exactly beside the likes so a nice visual comparison given for how many footnotes there were compared to how many likes there were.
- New models include Writerprofile and WriterProfileForm model
-The Medley model
-<p>Lucidcharts</p>
+The two models in the footnote app have been derived from the blog walkthrough project but customised accordingly and tailored code to suit my project; 'Idea' model and the 'FootNote' model.
+
+I added an additional feature to the footnote model that a counter was attached to each idea and this was displayed under the idea, to show how many footnotes were received on a comment. Also placed exactly beside the likes so a nice visual comparison given for how many footnotes there were compared to how many likes there were. I also connected a form to the Idea model to enable users to leave original ideas. I deliberately removed the author field from the Idea model to ensure unbiased reaction to the ideas due to the anonymous nature.
+ I created two new apps since the original submission; the writer_profile app and the medley app.
+ Thw writer_profile app contains a Writerprofile model and WriterProfileForm.
+The new medley app contains a view that uses the random method to pull random footnotes from the FootNote Model.
+
+## Lucidcharts
 
 Luidcharts and it's easy-to-use shapes (circles, arrows), color scheme (to discern features/relationships from one another) and tabular format (enabling me to use separate tabs for different views/drill downs into models etc) greatly assisted me in designing how I wanted the app to look.
 
-The ability to use various shapes colour coded-operated as a visual legend of sorts. The arrows also helped me to design on a chain of command.
+The ability to use various shapes that had colour coding-operated as a visual legend of sorts. The arrows also helped me to design on a chain of command.
 
-I mapped various parts as 'One to Many Relationships' or 'Many to One' and colour coded them.
+I mapped various parts as 'One to Many Relationships' or 'Many to One' and colour coded them. Please see the Entity Relationship Diagram for FootNote designed on lucidcharts below:
 
-Order of events and prioritization easier to understand, assisted with understanding chain of action
+FootNote ERD on Lucidcharts: ![alt text](./static/media/lucid_charts_one.png)
+
+ I found lucidcharts useful in general for planning  and prioritization. It helped to draw things out as I was watching tutorials or going through the walkthroughs, as it might the logic easier to understand and assisted with understanding chain of action. Please see various planning tabs from my Lucidcharts below:
 
 Lucidchart extracts:
 Lucidcharts 1: ![alt text](./static/media/lc_1.png)
@@ -283,30 +330,14 @@ Lucidcharts 5: ![alt text](./static/media/lc_5.png)
 Lucidcharts 6: ![alt text](./static/media/lc_6.png)
 
 
-<b>Views:</b>
-
-Views-what views are there for this app:
--Summary view-shows a segment of a page containing the idea (summary of all ideas posted (3 ideas per page) and a counter function shows the amount of approvals with a tick and number). Shows amount of approvals associated with idea and the main image.(either the image uploaded with the original post or a default image)
--Idea and footnote view - 1 idea per page with up to ten footnotes. Allows focus to be on that idea. On this page, all users can see idea and footnotes left as well as number of approvals on ideas and number of smiley faces or unhappy faces on footnotes. They can also see when idea/footnotes were created/edited and by whom.
--Sign in/sign out/register tabs: Functional tabs that allows the user/potential user to sign in/sign out or register for the app
--Admin interface-The administrator logs in and can moderate the site. Can issue approvals etc.
-
-
-Functions to break down...
-
-One to many-the profile owner operates as the superuser or administrator of their own profile. Only they can post/edit their own original idea on their own FootNote profile. Accordingly, this is a one to many relationship.
-
-The users or feedback givers who are viewing the original ideas of the profile owner, who are voting like/dislike on the profile owners original ideas, who are posting FootNotes in response to the ideas (which have a maximum character/word restriction but can be deleted or edited by the user until the footnote is stored/removed by the profile owner) and who can like or dislike the footnotes of other users is a many to many relationship as they can interact on the profile but also they can receive interactions by others (such as somebody liking/disliking their footnote)
-
-
-<b>Directories, frameworks and technologies used:</b>
+## Directories, frameworks and technologies used:
 Cloudinary
 Django
 Boostrap
 Summernote
 Whitenoise
 
-<b>Things to consider when compiling project</b>
+## Things to consider when compiling project
 -Order
 -Frameworks to be installed (Django, Summernote, considered using Flask and reviewed a number of Bootstrap templates that I could have used)
 
@@ -318,6 +349,7 @@ Excellent feature of Django-blocks of code that could easily be slotted into the
 
 # Testing 
 -Manual testing:
+Do the buttons work
 Class tests written
 Separate test files and separation of concerns
 Build test and make them fail
@@ -326,45 +358,65 @@ Manual testing...testing for responsiveness...testing programmes
 
 -Design based coding...app aimed at mobile phones. Used developer tools to view the app from different mobile phones and ensured it was responsive. (bootstrap container/container-fluids and columns used, flexbox used, overscroll:hidden, vh and vw) Developer tools used to assess different viewports-mobile first design
 
-Bootstrap:
+## Bootstrap:
+<ul>
 Bootstrap made the process fast end easier
 Implemented in the design of the following:
-the cards
-the buttons
-responsiveness (container and container fluid classes, columns stipulated the viewport size lg md sm)
-Used bootstrap for alert messages (alert when footnote submitted, edited or deleted)
-Used bootstrap formatting for cards-summary of ideas
+<ul>
+<li>The cards</li>
+<li>The buttons (idea button, footnote button, medley button)</li>
+<li>The carousel on the Medley page</li>
+<li>The collapsible on the Writer profile page</li>
+<li>Responsiveness (container and container fluid classes, columns stipulated the viewport size lg md sm)</li>
+<li>Used bootstrap for alert messages (alert when footnote submitted, edited or deleted)</li>
+</ul>
 
 # UX DESIGN
 
-The five planes of design:
-Scope:
-Skeleton:
+I ensured that the design was focussed on the idea behind the app, the transient nature of creativity and quick add-on inspiration whilst on foot. Accordingly, the Foot and Note parts of the name are split by capitalisation and colour in some instances. To emphasize the 'by foot' or transient element, I used the color scheme of the title to separate the Foot from the Note-Foot in purple, Note in black. Also to fit in with the leaving a footnote to an original idea theme, the a ot of superscript 'x' is used throughout. Use of superscript-in keeping with them theme, I used superscript in the titles. Visually appealing and on theme. <sup>FOOTNOTE</sup>
 
-Focus on idea...
-Mobile-first design, app is designed for those who are on the move, out and about and are struck by quick inspiration and want instant feedback so naturally, is designed to be used by users when they would be on their mobile phones. Accordingly, the app has been designed to be responsive to a number of different types of phone.
+  To denote the creativity, the following play on words is incorporated alongside the Create an idea button:
 
-Sharp
-Having done some research online, the font that I have chosen, 'Dancing Script' is inkeeping with the theme of creative writing, so chose as it looks like handwriting.
+  'Tread softly because you tread on my dreams' from 'Aedh Wishes for the Cloths of Heaven' by WB Yeats, altered subtly to 'Thread softly because you thread on my dreams', with the distinguishing 'h' emphasised with color. This is in reference how people are putting their creative ideas out there to be footnoted but those providing feedback should also be sensitive with the ideas of others.
 
-Use of superscript-in keeping with them theme, I used superscript in the titles. Visually appealing and on theme. <sup>FOOTNOTE</sup>
 
-In my design, I wanted to convey the fast-moving and transient nature of what the app is intended for (quickly occurring spouts of creativity) so I used bright colors, quick messages/modals and various animations including...
+To ensure that the app would be fully responsive, I applied mobile-first design, using Google developer tools. I ensured everything was responsive and visible on the smaller viewports.
 
-Also to emphasize the 'by foot' or transient element, I used the color scheme of the title to separate the Foot from the Note-Foot in purple, Note in black.
+The app is designed for those who are on the move, out and about and are struck by quick inspiration and want instant feedback so naturally, is designed to be used by users when they would be on their mobile phones. Accordingly, the app has been designed to be responsive to a number of different types of phone, as seen in the responsive testing section.
+
+Having done some research online, the font that I have chosen to incorporate on the majority of the app (aside from the Medley tab), 'Dancing Script' is inkeeping with the theme of creative writing, so I felt it was most appropriate as it looks like handwriting.
+
+
+To further establish the aforemtioned fast-moving and transient nature of what the app is intended for (quickly occurring spouts of creativity), I used bright colors (purple, red, blue, green), quick messages/modals and the carousel with changing images on the Medley page as well as the medley button that produces random footnotes from the app when clicked.
+
+The writer profile is also an important aspect of the design, it is intended for writers who seek feedback so, accordingly having their own page where they can have their own information stored (which they can readily udpate) and that the footnotes feed in from the main site and they can mark the ones they consider more inspirational/useful from their own perspective (currently this is done with a check button in a 'favourite column' where they can denote the footnotes that are their favourite so that they can refer to them at a quick glance). Future designs will also include a star rating for each.
+
+## Logo on Look
+
+Having used Look for a logo in a separate project, I considered it to be a good investment and purchased a logo from Looka for this app. I stipulated the theme and colour preferences and was presented with the following (which I have incorporated as a favicon):
+
+Logo: ![alt text](./static/media/favicon.ico)
+
 ## Colors
-Color combinations
-Rgba etc
-Color palette
-Colors used: Peachpuff and purple
-Traditional green and red used for submit, edit, delete buttons
-Shape: Maintained the summary of cards from blog walkthrough, appreciated the visual impact as the cards look like post-it notes and aligned with the theme of footnote…deliberately note exactly aligned in terms of size, to represent diversity
+I considered various color combinations when settling on a design.
+I explored a variety of options on colormind.io/
+
+The colours that are most used throughout the website: Peachpuff (for the cards and containers) and purple (for the font)
+Traditional green and red used for submit, edit, delete buttons so that these would stand out. Blue is used for the medley button as it is intentionally quirky.
+
+
+Shape:
+ Maintained the summary of cards from blog walkthrough, appreciated the visual impact as the cards look like post-it notes and aligned with the theme of footnote…deliberately note exactly aligned in terms of size, to represent diversity
 Use of opaque footprint as background: Above masthead on summary page and in place of masthead on individual idea pages-inkeeping with the transient, on foot theme.
-Font used: Dancing Script-the font looks like handwriting, very neat, calligraphy esque handwriting and accordingly was inkeeping with the theme of creative writing
+
+Font used:
+I explored a variety of options on Google Fonts before choosing Dancing Script. I chose Dancing Script because the font looks like handwriting. It is very neat, calligraphy-esque style handwriting and accordingly was inkeeping with the theme of creative writing.
+
+I incoporated different fonts used on the medley page to convery the mix and match theme of that page.
 
 Additional design feature: Use of Superscript. To represent the ‘footnote’ theme. The comments are there to build/extrapolate on the original ideas not to negate from them or to be off topic
 
-Incorporated font awesome a lot…footsteps beside ‘thread softly because you thread on my dreams”
+I incorporated font awesome in my design, footsteps beside ‘thread softly because you thread on my dreams”, the icones beside each field on the suerprofile form in the writer profile tab.
 Semantic styling of font, added to word play ‘Foot’ and ‘Note’ aspects of name in different colours
 
 The responsive nature of design-focused on smaller devices...phones/ipads/tablets/laptops while on the move-emphasis on responsiveness. This is because the app is aimed for busy people who are on the go who are struck with inspiration and want quick feedback for their ideas.
@@ -372,14 +424,16 @@ The responsive nature of design-focused on smaller devices...phones/ipads/tablet
 Use of footnote superscript in the title (and dragging into the footnotes). 
 To support the idea that users are contributing small tidbits of inspiration/nudges in the right direction, adding on to the idea like a footnote as opposed to offering major insights.
 
--Modal messages...automatically generated messages that are prompted when various actions are taken. (E.g. a modal message appears when a footnote is submitted or when the user logs out)
+-I ensured to incorporate Modal messages in my design, having been impressed by them in the walkthrough. I automatically generated messages that were prompted when various actions are taken. (E.g. a modal message appears when a footnote is submitted or when the user logs out)
 
--Alert messages
+-Alert messages-similar to modals but don't need to be dismissed.
 
 -Counter on likes and counter on number of footnotes-can like without leaving a foonote, both reflected in the summar card on summary page
 
-<b>Future features of design</b>
+## Future features of design
 To be complete
+
+
 # Technologies used
 -Summernote
 -Django
@@ -398,7 +452,7 @@ When deciding what to do for the project, I also considered Flask (particularly 
 
 
 Django has a testing framework-with automated tests.
-Django is inbuilt with test.py file. Django imports testcase class-extension of Unittest (methods to assert things about code)
+Django is inbuilt with test.py file. Django imports testcase which is a class-extension of Unittest (methods to assert things about code)
 Testing is based on assertions. 
 -Write classes within files to test various things within targeted files
 Once class is written, run the test command:
@@ -413,9 +467,10 @@ E= Error detected
 We see what test failed and why
 We are provided with a Summary detailing: How many tests were run, how long it took and how many failures there were.
 
+## Testing of the FootNote App
 For the FootNote App, I tried to write specific tests to see whether the specific tests fail.
 
-Firstly, split the 'test.py' file out into three separate files for more specified testing, clear code (organised and easy to manage, keeping tests independent of one another). I completed a select number of tests only due to limited time: 
+Firstly, I split the 'test.py' file out into three separate files for more specified testing, clear code (organised and easy to manage, keeping tests independent of one another). I completed a select number of tests only due to limited time: 
 
 
 (1)Test forms - split into test_forms.py file
@@ -453,9 +508,9 @@ python3 -m http.server
 Thsi gives us the reason that various parts are not 100% covered so that we are know what is left to be tested.
 
 
-<b>Manual Testing Write-Up</b>
+## Manual Testing Write-Up
 I carried out various tests to ensure that the functionality of the app was as intended:
--Pagination-check could I move from page to page
+-Pagination-I checked could I move from page to page and were there three ideas per page, as intended
 Supposed to move to a new page when three idea summaries are on site, wrote six ideas to test this and sure enough three moved to a separate page.
 -Max ten footnotes per page...check if this is in place
 -I checked the functionality of the footnote button. Sure enough, when footnote textarea is filled and the submit button is clicked, a message appears confirming that the ‘Footnote was been submitted”.
@@ -463,18 +518,18 @@ Supposed to move to a new page when three idea summaries are on site, wrote six 
 -Checked that as intended alert messages were prompted when user elects to log in and log out
 
 
+## Responsiveness testing:
 
+As influenced by the Peer Code Review page on slack, I ran the app through AMIresponsive and have included the image at the start of this README.
 
-<b>Responsiveness testing:</b>
-
-Bootstrap code used which ensures more centred design.
+I ensured to use Bootstrap, which ensured more centred design. (col, rows, containers)
 I employed the following within my CSS design to ensure that the app was responsive to smaller devices: 
 Justify-content center
 Flex
 Overflow:hidden
 Margin
 
-vh and vw used- sizes things relative to the viewport height(vh) and viewport width(vw)
+vh and vw used- which sizes things relative to the viewport height(vh) and viewport width(vw)
 
 Please see below, a variety of responsiveness testing photos on different viewports,
 viewed online via Developer Tools:
@@ -489,11 +544,9 @@ Ipad Air: ![alt text](./static/media/ipad_air_test.png)
 
 Nest Hub:  ![alt text](./static/media/nest_hub_test)
 
-Cards stack on top of one another in a responsive fashion instead of becoming stretched or crushed and the visibility is not affected by the size of the viewport.
+On small devices, on the landing page, the summary cards stack on top of one another in a responsive fashion instead of becoming stretched or crushed and the visibility is not affected by the size of the viewport.
 
-User has the ability to scroll down.
-
-
+The user has the ability to scroll down.
 
 <b>Compatibility testing</b>
 
@@ -517,7 +570,7 @@ See below various browsers listed and detail on compatibility with app:
                     <td>Yes</td>
                 </tr>
                 <tr>
-                    <td>Links/URLs:</td>
+                    <td>Links/URLs work as intended:</td>
                 </tr>
                 <tr>
                     <td>Yes</td>
@@ -526,7 +579,7 @@ See below various browsers listed and detail on compatibility with app:
                     <td>Yes</td>
                 </tr>
                 <tr>
-                    <td>Images work:</td>
+                    <td>Images load:</td>
                 </tr>
                 <tr>
                     <td>Yes</td>
@@ -543,16 +596,20 @@ See below various browsers listed and detail on compatibility with app:
  Safari: ![alt text](./static/media/kanban_board.png)
  Firefox: ![alt text](./static/media/kanban_board.png)
  Internet Explorer: ![alt text](./static/media/kanban_board.png)        
+
 <b>Bugs resolved and unresolved</b>
 
-Inbuilt feature of Github, PEP 8 errors are detailed under problems. Go into each file and check these. Usually issues with line being too long, whitespace left after code lines, not enough spaces before a line of code etc.
+One of the useful inbuilt features of Github with regard to python code is that the PEP 8 errors are detailed under problems.
 
-Opening from Github as opposed to pinned workspace...had to recreate env.py file a number of times.
-Had to reinstall various dependencies...allauth, summernote etc.
+PEP8 errors: ![alt text](./static/media/kanban_board.png) 
+
+ Go into each file and check these. Usually issues with line being too long, whitespace left after code lines, not enough spaces before a line of code etc.
+
+- I encountered an issue when I opened the reposiatry from Github as opposed to from the pinned workspace. I had to recreate the env.py file and reinstall dependencies by freezing the requirements.txt file when this happened.
 
 -Used 'Hello Django' blog code as boilerplate code, had to get rid of author as author id not recognised.
 
-Django, large useful error messages
+-Django, large useful error messages
 Browser open as I coded, refreshed and received feedback into different types of errors and reasons for them
 
 
@@ -586,7 +643,7 @@ No errors found received when CSS code runthrough validator (via copy and paste)
 <p>Python:</p>
 Django is a python framework, comes with inbuilt python testing
 Test.py file and PEP8
-CI Pytest extracts:
+
 
 To ensure python testing was installed and working, used following commands:
 "pip install pep8"
@@ -596,7 +653,11 @@ Also tried to ensure pylint requirement satisfied also,
 "python -m pip install pylint"
 
 
-<b>Features testing</b>
+ I completed additional python testing on the Code Institute pytest tool, please see below:
+
+![alt text](./static/media/css_validation.png)
+
+## Features testing
 
 -Post FootNote
 -Counters reflect number of likes an idea received and how many FootNotes were left on an idea
@@ -608,6 +669,7 @@ Also tried to ensure pylint requirement satisfied also,
 -FootNotes give detail on who posted them and when they were posted
 -Facebook/Tiktok/Instgram at bottom
 -NAV bar effectively allows user to navigate from summary page to idea page
+
 # Deployment
 <b>Deployment, forking, cloning </b>
 Following structure influence from other READMEs on Slack: (Peer Code Review page)
@@ -621,7 +683,7 @@ Help to avoid last minute disasters.
 Importance of disable the DEBUG feature emphasised in tutorials as well as the importance of removing the DISABLE_STATICFILES.
 
 
-<Challenges with deployment>
+## Challenges with deployment>
 Surely enough, I had some difficulties, migration wouldn't work on my first attempt so I had to redo the entire application (repositary-Elephant SQL-Heroku app-migrate…DEBUG off, remove disable collectstatic etc.)
 
 In the end, I believe migration would not work due to mixing up the use of app name versus project name in some of the code so I ensured to be very careful with this going forward.
@@ -705,7 +767,7 @@ Tells system resources are permitted to be loaded
 
 
 
-#Credit and Thanks
+# Credit and Thanks
 
 ## References
 
