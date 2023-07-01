@@ -20,7 +20,8 @@ class Idea(models.Model):
     approved = models.BooleanField(default=False)
     user_profile = models.ForeignKey(WriterProfile,
                                      on_delete=models.SET_NULL, null=True,
-                                     blank=True, related_name='writerprofileidea')
+                                     blank=True,
+                                     related_name='writerprofileidea')
     delete = models.BooleanField(default=False)
     likes = models.ManyToManyField(
         User, related_name='idea_like', blank=True)
@@ -33,23 +34,24 @@ class Idea(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-    
+
     def delete_idea(self):
         return self.idea.delete()
 
 
 class FootNote(models.Model):
-    idea = models.ForeignKey(Idea, on_delete=models.CASCADE, related_name='footnotes')
+    idea = models.ForeignKey(Idea, on_delete=models.CASCADE,
+                             related_name='footnotes')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     content = models.TextField(max_length=280)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    likes = models.ManyToManyField(User, related_name='footnote_like', blank=True)
+    likes = models.ManyToManyField(User, related_name='footnote_like',
+                                   blank=True)
     user_profile = models.ForeignKey(WriterProfile,
                                      on_delete=models.SET_NULL, null=True,
                                      blank=True, related_name='writerprofile')
-    
 
     def __str__(self):
         return self.title
@@ -62,5 +64,3 @@ class FootNote(models.Model):
 
     def __str__(self):
         return f"FootNote {self.content} by {self.name}"
-
-    

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
-from django.db.models.signals import post_save 
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
@@ -16,7 +16,8 @@ class WriterProfile(models.Model):
                                             null=True, blank=True)
     default_country = CountryField(blank_label='Country *',
                                    null=True, blank=True)
-    default_writingtype = models.CharField(max_length=60, null=True, blank=True)
+    default_writingtype = models.CharField(max_length=60, null=True,
+                                           blank=True)
     default_genre = models.CharField(max_length=100, null=True, blank=True)
     default_favouriteauthor = models.CharField(max_length=200,
                                                null=True, blank=True)

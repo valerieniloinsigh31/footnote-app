@@ -25,7 +25,7 @@ def medley(request):
     view to render the landing page and generate random footnote
     """
     template = 'medley.html'
-    random_footnote = FootNote.objects.order_by('?').first 
+    random_footnote = FootNote.objects.order_by('?').first
     context = {
         'random_footnote': random_footnote, }
     return render(request, template, context)

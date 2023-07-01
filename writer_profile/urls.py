@@ -7,5 +7,3 @@ urlpatterns = [
     path('', views.writerprofile, name='writerprofile'),
     path('', views.footnote_history, name='footnote_history'),
 ]
-
-# think about '' contents for edit footnote path

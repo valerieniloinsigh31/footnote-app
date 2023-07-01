@@ -669,7 +669,22 @@ Also tried to ensure pylint requirement satisfied also,
 
  I completed additional python testing on the Code Institute python testing tool: (https://pep8ci.herokuapp.com/)
 
-![alt text](./static/media/css_validation.png)
+footnote app:
+forms: ![alt text](./static/media/footnoteforms_pytest.png)
+models: ![alt text](./static/media/footnotemodels_pytest.png)
+urls: ![alt text](./static/media/footnoteurls_pytest.png)
+views: ![alt text](./static/media/footnoteviews_pytest.png)
+
+writer_profile app:
+forms: ![alt text](./static/media/writerprofileform_pytest.png)
+models: ![alt text](./static/media/writerprofilemodels_pytest.png)
+urls: ![alt text](./static/media/writerprofileurl_pytest.png)
+views: ![alt text](./static/media/writerprofileviews_pytest.png)
+
+medley app:
+views: ![alt text](./static/media/medleyviews_pytest.png)
+urls: ![alt text](./static/media/medleyurls_pytest.png)
+
 
 ## Features testing
 
@@ -686,15 +701,16 @@ Also tried to ensure pylint requirement satisfied also,
 
 # Deployment
 <b>Deployment, forking, cloning </b>
-Following structure influence from other READMEs on Slack: (Peer Code Review page)
+
+
 <b>Deployment:</b>
 
-Early deployment as per the walkthroughs to avoid last minute panic.
-Before writing the code, set up an instance on ElephantSQL and then created the app on Heroku. Used the API from ELlephant SQL to build Heroku APP. Connected Heroku with Github CLI for automatic deployment.
+I completed early deployment as per the walkthroughs to avoid last minute panic.
+Before writing the code, I set up an instance on ElephantSQL and then created the app on Heroku. I used the API from ELlephant SQL to build Heroku APP. Connected Heroku with Github CLI for automatic deployment.
 
-Help to avoid last minute disasters.
+This was done in order to avoid last minute delays.
 
-Importance of disable the DEBUG feature emphasised in tutorials as well as the importance of removing the DISABLE_STATICFILES.
+The importance of disabling the DEBUG feature was emphasised in tutorials as well as the importance of removing the DISABLE_STATICFILES so this was at the forefront of my mind for final deployment.
 
 
 ## Challenges with deployment>
@@ -707,7 +723,7 @@ I ran into this issue again on the friday prior to finishing the project and as 
 
 I checked in with my tutor the next day and after all of the rework, it was revealed the env.py file and installations needed to be redone due to me having opened the code using gitpod as opposed to the pinned workspaces platform. A lesson learned the hard way!
 
-  A couple of tricks for this was i used the reveal config vars in Heroku to inform me what to input in my env.py file and I recursivrly installed the needed packages form the requirements.txt file using the following command:
+  A couple of shortcuts for this was I used the reveal config vars in Heroku to inform me what to input in my env.py file and I recursivrly installed the needed packages form the requirements.txt file using the following command:
 
   pip3 install -r requirements.txt
 
@@ -717,8 +733,8 @@ Had a few different versions of the app on Heroku and had connected the database
 
 The website was delpoyed using GitHub. To do this I did the following;
 
-1. When on the websites GitHub repository, click on the settings tab
-2. Now on the settings page, on the left hand side of the page, click on the pages tab
+1. When on the websites GitHub repository, I clicked on the settings tab
+2. Then on the settings page, on the left hand side of the page, I clicked on the pages tab
 3. Under the Source section, click on the drop down menu titled Branch and select main
 4. The page is now published with a link available to use.
 
@@ -777,6 +793,7 @@ All app logic doesn't need to be in views.py file
 Disable debug...get rid of traceback which my compromise your site
 Install X-Frame Options=Same Origin...CORS cross origina resource sharing security feature
 Tells system resources are permitted to be loaded
+Remove disable collect static
 
 # Credit and Thanks
 

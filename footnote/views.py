@@ -13,7 +13,7 @@ from django.views.generic import (
     CreateView,
     UpdateView,
 )
-import requests 
+import requests
 
 
 def footnote_delete(request, slug, footnote_id, *args, **kwargs):
@@ -27,10 +27,10 @@ def footnote_delete(request, slug, footnote_id, *args, **kwargs):
     if footnote.name == request.user.username:
         footnote.delete()
         messages.add_message(request, messages.SUCCESS, 'Footnote deleted!')
-    else:    # The else seems redundant as option only appears for their own footnote
-        messages.add_message(request, messages.ERROR, 'You can only delete your own footnotes, you messer!')
+    else:
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own footnotes!')
     return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
-
 
 
 def footnote_edit(request, slug, footnote_id, *args, **kwargs):
@@ -49,9 +49,11 @@ def footnote_edit(request, slug, footnote_id, *args, **kwargs):
             footnote = footnote_form.save(commit=False)
             footnote.post = post
             footnote.save()
-            messages.add_message(request, messages.SUCCESS, 'Footnote Updated!')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Footnote Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating footnote!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating footnote!')
 
     return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
 
@@ -74,21 +76,21 @@ class AddIdea(View):
             "idea_form": idea_form
         }
         return render(request, "add_idea.html", context)
-        
+
     def post(self, request, *args, **kwargs):
         idea_form = IdeaForm(request.POST)
         if idea_form.is_valid():
             idea_form.save()
-            messages.success(request, "Your idea has been submitted for approval!")
+            messages.success(request,
+                             "Your idea has been submitted for approval!")
         else:
             pass
         return redirect('add_idea')
-        
 
 
 class IdeaDetail(View):
-    model = Idea                       
-    template_name = 'idea_detail.html' 
+    model = Idea
+    template_name = 'idea_detail.html'
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Idea.objects.filter(status=1)
@@ -121,7 +123,7 @@ class IdeaDetail(View):
         footnote_form = FootNoteForm(data=request.POST)
 
         if footnote_form.is_valid():
-            footnote_form.instance.email = request.user.email 
+            footnote_form.instance.email = request.user.email
             footnote_form.instance.name = request.user.username
             footnote = footnote_form.save(commit=False)
             footnote.idea = idea
@@ -139,8 +141,8 @@ class IdeaDetail(View):
                     "liked": liked,
                     "footnote_form": footnote_form
                 },
-            ) 
- 
+            )
+
 
 class IdeaLike(View):
 

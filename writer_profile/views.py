@@ -24,11 +24,11 @@ def writerprofile(request):
             messages.success(request, "Your writer profile is updated")
         else:
             messages.error(request,
-                           'Failed to update writer profile, please review form')
+                           'Failed to update writer profile')
     else:
         form = WriterProfileForm(instance=writer_profile)
-    
-    footnotes = FootNote.objects.all()  
+
+    footnotes = FootNote.objects.all()
     template = 'writer_profile/writerprofile.html'
     context = {
 
@@ -46,9 +46,11 @@ def footnote_history(request, content, created_on, user):
     render footnote history
     """
 
-    footnote = get_object_or_404(FootNote, content=content, created_on=created_on, user=request.user,)
+    footnote = get_object_or_404(FootNote, content=content,
+                                 created_on=created_on,
+                                 user=request.user,)
     messages.info(request, (
-        f'You posted the following footnote: {content} on the following date {created_on} '
+        f'Your footnote: {content} on the following date {created_on} '
     ))
 
     template = 'writer_profile/writerprofile.html'
@@ -63,10 +65,9 @@ def footnote_history(request, content, created_on, user):
     return render(request, template, context)
 
 
-@login_required  
-def delete_footnote(request, footnote_id, *args, **kwargs): 
-    
-        footnote = get_object_or_404(WriterProfile, id=footnote_id)   
-        footnote.delete()
-        return redirect (request, 'writerprofile')
+@login_required
+def delete_footnote(request, footnote_id, *args, **kwargs):
 
+    footnote = get_object_or_404(WriterProfile, id=footnote_id)
+    footnote.delete()
+    return redirect(request, 'writerprofile')

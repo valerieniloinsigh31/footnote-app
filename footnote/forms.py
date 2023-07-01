@@ -16,7 +16,14 @@ class IdeaForm(forms.ModelForm):
                   'content', 'featured_image',)
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control',  'placeholder': 'Pick a great title'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Lowercase version of title'}),
-            'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Tell us your great idea'}),
+            'title': forms.TextInput(attrs={'class': 'form-control',
+                                            'placeholder':
+                                                'Pick a great title'}),
+            'slug': forms.TextInput(attrs={'class': 'form-control',
+                                           'placeholder':
+                                           'Lowercase version of title'}),
+            'content': forms.Textarea(attrs={'class': 'form-control',
+                                             'placeholder':
+                                                 'Tell us your great idea'}),
         }
+        
