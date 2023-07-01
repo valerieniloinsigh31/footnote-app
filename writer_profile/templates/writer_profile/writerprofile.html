@@ -99,7 +99,7 @@
                           <th scope="col" style="color:#a410e8;;">Content:</th>
                           <th scope="col" style="color:#a410e8;">Date:</th>
                           <th scope="col" style="color:#a410e8;;">By:</th>
-                          <th scope="col" style="color:#a410e8;">Delete:</th>
+                          <th scope="col" style="color:#a410e8;">Favourite:</th>
                         </tr>
                     </thead>
                   <tbody>
@@ -109,7 +109,7 @@
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">What didst  the  footnote  sayeth?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">At which hour wast  the  footnote  hath made?</td>
                     <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">Who wroteth  the  footnote?</td>
-                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">  Favourite</td>
+                    <td scope="col" style="color:black;font-family:Arial, Helvetica, sans-serif;">  Mine Favourite </td>
 
       </tr>
               <div>
@@ -120,7 +120,12 @@
                           <td>{{ footnote.content }}{{ content }}</td>
                           <td style="color:#a410e8;">{{ footnote.created_on }}</td>
                           <td>{{ footnote.name }}</td>
-                          <td><a class="stars">⭐</a> </td>
+                          <td><div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">
+                             <div class="stars">⭐</div>
+                            </label>
+                          </div></td>
           
                         </td>
                             
@@ -134,7 +139,3 @@
       </div>
 {% endblock %}
 
-{% block extras %}
-{% load static %}
-<script src="{% static 'writer_profile/js/writerprofile.js' %}"></script>
-{% endblock extras %}
