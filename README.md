@@ -6,7 +6,7 @@ README FOOTNOTE
 
 ## Live Site: 
 
-## Repositary: 
+## Repositary: [Title](https://github.com/valerieniloinsigh31/footnote-app)
 
 ## Contents
 
@@ -722,7 +722,7 @@ Agile methodology webinar provided by Code Institute:
 
 ## Credits
 
--Stack community
+-Slack community
 I derived a huge amount of inspiration from Slack. Particularly the PP4 page, the peer code review page and the MSLETB page. Feedback/encouragement was provided via comments/review of various projects on peer code review page/searching for keywords with regard to my query and looking over old threads.
 Drew inspiration from the following projects on the Peer Code Review page, in particular:
 Blade 5 Repositary Roman: Romanc
