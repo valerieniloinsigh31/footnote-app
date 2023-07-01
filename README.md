@@ -73,55 +73,49 @@ User
 - For future iterations of the app, more emphasis will be placed on profile interaction between different users. They can apply to become a feedback giver on the profile of one of the suggested connections and, if approved, will be alerted whenever that person posts an idea (giving them additional access to see which ideas the person posted). Once they submit to become a feedback giver, the owner of the profile that they have applied to will assess whether or not to accept them as a feedback giver on their profile. This assessment will be made by the historical statistics of the applicant’s engagement-to-date on the FootNote App becoming readily visible to the profile owner. Metrics that will be exposed with the applicants statistics when they joined the app, will be how many original ideas of their own have they posted, how many votes have they submitted to other people’s FootNote Profiles, how many ticks have they sent and how long have the been on the site. This will help the profile owner to make an informed decision about whether or not to accept them as a feedback giver on their profile. 
 
 ## User Experience Design and Agile Methodology
--MOSCOW (colour coded labels)
--Kanban Board
--Epics
--Themes
--Sprints
--Acceptable Criteria
--Tasks
--To do/in progress/done
 
-<b>Kanban board and user stories</b>
-Agile methodology
-Helped me to form logic
-Logical progression
+ - The agile methodology helped me to focus on what needed to be done, helped to manage tasks and break them down into doable chunks, helped me to identify logical progression and to be more aware of what level pr progression was expected at different stages
 Easy way to focus on tasks that needed to be completed
-Inserted a number of Milestones
-Features I wanted to add
-As I was progressing through the Kanban board of user stories, I bore in mind the prioritisation emphasised in the Agile methodology module:
-I was always thinking about what is a must-have, what would be nice to have and what would be a feature added only if we had time.
+ - I watched all of the tutorials on Agile methodology as well as the additional explanatory youtube video that the Code Institute released discussing the requirements and noted the following agile methodology features that I should incorporate in my own project planning as they seemed very urseful and/or relevant:
 
--MOSCOW prioritisation
--Kanban board (user stories, themes, epics, milestones and sprints)
+- Creating a number of user stories issues on github and linking this with the project
+- MOSCOW priorisiation of user stories. I uses the labels feature on github to denote the prioritisation of different user stories. Thesecan also be colour coded so that they are instantly recognisable. I used green for must have priority user stories, I used yellow labels for should have priority user stories, amber for user stories that were a could have level of priority and red for won't have user stories.
+- Kanban Board. The kanban board feature of github was an excellent time management and planning tool. It is divided into three levels of progress: to do, in progress and done. I created a kanban board and linked it to the relevant repositary. Then I could user stories as relevant and slot them into the correct progress section.
+- User stories were created using a user story template, as advised in tutorials. I ensured they contained the user story, the epic the user story related to, the acceptance criteria, the tasks involved and a MOSCOW label of prioritisation. I also ensured that it was linked to the relevant project (FootNote) and that it was linked to a Milestone, where applicable.:
 
-SCREENGRABS:
-Kanban board: ![alt text](./static/media/kanban_board.png)
-User stories (Tasks and acceptance criteria): ![alt text](./static/media/)
-Epics: ![alt text](./static/media/)
-Milestones: ![alt text](./static/media/)
-Labels and MOSCOW Prioritisation: ![alt text](./static/media/)
+Detailed user story from the project, on the kanban board: ![alt text](./static/media/footnote_detailed%20user%20story.png)
 
-## Agile methodology and user stores
 
-<b>User stories testing</b>
-As aforementioned and as per the walkthrough, in support of Agile methodology, I set up a Kanban board to track what items I installed for the app.
-Per the Kanban board on github, there are three segments of development, within which to place the user stories:
-To do, in progress, complete
- I ensured to update the Kanban board stage of completion as I progressed through user stories when coding. As I was progressing through the coding of the application, this helped me to logically prioritise and gave me immediate visual feedback as to what remained left to be done.
+-Epics -  overarching themes the user stories can slot into
+-Themes - 
+-Sprints -  short pockets of time that tasks are priortised for
+-Acceptance Criteria
+-Tasks -  tasks to be carried out to fulfill the user story
+-To do/in progress/done - the sections of the kanban board
+-I inserted a number of Milestones for the project, which helped me to establish when things needed to be due and aided me in setting realistic goals:
 
-Kanban board:
-![alt text](./static/media/kanban_board.png)
+Screengrab of the different milestones created for this project: 
+Milestones 1: ![alt text](./static/media/footnote_milestonesv1.png)
+Milestones 2: ![alt text](./static/media/footnote_milestones_v2.png)
+Milestones 3: ![alt text](./static/media/footnote_milestonesv3.png)
+
 
 ## Prioritisation:
 
-As suggested in the tutorials, I applied MOSCOW prioritisation:
+As I was progressing through the Kanban board of user stories, I bore in mind the MOSCOW prioritisation emphasised in the Agile methodology module:
+I was always thinking about what is a must-have, what would be nice to have and what would be a feature added only if we had time.
+
+Labels and MOSCOW Prioritisation: ![alt text](./static/media/
+
+
+As advised in the tutorials, I applied MOSCOW prioritisation:
+I divided my user stories into the following subsections:
 Must Have (Ability to post an idea or footnote, separate writer profile page, log in and out and registration functionality. Abilty to edit and delete own comments)
 Should Have (Medley button that is inkeeping with the out of context inspiration the app promotes. The writerprofile links to the relevant writers (Marina Carr, John Grisham, Samuel Beckett))
 Could have (Ability to like footnotes. Ability to delete and edit ideas)
 Won't Have (Ability to delete footnotes from the footnote log on the writer profile-to be implemented in future iterations)
 
-No more than 60% of the user stories should be classified as 'must haves'
+As advised in the tutorials, I ensured that no more than 60% of the user stories should be classified as 'must haves'.
 
 The colored labelling available on the kanban board, allows for quick and easy to understand presentation of the MOSCOW presentation:
 
@@ -205,10 +199,6 @@ Summary page with summary cards for different ideas (revealing amount of likes/f
 ## Max length under 500 characters for both idea and footnotes
  As the focus of the website is on giving helpful nuggets on fast-occurring ideas as opposed to crossing the territory into elaborate collaboration/plagiarism.
 
- -Additional model for 'connect with my profile'...people who leave ideas will be able to set up a profile, containing only their ideas.
--Additional model 'Make this my favourite idea'...function of the FootNote website, users can choose one idea per per day as their favourite.
--Authentication-an additional future feature to be added is that only those who like the original idea will be able to leave a footnote-this will be to for website moderation purposes-the focus of the website is to focus on providing small nuggets of inspiration, a nod in the right direction as opposed to negative or frivolous vitriolic comments.
-
 
 ## Future Features
 
@@ -226,18 +216,17 @@ Can soft delete the idea at an point and due to CASCADE.DELETE function, all rel
 A separate view created by the moderator/administrator, showcases the most popular idea of the day and has a variety of quotes from writers and pictures of famous writers. It will also have a button called 'Inspire me'. This button will generate three random footnotes (of all of the hundreds of footnotes stored on the database for the apps) and post three of them at a time. One in each circular shaped bubble, to create a dream like effect. The footnotes will be deliberately without context and the randomness/incongruity/unrelatedness with one another may be humorous or profound and hopefully inspire the user.
 
 ## Filter on FootNotes under idea for different users
+ I will insert a filter option on the footnotes left on ideas that users can filter by. It will be linked to the profile of the people who left the footnotes so filter fields will consist of their favourite genre, their favourite author, where they are from, their gender, ther style etc.
 
 ## Order footnotes by amount of likes
+ I will add a like button to the footnotes and add a filter that will allow the user to order the footnotes by most liekd
 
-## Order idea cards on summary page by most liked
+## Order idea cards on summary page by most liked 
+ I will also set up a system of how the cards appear on the summary/landing page. The most popular(most liked) ideas will appear on the first page and so on.
 
-## The main image that appears on the idea will be also uploaded by the app user, it will be connected to their mobile.
-F
-uture features: Additional model for the person who owns the idea can soft-delete their idea and all corresponding footnotes at any time so that that the view becomes private and visible to only them...this will be a good way to ensure that the summary page doesn't become oversaturated.
+## Order idea cards on summary page by which idea received the most amount of footnotes
 
-Summary page, there will be a filter option inserted to order ideas either by how many green ticks they received or how many FootNotes they received.
-
-The cascade delete effect is in place so once an idea is deleted, all accompanying footnotes will be deleted as well.
+On the summary page, the user will be able to toggler between whether they want the ideas ordered by how many green ticks they received or how many FootNotes they received.
 
 # UX Design
 
@@ -259,48 +248,46 @@ Balsamiq 7(Medley page) ![alt text](./static/media/FN_Bals_Medley.png)
 
 ## LUCIDCHARTS
 
--When considering how to start designing the models for FootNote, the Lucidchart Entity Relationship Diagrams and the workflow, I also implemented the aforementioned agile methodology and MOSCOW prioritisation. I considered what was realistic with time being the primary constraint. Additionally, I considered which aspects of the app were considered to be ‘Must Have’ features and accordingly were of absolute importance to adjust the fields in the model to suit this.
--I considered the MOSCOW categorisation of the features when designing the models.
--The blog walkthrough and Kanban board feature assisted me in thinking about what features I would include in project four and how to go about implementing these/dividing these into sections that I could apply in a structured manner and what needed to be prioritised at different points. The Kanban board is an excellent time management tool.
--Inspired by the walkthrough projects (Django ‘to do’ app for CRUD functionality as well as the blog walkthrough), I planned on having the design for the model classes neatly planned and laid out in tabular format in  Lucidchart, which would help me to formulate the structure of the models in my own head when designing the code for the app:
-When designing the models, I delved deeply into the tutorials and suggested readings inserted, referenced on the LMS to try to ensure that I had a good level of Django/the Django structure prior to writing/designing the models:
+- When considering how to start designing the models for FootNote, the Lucidchart Entity Relationship Diagrams and the workflow, I also implemented the aforementioned agile methodology and MOSCOW prioritisation. I considered what was realistic with time being the primary constraint. Additionally, I considered which aspects of the app were considered to be ‘Must Have’ features and accordingly were of absolute importance to adjust the fields in the model to suit this.
+- I considered the MOSCOW categorisation of the features when designing the models.
+- The blog walkthrough and Kanban board feature assisted me in thinking about what features I would include in project four and how to go about implementing these/dividing these into sections that I could apply in a structured manner and what needed to be prioritised at different points. The Kanban board is an excellent time management tool.
+- Inspired by the walkthrough projects (Django ‘to do’ app for CRUD functionality as well as the blog walkthrough), I planned on having the design for the model classes neatly planned and laid out in tabular format in  Lucidchart, which would help me to formulate the structure of the models in my own head when designing the code for the app:
+- When designing the models, I delved deeply into the tutorials and suggested readings inserted, referenced on the LMS to try to ensure that I had a good level of Django/the Django structure prior to writing/designing the models:
 
- -My understanding of Django:
-Django, as per most python frameworks follows a model-view-template structure:
-<b>Model-View-Template</b>
-<b>Model</b>
-The models are based on object relational mapping. The models contain essential fields of the data. Each model maps to a single table. Django contains implicit functionality, hiding the plumbing (it is not explicit, all of the details are not transparent on the surface)
-<b>View</b>
+## My understanding of Django:
+<b>Model-View-Template Structure</b>
+- Model
+ The models are based on object relational mapping. They contain essential fields of the data. Each model maps to a single table. Django contains implicit functionality, hiding the plumbing (it is not explicit, all of the details are not transparent on the surface)
+- View
 The views contains logic, it is the controller of the app. The view defines the business logic that links the html templates with the defined models.
-<b>Template</b>
-The HTML templates are the user interface. The templates impact the presentation layer- how info is displayed to the user. The HTML files should be filled with designer-friendly syntax for rendering information to be presented to user. 
+- Template
+The HTML templates are the user interface. The templates impact the presentation layer- how the information is displayed to the user. The HTML files should be filled with designer-friendly syntax for rendering information to be presented to user. 
+
 The business logic (contained in the views) should be separated from the presentation logic(contained in the HTML files.)
- Separation of concerns is a core concept/feature of Django. Django was initially used for newspaper functionality, which contributed (I imagine) to the emphasis on separation of concerns; separating different features of projects into different apps, separating the test files from what the files they are testing (e.g. adding a test_views.py file) and having a separate test file for each type of testing (e.g. test_views.py and then separately, test_models.py and separately test_forms.py). I certainly tried to accommodate this trend/approach. I maintained separate files as necessary, separate test files and also separate apps. For example, I created a separate app for the Medley page despite it only being one model, to be inkeeping with the Django separation of concerns approach.
+
+ Separation of concerns is a core concept/feature of Django. Django was initially used for newspaper functionality (as discussed in a CI Webinar), which contributed (I imagine) to the emphasis on separation of concerns; separating different features of projects into different apps, separating the test files from what the files they are testing (e.g. adding a test_views.py file) and having a separate test file for each type of testing (e.g. test_views.py and then separately, test_models.py and separately test_forms.py). I certainly tried to accommodate this trend/approach. I maintained separate files as necessary, separate test files and also separate apps. For example, I created a separate app for the Medley page despite it only being one model, to be inkeeping with the Django separation of concerns approach.
 
 ## What is expected of the developer with regard to Django?:
 With Django, the designers are assumed to be comfortable with HTML and Javascript code. The syntax is embedded within the HTML files, which is subsequently used to inject data into the webpage. 
-In summary, with Django, the focus is on being implicit and hiding the plumbing (which goes against the usual Python approach of better to see something). The Django approach is to offer enough functionality (branching and looping) to allow us to make gooey decisions. Django certainly supports the DRY (Don’t Repeat Yourself) approach to ‘lazy’ (😉) developers. Code need not be rewritten as the foundation html, the ‘base.html’ file can be extended into other files with {% extends base.html %} with additional slices of specific, page specific code splice in (e.g. {% extra title%})
-Routing between different templates to avoid duplicating/repeating code...extends %%
+In summary, with Django, the focus is on being implicit and hiding the plumbing (which goes against the usual Python approach of better to see something). The Django approach is to offer enough functionality (branching and looping) to allow us to make 'gooey' decisions.
+ Django certainly supports the DRY (Don’t Repeat Yourself) approach to ‘lazy’ (😉) developers. Code need not be rewritten as the foundation html, the ‘base.html’ file can be extended into other files with {% extends base.html %} with additional slices of specific, page specific code splice in (e.g. {% extra title%}) Django allows the user to route between different templates to avoid duplicating/repeating code.
 Base.html is the premise and other html files used, %% block quotes slotted into base.html file. Base.html file extended.
 
 With Django, I focussed on convention over configuration, wherein I only specified the unconventional aspect and tried to draw the conventional aspects in directly from the Django framework (e.g. django_countries).
 
 If the developer wishes to stray from convention, explicit code needs to be added.
 
- Views-function based versus class-based views:
-As per the blog walkthrough, I used class-based views but I did also include a number of views which are solely definition based (e.g.)
+Views:
+As per the blog walkthrough, I used class-based views but I did also include a number of views which are solely definition based (e.g. function based views)
 
 The class based views allowed me to use code that is reusable and that inherits from one another.
 'Generic views' (built in Django feature) used, batteries included philosophy of Django.
 
 Connecting cloudinary, used cloudinary for image storage and for quick urls. Due to some syncing issues between Heroku and Cloudinary, also installed whitenoise to circumvent having any syncing problems.
 
-Package=plugs into code already written (use as much/little as possible)
-
-I summary the Django framework was extremely useful and time-saving, the code is already written, plugged app specific code into it. The django framework provided the basic structure and I customized within reason.
+I summary the Django framework was extremely useful and time-saving, the code is already written, for the developer to plug specific code into it. The django framework provided the basic structure and I customized within reason.
 
 <b>Class Models</b>
-Class-based models defined within models.py file and additional definitions included within those models.(specifications)
 
 The two models in the footnote app have been derived from the blog walkthrough project but customised accordingly and tailored code to suit my project; 'Idea' model and the 'FootNote' model.
 
@@ -405,34 +392,34 @@ The colours that are most used throughout the website: Peachpuff (for the cards 
 Traditional green and red used for submit, edit, delete buttons so that these would stand out. Blue is used for the medley button as it is intentionally quirky.
 
 
-Shape:
+- Shape:
  Maintained the summary of cards from blog walkthrough, appreciated the visual impact as the cards look like post-it notes and aligned with the theme of footnote…deliberately note exactly aligned in terms of size, to represent diversity
 Use of opaque footprint as background: Above masthead on summary page and in place of masthead on individual idea pages-inkeeping with the transient, on foot theme.
 
-Font used:
+- Font used:
 I explored a variety of options on Google Fonts before choosing Dancing Script. I chose Dancing Script because the font looks like handwriting. It is very neat, calligraphy-esque style handwriting and accordingly was inkeeping with the theme of creative writing.
 
 I incoporated different fonts used on the medley page to convery the mix and match theme of that page.
 
-Additional design feature: Use of Superscript. To represent the ‘footnote’ theme. The comments are there to build/extrapolate on the original ideas not to negate from them or to be off topic
+- Additional design feature: Use of Superscript. To represent the ‘footnote’ theme. The comments are there to build/extrapolate on the original ideas not to negate from them or to be off topic
 
-I incorporated font awesome in my design, footsteps beside ‘thread softly because you thread on my dreams”, the icones beside each field on the suerprofile form in the writer profile tab.
+- I incorporated font awesome in my design, footsteps beside ‘thread softly because you thread on my dreams”, the icones beside each field on the suerprofile form in the writer profile tab.
 Semantic styling of font, added to word play ‘Foot’ and ‘Note’ aspects of name in different colours
 
-The responsive nature of design-focused on smaller devices...phones/ipads/tablets/laptops while on the move-emphasis on responsiveness. This is because the app is aimed for busy people who are on the go who are struck with inspiration and want quick feedback for their ideas.
+- I always considered how responsiveness when designing the app. I focused on smaller devices(e.g. phones/ipads/tablets/laptops) while on the move-emphasis on responsiveness. This is because the app is aimed for busy people who are on the go who are struck with inspiration and want quick feedback for their ideas.
 
-Use of footnote superscript in the title (and dragging into the footnotes). 
+- Use of footnote superscript in the title (and dragging into the footnotes). 
 To support the idea that users are contributing small tidbits of inspiration/nudges in the right direction, adding on to the idea like a footnote as opposed to offering major insights.
 
--I ensured to incorporate Modal messages in my design, having been impressed by them in the walkthrough. I automatically generated messages that were prompted when various actions are taken. (E.g. a modal message appears when a footnote is submitted or when the user logs out)
+- I ensured to incorporate Modal messages in my design, having been impressed by them in the walkthrough. I automatically generated messages that were prompted when various actions are taken. (E.g. a modal message appears when a footnote is submitted or when the user logs out)
 
--Alert messages-similar to modals but don't need to be dismissed.
 
--Counter on likes and counter on number of footnotes-can like without leaving a foonote, both reflected in the summar card on summary page
+-  Alert messages-similar to modals but don't need to be dismissed.
+
+- Counter on likes and counter on number of footnotes-can like without leaving a foonote, both reflected in the summar card on summary page
 
 ## Future features of design
-To be complete
-
+- FootNote Log to be developed a lot further. Eventually this will be a place foe the user to privately store footnotes that inpisred them. They will readily be able to delete footnotes from their profile and also they will be able to leave a star rating on footnotes.
 
 # Technologies used
 -Summernote
@@ -608,15 +595,16 @@ PEP8 errors: ![alt text](./static/media/kanban_board.png)
 
 - I encountered an issue when I opened the reposiatry from Github as opposed to from the pinned workspace. I had to recreate the env.py file and reinstall dependencies by freezing the requirements.txt file when this happened.
 
--Used 'Hello Django' blog code as boilerplate code, had to get rid of author as author id not recognised.
+- Used 'Hello Django' blog code as boilerplate code, had to get rid of author as author id not recognised.
 
--Django, large useful error messages
+- Django, large useful error messages
 Browser open as I coded, refreshed and received feedback into different types of errors and reasons for them
 
+- Email was a field in the footnote model but it disrupted the process of users loggin a footnote. All hte logger in user does to leave a footnote is insert text in the content box and submit on the idea page. But I noted when approving footnotes on the admin interface that footnotes could not be approved as they were missing an email address. As an immediate fix, I deleted the email field from the FootNote model, mademigrations and migrated.
 
 ## Lighthouse testing outcomes
 
-I completed Lighthouse testing of the application via google developer tools:
+- I completed Lighthouse testing of the application via google developer tools:
 I did this via Google developer tools and was satisifed with the result of 97% performance.
 
 Lighthouse test:  ![alt text](./static/media/footnote_lighthouse.png)
@@ -695,13 +683,14 @@ WAVE Accessibility testing:
 Having considered the must-have users stories, I ensured to test the following functionalities on the website:
 
 -I ensured to test the ability to 'Create an Idea'. I ensured that the initial call to action button was functional in that it opened the relevant form. I ensured that the placeholders in the form were correct and information. I ensured the submit button worked and that a modal appeared alerting me that I had submitted an idea. When this was complete, I logged into the admin interface and confirmed that the idea had been posted there for approval.
+-I checked that the photo upload field worked properly when creating and idea
 -I ensured that the counters on the ideas accurately reflected the number of likes an idea received (I tested whether this changed when I clicked it, decreasing and increasing in number accordingling). I also checked how many FootNotes were left on an idea. I manually counted them and checked the number on the counter to ensure accuracy.
 -Summary cards open up more detail idea post when clicked
 -I checked that the pagination worked as intended (three ideas per summary page)
 -I checked the the max footnote function was wokring
 -I checked that the account regisation worked. I registered an account and ensured I could log in after that with those details
 -I checked that I could log in with my registered account, log out and then back in again.
--I checked that the mssages worked and disappeared by themselves after the time i ahd specified in the code (6 seconds-6000)
+-I checked that the messages worked and disappeared by themselves after the time i ahd specified in the code (6 seconds-6000)
 -FootNotes give detail on who posted them and when they were posted
 -I checked that the links to socials, Facebook, Tiktok, Instagram and Twitter, as well as personal website, that were listed in the footer all successfully oepend on a separate page
 -I checked that the NAV bar effectively allowed me to navigate to the pages that it indicated. I also checked the the FootNote in the corner led to the landing page as I ahd intended.
