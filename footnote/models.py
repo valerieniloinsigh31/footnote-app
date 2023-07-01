@@ -43,7 +43,6 @@ class FootNote(models.Model):
     idea = models.ForeignKey(Idea, on_delete=models.CASCADE,
                              related_name='footnotes')
     name = models.CharField(max_length=80)
-    email = models.EmailField()
     content = models.TextField(max_length=280)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)

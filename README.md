@@ -800,7 +800,7 @@ As the app was deploying, I scrolled to the activity tab and monitored the build
 - I disablef debug. This gets rid of the traceback which may have compromised the site.
 -Install 'X-Frame Options=Same Origin'. This is a CORS(Cross Origin Resource Sharing) security feature.
 - Tells system resources are permitted to be loaded
-- I removed the DISABLE_COLLECT STATIC field from Heroku
+- I removed the DISABLE_COLLECTSTATIC field from Heroku
 
 # Credit and Thanks
 
