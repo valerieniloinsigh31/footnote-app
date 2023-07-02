@@ -14,7 +14,7 @@
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in idea.featured_image.url %}
-                    <img class="card-img-top" src="https://res.cloudinary.com/dlaz6yghz/image/upload/v1678824647/preview16_xlwjzw.jpg" width="80%">
+                    <img class="card-img-top" src="https://res.cloudinary.com/dlaz6yghz/image/upload/v1678824647/preview16_xlwjzw.jpg" alt="Woman looking excited, smiling with her hands up, with a lightbulb visible over her head." width="80%">
                 {% else %}
                 <img class="card-img-top" src=" {{ idea.featured_image.url }}" width="80%">
                 {% endif %}
@@ -31,7 +31,6 @@
                     {{ idea.content | safe }}
                 </p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
@@ -48,7 +47,6 @@
                                 {% endif %}
                         <span class="text-secondary">{{ idea.number_of_likes }} </span> 
                     </strong>
-
                     </div>
                     <div class="col-1">
                         {% with footnotes.count as total_footnotes %}
@@ -66,7 +64,6 @@
         <div class="col">
             <hr>
         </div>
-    </div>
     <div class="row" style="justify-content: center;">
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3><span class="brand"><span class="odd">Foot</span><span
@@ -80,14 +77,16 @@
                             {{ footnote.created_on }}
                         </span> noted <i class="fa-solid fa-shoe-prints"></i>:
                     </p>
-                <div id="footnote{{ footnote.id }}" class="thin">  {{ footnote.content | linebreaks }} </div>
+                   <div id="footnote{{ footnote.id }}" class="thin">  {{ footnote.content | linebreaks }} </div>
 
                     {% if user.is_authenticated and footnote.name == user.username %}
                         <button class="btn btn-delete" footnote_id="{{ footnote.id }}">Delete</button>
                         <button class="btn btn-edit" footnote_id="{{ footnote.id }}">Edit</button>
                     {% endif %}
                 {% endfor %}
+                </div>
             </div>
+         </div>       
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if footnoted %}

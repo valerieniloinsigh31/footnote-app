@@ -24,7 +24,6 @@
         {% block core_css %}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@500&display=swap" rel="stylesheet">    
-        <link rel="shortcut icon" type="image/png" href="">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
@@ -50,8 +49,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand"><span class="odd">Foot</span><span
-                        class="thin">Note<sup class="odd">x</sup></span></span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="odd">Foot</span>
+                    <span class="thin">Note<sup class="odd">x</sup></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -107,17 +106,16 @@
             </symbol>
           </svg>
           
-          <div class="ajax-loader">
+        <div class="ajax-loader">
             <div class="paw"><svg class="icon">
                 <use xlink:href="#paw" />
-              </svg></div>
-          </div>
-          </div>
+              </svg>
+            </div>
+        </div>
+    </div>
         <!-- Footprint closed -->
         {% block content %}
         {% endblock content %}
-    </main>
-
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">Made by <a href="https://www.valerieniloinsigh.com/">Valerie Ni Loinsigh</a></p>
