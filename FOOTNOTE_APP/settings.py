@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'footnote',
     'writer_profile',
-    'django_countries',
     'medley',
 ]
 
