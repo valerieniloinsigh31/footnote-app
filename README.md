@@ -745,6 +745,25 @@ Having considered the must-have users stories, I ensured to test the following f
 
 - I reinserted the DISABLE_COLLECTSTATIC=1 to config vars and set debug back to True in settings.py in the code and continue to try to resolve the issue with opening the live dpeloyed app. I sent a mail to Irish, my cohort facilitator as well as student care on the same. 
 
+- I drilled down into the Heroku logs, using the following steps:
+
+- Open a terminal window and login to Heroku
+heroku login -i
+
+- Enter the email address associated with your Heroku account
+ - As I have Multi-Factor Authentication (MFA) enabled, for password, I input my Heroku API-key instead of my account password.
+
+I sourced my API-key from the personal account settings section of Heroku.
+
+- Start the application logs:
+heroku logs --tail --app <footnote>
+
+This revealed that there was a gunicorn realted issue where the worker failed to boot, I shared the screengrab on slack to try to resolve this:
+
+Heroku logs error: ![alt text](./static/media/herokulogs_footnoteerror.png)
+
+
+
 ### Github Deployment
 
 The website was deployed using GitHub. To do this I did the following;
