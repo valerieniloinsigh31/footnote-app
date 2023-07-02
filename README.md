@@ -87,9 +87,9 @@ Detailed user story from the project, on the kanban board: ![alt text](./static/
 
 
 -Epics -  overarching themes the user stories can slot into
--Themes - 
+-Themes - themes to group the user stories into
 -Sprints -  short pockets of time that tasks are priortised for
--Acceptance Criteria
+-Acceptance Criteria - things that need to be in place for user story to be considered fulfilled
 -Tasks -  tasks to be carried out to fulfill the user story
 -To do/in progress/done - the sections of the kanban board
 -I inserted a number of Milestones for the project, which helped me to establish when things needed to be due and aided me in setting realistic goals:
@@ -188,7 +188,7 @@ Click medley to be presented with a random out of context idea/footnote from the
 Three idea summaries per page, then pagination comes into force.
 This is so the user does not become overwhelmed.
 It is an app designed to be used on a small, mobile device so visually, summary cards for three ideas seems most appropriate, to avoid unnecessary scrolling.
-Once the idea card is clicked into, there will be one idea per page and up to ten footnotes. (has ten footnotes limit been enforced?) A bootstrap collapsible element has been applied to the foonotes so the ability to writer a footnote pops up immediately without having to scroll down the page
+ A bootstrap collapsible element has been applied to the foonotes so the ability to writer a footnote pops up immediately without having to scroll down the page
 
 ## Navigation bar. 
 Summary page with summary cards for different ideas (revealing amount of likes/footnotes on an idea). Login/Logoff function. Register function. Medley tab, this is a decorative tab, to provide quick inspiration-quotes from famous writers and a button which generates random footnotes from the database once clicked
@@ -322,7 +322,8 @@ Summernote
 Whitenoise
 
 ## Things to consider when compiling project
--Order
+-Order (The order in which to complete things)
+
 -Frameworks to be installed (Django, Summernote, considered using Flask and reviewed a number of Bootstrap templates that I could have used)
 
 -MVP-My focus was on keeping in line with the Minimum Viable Product (CRUD, Object orientated programming and object orientated programming (classes))
@@ -330,17 +331,8 @@ Whitenoise
 -Refactoring/inheritance (order of code, inheritance from parent code and using minimum amount of code/avoid repetition)
 Excellent feature of Django-blocks of code that could easily be slotted into the base.html file.
 
+-Separation of concerns, separating files and creating new apps when deemed necessary to ensure everything was clearly laid out. Beauty of Django is the ability to keep everything separate so issues don't overlap and they are easily isolated and resolved (e.g. HTML separate from CSS, different apps etc.)
 
-# Testing 
--Manual testing:
-Do the buttons work
-Class tests written
-Separate test files and separation of concerns
-Build test and make them fail
-Manual testing...testing for responsiveness...testing programmes
-
-
--Design based coding...app aimed at mobile phones. Used developer tools to view the app from different mobile phones and ensured it was responsive. (bootstrap container/container-fluids and columns used, flexbox used, overscroll:hidden, vh and vw) Developer tools used to assess different viewports-mobile first design
 
 ## Bootstrap:
 <ul>
@@ -438,9 +430,9 @@ When deciding what to do for the project, I also considered Flask (particularly 
 Django has a testing framework-with automated tests.
 Django is inbuilt with test.py file. Django imports testcase which is a class-extension of Unittest (methods to assert things about code)
 Testing is based on assertions. 
--Write classes within files to test various things within targeted files
+ - Write classes within files to test various things within targeted files
 Once class is written, run the test command:
--python3 manage.py test command run 
+- python3 manage.py test command run 
 After command run, output will be printed to the terminal providing a summary of the following details of the test:
 
 We see whether a test failed, coded as one of the following, '.','F' 'E'
@@ -466,7 +458,7 @@ Wrote a class and included a test for form ensuring that FootNote form was not s
 
 (2)Test models - split into test_models.py file
 <p>What was tested for models</p>
-Test footnote will autmotically be false until approved by admin.
+Test footnote will automatically be false until approved by admin.
 
 
 (3)Test views - split into test_views.py file
@@ -477,29 +469,29 @@ Tell it summary page-idea detail. Test uses HTTP response.
 
 Once this was done, I performed a coverage test to see what % of the app had been tested. 
 
-Command to install:
+- Command to install coverage:
 pip3 install coverage
-Command to run coverage test examine all of the tests written to see what % of app was tested-a report generated as a result:
+
+- Command to run coverage test examine in order to all of the tests written to see what % of app was tested-with a coverage report being generated as a result:
 coverage run --source=todo manage.py test
 
-To view the report, I input the command:
+- To view the report, I input the command:
 coverage report
-Can use an interactive HTML report, using command:
+- Can use an interactive HTML report, using command:
 coverage html
-and then to view this report, use following command:
+- and then to view this report, use following command:
 python3 -m http.server
 
 Thsi gives us the reason that various parts are not 100% covered so that we are know what is left to be tested.
 
 
 ## Manual Testing Write-Up
-I carried out various tests to ensure that the functionality of the app was as intended:
--Pagination-I checked could I move from page to page and were there three ideas per page, as intended
-Supposed to move to a new page when three idea summaries are on site, wrote six ideas to test this and sure enough three moved to a separate page.
--Max ten footnotes per page...check if this is in place
--I checked the functionality of the footnote button. Sure enough, when footnote textarea is filled and the submit button is clicked, a message appears confirming that the ‘Footnote was been submitted”.
+I carried out various tests to ensure that the functionality of the app was as intended. As well as testing all of the functionalities listed in the features testing section, here are some specific test examples:
 
--Checked that as intended alert messages were prompted when user elects to log in and log out
+- Pagination-I checked could I move from page to page and were there three ideas per page, as intended
+Supposed to move to a new page when three idea summaries are on site, wrote six ideas to test this and sure enough three moved to a separate page.
+- I checked the functionality of the footnote button. Sure enough, when footnote textarea is filled and the submit button is clicked, a message appears confirming that the footnote was been submitted.
+- Checked that as intended alert messages were prompted when user logs in and logs out.
 
 
 ## Responsiveness testing:
@@ -514,7 +506,7 @@ Overflow:hidden
 Margin
 
 
-vh and vw used- which sizes things relative to the viewport height(vh) and viewport width(vw)
+vh and vw used in some cases- which sizes things relative to the viewport height(vh) and viewport width(vw)
 
 Please see below, a variety of responsiveness testing photos on different viewports,
 viewed online via Developer Tools:
@@ -576,20 +568,14 @@ See below various browsers listed and detail on compatibility with app:
                 <tr>
             </table> 
 
- Include screengrabs using developer tools   
+ Please see screengrabs of the app on various browsers below: 
 
  Google: ![alt text](./static/media/footnote_google.png)
  Safari: ![alt text](./static/media/footnote_safari.png)
- Firefox: ![alt text](./static/media/)
- Internet Explorer: ![alt text](./static/media/)        
+ Firefox: ![alt text](./static/media/footnote_firefox.png)
+ Internet Explorer: ![alt text](./static/media/footnote_internetexplorer.jpg)       
 
 ## Bugs resolved and unresolved
-
-One of the useful inbuilt features of Github with regard to python code is that the PEP 8 errors are detailed under problems.
-
-PEP8 errors: ![alt text](./static/media/)
-
- Go into each file and check these. Usually issues with line being too long, whitespace left after code lines, not enough spaces before a line of code etc.
 
 - I encountered an issue when I opened the reposiatry from Github as opposed to from the pinned workspace. I had to recreate the env.py file and reinstall dependencies by freezing the requirements.txt file when this happened.
 
@@ -609,29 +595,23 @@ Lighthouse test:  ![alt text](./static/media/footnote_lighthouse.png)
 
 ## Code validation
 
-Different validators used for each language type (HTML, CSS, Javascript, Python) Please see below a screengrab of the results for each:
+- Different validators used for each language type (HTML, CSS, Javascript, Python) Please see below a screengrab of the results for each:
 
 ## HTML
-<p>[W3 Markup Validation] https://validator.w3.org
- Only minor errors. 3 HTML files, code manually tested for each. Copied and pasted
- into validator
 
- Please see the results for the HTML validation testing for the various HTML templates below:
-
- Landing Page:
- Idea Detail:
- Sign In/Out:
- Medley:
- Writer Profile:
+[W3 Markup Validation] https://validator.w3.org
  
+Nu HTML website address testing: ![alt text](./static/media/footnote_HTMLtest.png)
 
-<p>Javascript testing</p>
+## Javascript testing
 
 jshint.com: ![alt text](./static/media/jshint_footnote.png)
 
 No errors
 
-<p>CSS: [W3 Jigsaw] https://jigsaw.w3.org/css-validator
+## CSS:
+
+[W3 Jigsaw] https://jigsaw.w3.org/css-validator
 
 No errors found received when CSS code runthrough validator (via copy and paste)
 
@@ -639,15 +619,21 @@ medley css: [alt tex](./static/media/footnote_css.png)
 
 </p>
 
-<p>Python:</p>
+## Python:
 Django is a python framework, comes with inbuilt python testing
 Test.py file and PEP8
 
+One of the useful inbuilt features of Github with regard to python code is that the PEP 8 errors are detailed under problems.
+
+PEP8 errors: ![alt text](./static/media/footnote_PEP8.png)
+
+- Go into each file and check these. Usually issues with line being too long, whitespace left after code lines, not enough spaces before a line of code etc.
 
 To ensure python testing was installed and working, used following commands:
 "pip install pep8"
 
 Sure enough, received the message that PEP8 was already installed
+
 Also tried to ensure pylint requirement satisfied also,
 "python -m pip install pylint"
 
@@ -671,43 +657,35 @@ views: ![alt text](./static/media/medleyviews_pytest.png)
 urls: ![alt text](./static/media/medleyurls_pytest.png)
 
 
-WAVE Accessibility testing:
- I performed accessibility testing at wavewabaim.org. I learned about this additional testing piece when researching on Slack. I noted other students were completing this and thought that it would be useful for my project also.
-
-
 ## Features testing
 
 Having considered the must-have users stories, I ensured to test the following functionalities on the website:
 
--I ensured to test the ability to 'Create an Idea'. I ensured that the initial call to action button was functional in that it opened the relevant form. I ensured that the placeholders in the form were correct and information. I ensured the submit button worked and that a modal appeared alerting me that I had submitted an idea. When this was complete, I logged into the admin interface and confirmed that the idea had been posted there for approval.
--I checked that the photo upload field worked properly when creating and idea
--I ensured that the counters on the ideas accurately reflected the number of likes an idea received (I tested whether this changed when I clicked it, decreasing and increasing in number accordingling). I also checked how many FootNotes were left on an idea. I manually counted them and checked the number on the counter to ensure accuracy.
--Summary cards open up more detail idea post when clicked
--I checked that the pagination worked as intended (three ideas per summary page)
--I checked the the max footnote function was wokring
--I checked that the account regisation worked. I registered an account and ensured I could log in after that with those details
--I checked that I could log in with my registered account, log out and then back in again.
--I checked that the messages worked and disappeared by themselves after the time i ahd specified in the code (6 seconds-6000)
--FootNotes give detail on who posted them and when they were posted
--I checked that the links to socials, Facebook, Tiktok, Instagram and Twitter, as well as personal website, that were listed in the footer all successfully oepend on a separate page
--I checked that the NAV bar effectively allowed me to navigate to the pages that it indicated. I also checked the the FootNote in the corner led to the landing page as I ahd intended.
--I checked that the dropdown gave me options
--I checked that i could post a footnote to an idea (Enter the idea page, enter text in the footnote content box and submit footnote). I ensured I received a message confirming submission and checked the admin interface afterwards also. 
--I checked did all of my footnoes show that I had the capaability of editing them and deleting them (the edit and delete buttons should automatically appear under footnotes that the logged in user has left)
--I checked did the edit button function as intended (autopopulate the content box with my previous footnote, enable editing and have the text on the button change from submit to update.) I ensured the footnote matched the updated text once submitted.
--I checked did the delete button work as intended. Once delete is clicked, defensive programming was provoked, asking me to confirm whether I would like to permanently delete my footnote. Once confirmed, the footnote was deleted and no longer appeared under the idea.
--I checked on the writer profile tab could I freely update my personal details. The field updated accordingly once update was clicked and the answers remained that way even when navigating away form the page and back again
--I checked did the collapsible work as intended in the footnote log on the writer profile page. As intended, it revealed and hid the footnotes that pulled in from the main site as intended
--I checked did the checkbox inserted beside the footnotes in the footnote log work. These are currently just for aesthetic reasons. It is to be helpful to the writer to tick particular footnotes they are interested in so they can asily transfer them to a laptop etc without losing their place as there are a lot of footnotes. The check box does not remain ticked once the page is refreshed
--I checked did the carousel feature on the Medley page work as intended. As intended, I could flick from one slide to the next using the controls.
--I checked did the medley button work, as intended when the medley button is clicked it pulls in and displays a random footnote from the ideas posted to the app.  It denotes solely the content the the person who left the footnote. It is designed to provide quick moments of out of context inspiration.
+- I ensured to test the ability to 'Create an Idea'. I ensured that the initial call to action button was functional in that it opened the relevant form. I ensured that the placeholders in the form were correct and information. I ensured the submit button worked and that a modal appeared alerting me that I had submitted an idea. When this was complete, I logged into the admin interface and confirmed that the idea had been posted there for approval.
+- I checked that the photo upload field worked properly when creating and idea
+- I ensured that the counters on the ideas accurately reflected the number of likes an idea received (I tested whether this changed when I clicked it, decreasing and increasing in number accordingly). I also checked how many FootNotes were left on an idea. I manually counted them and checked the number on the counter to ensure accuracy.
+- Summary cards open up more detail idea post when clicked
+- I checked that the pagination worked as intended (three ideas per summary page)
+- I checked the the max footnote function was working
+- I checked that the account regisation worked. I registered an account and ensured I could log in after that with those details
+- I checked that I could log in with my registered account, log out and then back in again.
+- I checked that the messages worked and disappeared by themselves after the time i ahd specified in the code (6 seconds-6000)
+- FootNotes give detail on who posted them and when they were posted
+- I checked that the links to socials, Facebook, Tiktok, Instagram and Twitter, as well as personal website, that were listed in the footer all successfully oepend on a separate page
+- I checked that the NAV bar effectively allowed me to navigate to the pages that it indicated. I also checked the the FootNote in the corner led to the landing page as I ahd intended.
+- I checked that the dropdown gave me options
+- I checked that i could post a footnote to an idea (Enter the idea page, enter text in the footnote content box and submit footnote). I ensured I received a message confirming submission and checked the admin interface afterwards also. 
+- I checked did all of my footnoes show that I had the capaability of editing them and deleting them (the edit and delete buttons should automatically appear under footnotes that the logged in user has left)
+- I checked did the edit button function as intended (autopopulate the content box with my previous footnote, enable editing and have the text on the button change from submit to update.) I ensured the footnote matched the updated text once submitted.
+- I checked did the delete button work as intended. Once delete is clicked, defensive programming was provoked, asking me to confirm whether I would like to permanently delete my footnote. Once confirmed, the footnote was deleted and no longer appeared under the idea.
+- I checked on the writer profile tab could I freely update my personal details. The field updated accordingly once update was clicked and the answers remained that way even when navigating away form the page and back again
+- I checked did the collapsible work as intended in the footnote log on the writer profile page. As intended, it revealed and hid the footnotes that pulled in from the main site as intended
+- I checked did the checkbox inserted beside the footnotes in the footnote log work. These are currently just for aesthetic reasons. It is to be helpful to the writer to tick particular footnotes they are interested in so they can asily transfer them to a laptop etc without losing their place as there are a lot of footnotes. The check box does not remain ticked once the page is refreshed
+- I checked did the carousel feature on the Medley page work as intended. As intended, I could flick from one slide to the next using the controls.
+- I checked did the medley button work, as intended when the medley button is clicked it pulls in and displays a random footnote from the ideas posted to the app.  It denotes solely the content the the person who left the footnote. It is designed to provide quick moments of out of context inspiration.
 
 
 # Deployment
-<b>Deployment, forking, cloning </b>
-
-
-<b>Deployment:</b>
 
 I completed early deployment as per the walkthroughs to avoid last minute panic.
 Before writing the code, I set up an instance on ElephantSQL and then created the app on Heroku. I used the API from ELlephant SQL to build Heroku APP. Connected Heroku with Github CLI for automatic deployment.
@@ -717,7 +695,7 @@ This was done in order to avoid last minute delays.
 The importance of disabling the DEBUG feature was emphasised in tutorials as well as the importance of removing the DISABLE_STATICFILES so this was at the forefront of my mind for final deployment.
 
 
-## Challenges with deployment>
+## Challenges with deployment
 Surely enough, I had some difficulties, migration wouldn't work on my first attempt so I had to redo the entire application (repositary-Elephant SQL-Heroku app-migrate…DEBUG off, remove disable collectstatic etc.)
 
 In the end, I believe migration would not work due to mixing up the use of app name versus project name in some of the code so I ensured to be very careful with this going forward.
@@ -733,6 +711,12 @@ I checked in with my tutor the next day and after all of the rework, it was reve
 
 Had a few different versions of the app on Heroku and had connected the database to the wrong postgres url so no info appeared, updated DATABASE URL in env.py file to amend
 
+ Additionally, the morning of submission, I noted that there was an Application Error when opening the live deployed site from Heroku. I removed 'DISABLE_COLLECTSTATIC=1' from config vars in heroku and set debug to false in settings.py in the code.
+
+ This made matters words as the CSS was no longer functional on the browser, the images added more recently (e.g. not added via the admin interface a month ago) did not load on the browser and now automatic deployment to heroku was failing, with the build logs mentioned the disable collect static.
+
+  I reinserted the DISABLE_COLLECTSTATIC=1 to config vars and set debug back to True in settings.py in the code and continue to try to resolve the issue with opening the live dpeloyed app. I sent a mail to Irish, my cohort facilitator as well as student care on the same. 
+
 ### Github Deployment
 
 The website was deployed using GitHub. To do this I did the following;
@@ -741,21 +725,6 @@ The website was deployed using GitHub. To do this I did the following;
 2. Then on the settings page, on the left hand side of the page, I clicked on the 'pages' tab.
 3. Under the Source section,  I selected 'main' as the branch.
 4. This procured a published link.
-
-### Creating a Fork or Copying
-
-To fork the repository you click on the fork tab which is situated next to unwatch tab in the top right corner of the page
-
-### Copying the repositary on Github
-
-To create a clone of your project:
-
-1. Click the green 'Code' dropdown button beside the green 'Gitpod' button in the repositary page on github
-2. Select the clipboard/copy icon
-3. In the IED open GitBash
-4. Change the working directory to the location you prefer
-5. Add Git Clone with the copy of the repositrory name
-6. Clone has been created
 
 ### Heroku
 
