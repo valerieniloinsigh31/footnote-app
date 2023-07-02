@@ -762,7 +762,7 @@ This revealed that there was a gunicorn realted issue where the worker failed to
 
 Heroku logs error: ![alt text](./static/media/herokulogs_footnoteerror.png)
 
-
+I removed 'django_countries' from INSTALLED APPS in settings.py
 
 ### Github Deployment
 
