@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'footnote',
     'writer_profile',
     'medley',
+    'django_countries',
 ]
 
 SITE_ID = 1
